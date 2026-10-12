@@ -1,0 +1,14 @@
+% ==============================================================================
+% SECTION 5: EXPERIMENTAL HYPOTHESES
+% ==============================================================================
+\section{Formal Experimental Hypotheses}
+\label{sec:hypotheses}
+
+To guide empirical validation, we define five pre-experiment hypotheses:
+\begin{itemize}
+    \item \textbf{H1 (Architectural Leakage Sensitivity)}: Removing synthetic pattern leakage via Duplicate-Aware CV (Protocol C) will expose significant degradation in partitioned tree models, whereas additive linear and kernel models maintain generalization.
+    \item \textbf{H2 (Symptom Sparsity Sensitivity)}: Diagnostic performance degrades as presenting symptom budget $s$ decreases, with multi-candidate Top-3 and Top-5 ranking providing substantial resilience over single-label Top-1 accuracy under severe sparsity.
+    \item \textbf{H3 (Noise Asymmetry)}: False-positive symptom activations cause steeper performance degradation than false-negative symptom dropouts.
+    \item \textbf{H4 (Calibration Efficacy)}: Post-hoc probability calibration significantly reduces ECE and Brier scores across tree and neural classifiers.
+    \item \textbf{H5 (Attribution Stability)}: Top SHAP predictive features remain stable under input noise and concord with documented medical literature.
+\end{itemize}

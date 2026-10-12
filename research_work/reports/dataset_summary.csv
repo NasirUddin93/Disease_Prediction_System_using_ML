@@ -1,0 +1,22 @@
+Metric,Empirical Value
+Raw Training Samples,4920
+Raw Training Columns,134
+Artifact Columns Detected,1
+Clean Symptom Features,132
+Disease Classes in Training,41
+Disease Classes in Testing,41
+Kaggle Stated Disease Classes,42
+Observed Empirical Disease Classes,41
+Training Class Balance,Perfect (120 per class)
+Raw Testing Samples,42
+Unique Symptom Vectors in Train,304
+Exact Duplicate Rows in Train,4616
+Train Exact Duplication Rate (%),93.82
+Contradictory Symptom Vectors,0
+Test Records Identical to Train (Leakage),41
+Test Exact Leakage Percentage (%),97.62
+Mean Symptoms per Patient,7.45
+Min Symptoms per Patient,3
+Max Symptoms per Patient,17
+Zero-Variance Symptom Features,1
+High-Correlation Feature Pairs (|r|>=0.85),95

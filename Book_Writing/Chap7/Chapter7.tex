@@ -1,0 +1,58 @@
+\chapter{Discussion, Conclusion, and Future Work}
+\label{chap:conclusion}
+
+\section{Discussion and Limitations}
+\label{sec:discussion}
+
+\subsection{Scientific Limitations}
+\label{subsec:scientific_limitations}
+The Kaggle Disease Prediction dataset is a rule-derived benchmark rather than a prospective clinical patient cohort. The absence of patient demographics (age, sex, vitals, medical history, comorbidities) represents an inherent structural constraint. Consequently, this system is strictly evaluated as an algorithmic decision-support prototype under simulated benchmark stress testing. Statistical stability across feature selection algorithms and cross-validation folds establishes dataset-level algorithmic evidence, but does not substitute for independent external clinical validation.
+
+\subsection{Ethical Framework and Clinical Safety}
+\label{subsec:ethical_framework}
+The decision-support prototype is engineered with explicit safety constraints: it outputs candidate probabilities, supporting/opposing evidence, and a mandatory disclaimer advising formal clinical consultation. The system is explicitly designed as an assistive triage aid, not an autonomous diagnostic agent.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+This research establishes a rigorous, leakage-aware foundation for symptom-based disease prediction:
+\begin{enumerate}
+    \item By forensically exposing the 93.8\% synthetic duplication and 97.6\% train-test leakage in the widely cited Kaggle benchmark, we demonstrate why prevailing na\"{i}ve 100\% accuracy claims are methodologically flawed.
+    \item Through leakage-aware Duplicate-Aware Group Cross-Validation (Protocol C), we proved that partitioned tree-based models suffer substantial degradation (Decision Tree: $-17.44\%$, XGBoost: $-12.80\%$) when evaluated on genuinely unseen symptom profiles, confirming Hypothesis H1.
+    \item Our leakage-aware feature selection demonstrates that a compact set of 50 consensus symptoms preserves $\ge 95\%$ retained Macro-F1 on the benchmark, identifying an algorithmically stable symptom ontology without sacrificing core predictive fidelity.
+    \item Under controlled symptom sparsity simulations, we observed that while single-label Top-1 accuracy declines steeply as inputs are restricted to acute chief complaints ($s \le 3$), Top-3 and Top-5 candidate ranking retains over 88\% and 93\% inclusion on this benchmark. This provisional finding highlights the critical buffer provided by differential candidate ranking when patient intake profiles are incomplete.
+\end{enumerate}
+
+\section{Key Findings Summary}
+\label{sec:key_findings}
+\begin{itemize}
+    \item The Kaggle Disease Prediction dataset contains only 304 unique symptom vectors across 4,920 training records (93.8\% duplication), with 41 of 42 test records being verbatim duplicates of training records.
+    \item Duplicate-Aware Group CV (Protocol C) exposes that Decision Tree accuracy collapses by $-17.44\%$ and XGBoost by $-12.80\%$ relative to standard cross-validation.
+    \item A compact ontology of 50 consensus symptoms satisfies the $\ge 95\%$ retained Macro-F1 operational criterion at the dataset level, establishing algorithmic feature stability on this benchmark.
+    \item Multi-candidate differential ranking (Top-3 and Top-5) consistently provides a resilient safeguard against single-label accuracy collapse under both feature reduction and simulated symptom sparsity.
+\end{itemize}
+
+\section{Future Work and Research Roadmap}
+\label{sec:future_work}
+
+The findings of this thesis provide an empirical baseline for several immediate research extensions:
+
+\subsection{Reconciliation of Complete Sparsity Matrix}
+\label{subsec:sparsity_reconciliation}
+The immediate priority is completing the full model-by-budget-by-seed experimental matrix for Phase 5 across all five random seeds, reconciling baseline cross-validation variances across all six model families, and freezing the final empirical degradation parameters.
+
+\subsection{Noise Robustness and Asymmetry Profiling (Hypothesis H3)}
+\label{subsec:noise_robustness}
+Building upon the sparsity stress test, Phase 6 will systematically profile model degradation under stochastic reporting noise, testing the hypothesis that false-positive symptom activations cause steeper performance drops than false-negative symptom dropouts across error rates up to 30\%.
+
+\subsection{Probability Calibration and Uncertainty Quantification (Hypothesis H4)}
+\label{subsec:calibration_roadmap}
+Evaluating post-hoc calibration methods (Platt scaling, Isotonic regression, and temperature scaling) to minimize Expected Calibration Error (ECE) and Brier scores across neural and tree models, ensuring that output candidate probabilities accurately reflect diagnostic likelihoods.
+
+\subsection{TreeSHAP Clinical Literature Concordance Audit (Hypothesis H5)}
+\label{subsec:shap_audit}
+Conducting an in-depth global and local feature attribution audit using TreeSHAP, systematically cross-referencing high-weight predictive symptoms against diagnostic criteria published by the World Health Organization (WHO) and the Centers for Disease Control and Prevention (CDC).
+
+\subsection{Prospective Real-World Clinical Validation}
+\label{subsec:real_world_validation}
+Finally, validating the algorithmic framework on prospectively collected clinical patient cohorts featuring authentic demographic diversity, laboratory telemetry, and complex real-world comorbidities to evaluate generalizability beyond synthetic rule-derived benchmarks.

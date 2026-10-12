@@ -1,0 +1,74 @@
+\chapter{Methodology, Experimental Design, and Formal Hypotheses}
+\label{chap:methodology}
+
+\section{Evaluation Protocols}
+\label{sec:evaluation_protocols}
+To establish scientific validity, models are evaluated across three distinct protocols:
+\begin{itemize}
+    \item \textbf{Protocol A (Original Kaggle Split)}: Train on \texttt{Training.csv} (4,920 samples) and evaluate on \texttt{Testing.csv} (42 samples). Serves as a baseline to replicate prior claims.
+    \item \textbf{Protocol B (Standard Stratified 10-Fold CV)}: Evaluates randomized cross-validation on the combined dataset.
+    \item \textbf{Protocol C (Duplicate-Aware Group CV)}: Identical symptom vectors are grouped into isolated clusters. Folds are partitioned at the group level, guaranteeing that no identical symptom vector bridges training and validation partitions.
+\end{itemize}
+
+\section{Structured Model Hierarchy}
+\label{sec:model_hierarchy}
+We implement a four-level model hierarchy:
+\begin{enumerate}
+    \item \textbf{Baselines}: Uniform Dummy Classifier, Bernoulli Naive Bayes, and $L_1/L_2$-regularized Multinomial Logistic Regression.
+    \item \textbf{Tree Ensembles}: CART Decision Trees, Random Forest (100 estimators), Extra Trees, and Extreme Gradient Boosting (XGBoost).
+    \item \textbf{Kernel Methods}: Linear SVM and RBF-kernel SVM with Platt probability scaling.
+    \item \textbf{Neural Network}: A structured Multi-Layer Perceptron (MLP):
+    \begin{equation}
+        \mathbf{x} \in \{0, 1\}^{132} \xrightarrow{\text{Dense(128, ReLU)}} \xrightarrow{\text{Drop(0.3)}} \xrightarrow{\text{Dense(64, ReLU)}} \xrightarrow{\text{Drop(0.2)}} \mathbf{y} \in \Delta^{41}
+    \end{equation}
+\end{enumerate}
+
+\section{Controlled Robustness Perturbations}
+\label{sec:robustness_perturbations}
+
+\subsection{Synthetic Symptom Sparsity (Restricted Presentation Simulation)}
+\label{subsec:sparsity_design}
+To quantify model robustness under restricted symptom reporting, we evaluate diagnostic accuracy when input profiles are stochastically constrained to budgets $s \in \{\text{Full}, 10, 8, 6, 5, 4, 3, 2, 1\}$ active symptoms. Subsampling is conducted across five independent random seeds applied across all records, and evaluated on both the uncompressed 132-symptom and frozen 50-symptom feature spaces under Protocol C.
+
+\subsection{Stochastic Clinical Noise Injection}
+\label{subsec:noise_injection}
+We introduce two controlled perturbation mechanisms across 5 random seeds:
+\begin{itemize}
+    \item \textbf{False Negatives (Symptom Dropout)}: Active symptoms ($1 \to 0$) dropped with probability $p_{\text{drop}} \in \{5\%, 10\%, 15\%, 20\%, 30\%\}$.
+    \item \textbf{False Positives (Erroneous Reporting)}: Inactive symptoms ($0 \to 1$) activated with probability $p_{\text{fp}} \in \{1\%, 2\%, 5\%, 10\%\}$.
+\end{itemize}
+
+\section{Uncertainty Quantification and Differential Diagnosis}
+\label{sec:uncertainty_quant}
+Posterior probabilities $\hat{p}_{ic}$ for sample $i$ and class $c$ are calibrated using Platt scaling and Isotonic regression. Reliability is quantified via:
+\begin{itemize}
+    \item \textbf{Brier Score}:
+    \begin{equation}
+        \text{BS} = \frac{1}{N} \sum_{i=1}^N \sum_{c=1}^C (\hat{p}_{ic} - y_{ic})^2
+    \end{equation}
+    \item \textbf{Expected Calibration Error (ECE)}:
+    \begin{equation}
+        \text{ECE} = \sum_{m=1}^M \frac{|B_m|}{N} \left| \text{acc}(B_m) - \text{conf}(B_m) \right|
+    \end{equation}
+    \item \textbf{Top-$k$ Accuracy}: Measuring whether the true diagnosis resides within the top 1, 3, or 5 ranked candidate diseases.
+\end{itemize}
+
+\section{Explainable AI (XAI) and Medical Alignment}
+\label{sec:xai_method}
+We apply TreeSHAP~\cite{lundberg2017unified} to compute exact Shapley feature attributions:
+\begin{equation}
+    \phi_j = \sum_{S \subseteq F \setminus \{j\}} \frac{|S|!(|F| - |S| - 1)!}{|F|!} [f(S \cup \{j\}) - f(S)]
+\end{equation}
+Global and local explanations are cross-referenced with diagnostic guidelines from the World Health Organization (WHO) and the Centers for Disease Control and Prevention (CDC).
+
+\section{Formal Experimental Hypotheses}
+\label{sec:hypotheses}
+
+To guide empirical validation, we define five pre-experiment hypotheses:
+\begin{itemize}
+    \item \textbf{H1 (Architectural Leakage Sensitivity)}: Removing synthetic pattern leakage via Duplicate-Aware CV (Protocol C) will expose significant degradation in partitioned tree models, whereas additive linear and kernel models maintain generalization.
+    \item \textbf{H2 (Symptom Sparsity Sensitivity)}: Diagnostic performance degrades as presenting symptom budget $s$ decreases, with multi-candidate Top-3 and Top-5 ranking providing substantial resilience over single-label Top-1 accuracy under severe sparsity.
+    \item \textbf{H3 (Noise Asymmetry)}: False-positive symptom activations cause steeper performance degradation than false-negative symptom dropouts.
+    \item \textbf{H4 (Calibration Efficacy)}: Post-hoc probability calibration significantly reduces ECE and Brier scores across tree and neural classifiers.
+    \item \textbf{H5 (Attribution Stability)}: Top SHAP predictive features remain stable under input noise and concord with documented medical literature.
+\end{itemize}

@@ -1,0 +1,14 @@
+% ==============================================================================
+% SECTION 2: RELATED WORK
+% ==============================================================================
+\section{Related Work and Research Gaps}
+\label{sec:related_work}
+
+\subsection{Machine Learning in Symptom-Based Diagnosis}
+Automated disease classification has evolved from rule-based expert systems (such as MYCIN and INTERNIST-I) toward statistical learning and deep neural networks. Multiple studies have applied Decision Trees, Random Forests, Support Vector Machines (SVM), and Gradient Boosted Trees (XGBoost) to tabular symptom-disease profiles. However, existing literature overwhelmingly reports near-perfect accuracies without investigating data redundancy or testing robustness against missing features.
+
+\subsection{The Pitfall of Data Leakage in Healthcare AI}
+Data leakage occurs when information from outside the training dataset is inadvertently utilized to train the model~\cite{kapoor2023leakage}. In medical diagnostics, when synthetic benchmarks duplicate symptom vectors across train and validation splits, standard cross-validation grossly overestimates model generalization. Models learn to act as lookup tables for recurring synthetic vectors, leading to catastrophic failure when deployed on real patients presenting novel symptom combinations.
+
+\subsection{Probability Calibration in Clinical Decision Support}
+A clinical decision-support tool must express calibrated confidence~\cite{guo2017calibration}. If a classifier assigns a 90\% probability to Dengue, empirical clinical observations should confirm Dengue in approximately 90\% of such cases. Modern non-linear classifiers, particularly deep neural networks and boosted trees, often suffer from overconfidence. Post-hoc calibration via Platt scaling~\cite{platt1999probabilistic} and Isotonic regression~\cite{zadrozny2002transforming} is critical to transform raw scores into actionable clinical probabilities.

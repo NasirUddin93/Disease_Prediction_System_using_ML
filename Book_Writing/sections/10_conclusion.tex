@@ -1,0 +1,7 @@
+% ==============================================================================
+% SECTION 10: CONCLUSION
+% ==============================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+This research establishes a rigorous framework for symptom-based disease prediction. By forensically exposing the 93.8\% duplication and 97.6\% train-test leakage in a widely used benchmark, we demonstrate why naive 100\% accuracy claims are flawed. Through leakage-aware protocols, we proved that tree-based models suffer significant degradation (up to -17.4\%) when evaluated on genuinely unseen symptom profiles. Furthermore, our leakage-aware feature selection demonstrates that 50 stable consensus symptoms identified through multi-method statistical selection represent the smallest evaluated feature subset satisfying the predefined operational criterion of $\ge 95\%$ retained Macro-F1, while Top-3 differential diagnostic accuracy remains $\ge 97\%$ down to 20 symptoms. Under controlled symptom sparsity simulations, we showed that while single-label Top-1 accuracy degrades when inputs are restricted to 2--3 symptoms, Top-3 and Top-5 candidate ranking retains over 88\% and 93\% inclusion on this benchmark, demonstrating the safeguard provided by candidate ranking under restricted symptom reporting. This provides a sound empirical foundation for subsequent noise, calibration, and explainability investigations.

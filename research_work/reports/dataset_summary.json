@@ -1,0 +1,177 @@
+{
+  "dimensions_and_artifacts": {
+    "train_raw_rows": 4920,
+    "train_raw_cols": 134,
+    "test_raw_rows": 42,
+    "test_raw_cols": 133,
+    "train_artifact_columns": [
+      "Unnamed: 133"
+    ],
+    "test_artifact_columns": [],
+    "train_cols_with_whitespace": [],
+    "test_cols_with_whitespace": []
+  },
+  "missing_values": {
+    "train_total_missing_cells": 4920,
+    "train_feature_missing_cells": 0,
+    "test_total_missing_cells": 0,
+    "test_feature_missing_cells": 0
+  },
+  "class_distribution": {
+    "num_classes_train": 41,
+    "num_classes_test": 41,
+    "classes_in_train_only": [],
+    "classes_in_test_only": [],
+    "train_min_class_count": 120,
+    "train_max_class_count": 120,
+    "train_mean_class_count": 120.0,
+    "is_train_perfectly_balanced": true,
+    "test_min_class_count": 1,
+    "test_max_class_count": 2,
+    "test_classes_with_multiple_samples": [
+      "Fungal infection"
+    ]
+  },
+  "duplicates_and_leakage": {
+    "symptom_feature_count": 132,
+    "train_exact_duplicate_rows": 4616,
+    "train_exact_duplicate_percentage": 93.82,
+    "train_unique_rows_count": 304,
+    "train_unique_feature_vectors": 304,
+    "test_exact_duplicate_rows": 0,
+    "contradictory_symptom_vectors_count": 0,
+    "test_rows_exact_in_train": 41,
+    "test_rows_exact_in_train_percentage": 97.62,
+    "test_feat_vectors_in_train": 41,
+    "test_feat_vectors_in_train_percentage": 97.62,
+    "unique_patterns_per_disease": {
+      "(vertigo) Paroymsal  Positional Vertigo": 7,
+      "AIDS": 5,
+      "Acne": 5,
+      "Alcoholic hepatitis": 8,
+      "Allergy": 5,
+      "Arthritis": 6,
+      "Bronchial Asthma": 7,
+      "Cervical spondylosis": 6,
+      "Chicken pox": 10,
+      "Chronic cholestasis": 8,
+      "Common Cold": 9,
+      "Dengue": 10,
+      "Diabetes ": 9,
+      "Dimorphic hemmorhoids(piles)": 6,
+      "Drug Reaction": 6,
+      "Fungal infection": 5,
+      "GERD": 7,
+      "Gastroenteritis": 5,
+      "Heart attack": 5,
+      "Hepatitis B": 9,
+      "Hepatitis C": 7,
+      "Hepatitis D": 10,
+      "Hepatitis E": 9,
+      "Hypertension ": 6,
+      "Hyperthyroidism": 9,
+      "Hypoglycemia": 9,
+      "Hypothyroidism": 8,
+      "Impetigo": 6,
+      "Jaundice": 9,
+      "Malaria": 8,
+      "Migraine": 10,
+      "Osteoarthristis": 7,
+      "Paralysis (brain hemorrhage)": 5,
+      "Peptic ulcer diseae": 7,
+      "Pneumonia": 9,
+      "Psoriasis": 7,
+      "Tuberculosis": 9,
+      "Typhoid": 9,
+      "Urinary tract infection": 5,
+      "Varicose veins": 8,
+      "hepatitis A": 9
+    }
+  },
+  "symptom_statistics": {
+    "top_10_most_frequent_symptoms": {
+      "fatigue": 0.3927,
+      "vomiting": 0.389,
+      "high_fever": 0.2768,
+      "loss_of_appetite": 0.2341,
+      "nausea": 0.2329,
+      "headache": 0.2305,
+      "abdominal_pain": 0.2098,
+      "yellowish_skin": 0.1854,
+      "yellowing_of_eyes": 0.1659,
+      "chills": 0.1622
+    },
+    "top_10_least_frequent_symptoms": {
+      "extra_marital_contacts": 0.022,
+      "swollen_blood_vessels": 0.022,
+      "blackheads": 0.022,
+      "weakness_of_one_body_side": 0.022,
+      "spinning_movements": 0.022,
+      "dischromic _patches": 0.022,
+      "scurring": 0.022,
+      "pus_filled_pimples": 0.022,
+      "foul_smell_of urine": 0.0207,
+      "fluid_overload": 0.0
+    },
+    "zero_variance_symptoms": [
+      "fluid_overload"
+    ],
+    "min_symptoms_per_patient": 3,
+    "max_symptoms_per_patient": 17,
+    "mean_symptoms_per_patient": 7.45,
+    "median_symptoms_per_patient": 6.0,
+    "high_correlation_pairs_count": 95,
+    "high_correlation_pairs_sample": [
+      {
+        "feature_1": "nodal_skin_eruptions",
+        "feature_2": "dischromic _patches",
+        "pearson_r": 0.8864
+      },
+      {
+        "feature_1": "shivering",
+        "feature_2": "watering_from_eyes",
+        "pearson_r": 0.8864
+      },
+      {
+        "feature_1": "muscle_wasting",
+        "feature_2": "patches_in_throat",
+        "pearson_r": 0.8864
+      },
+      {
+        "feature_1": "muscle_wasting",
+        "feature_2": "extra_marital_contacts",
+        "pearson_r": 0.8864
+      },
+      {
+        "feature_1": "weight_gain",
+        "feature_2": "cold_hands_and_feets",
+        "pearson_r": 0.9461
+      },
+      {
+        "feature_1": "weight_gain",
+        "feature_2": "puffy_face_and_eyes",
+        "pearson_r": 0.9461
+      },
+      {
+        "feature_1": "weight_gain",
+        "feature_2": "enlarged_thyroid",
+        "pearson_r": 0.9741
+      },
+      {
+        "feature_1": "weight_gain",
+        "feature_2": "brittle_nails",
+        "pearson_r": 0.9741
+      },
+      {
+        "feature_1": "weight_gain",
+        "feature_2": "swollen_extremeties",
+        "pearson_r": 0.9741
+      },
+      {
+        "feature_1": "anxiety",
+        "feature_2": "drying_and_tingling_lips",
+        "pearson_r": 0.9461
+      }
+    ]
+  }
+}

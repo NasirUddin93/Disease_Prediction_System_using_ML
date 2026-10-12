@@ -1,0 +1,10 @@
+Model,Protocol_A_Accuracy,Protocol_A_Macro_F1,Protocol_B_Accuracy,Protocol_B_Macro_F1,Protocol_C_Accuracy,Protocol_C_Macro_F1,Protocol_C_Top3_Acc
+Decision Tree,0.9762,0.9837,1.0,1.0,0.8256,0.83,0.8402
+Dummy Classifier,0.0,0.0,0.0242,0.0234,0.0152,0.0151,0.065
+Extra Trees,0.9762,0.9837,1.0,1.0,0.972,0.9721,0.9988
+Logistic Regression,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+MLP,0.9762,0.9837,0.9998,0.9998,1.0,1.0,1.0
+Naive Bayes,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Random Forest,0.9762,0.9837,1.0,1.0,0.9939,0.9939,1.0
+SVM,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+XGBoost,0.9762,0.9837,1.0,1.0,0.872,0.8748,0.9037

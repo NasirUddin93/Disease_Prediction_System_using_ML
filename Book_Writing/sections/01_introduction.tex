@@ -1,0 +1,34 @@
+% ==============================================================================
+% SECTION 1: INTRODUCTION
+% ==============================================================================
+\section{Introduction}
+\label{sec:introduction}
+
+\IEEEPARstart{C}{linical} Decision Support Systems (CDSS) powered by artificial intelligence have emerged as essential instruments for triaging patients, mitigating diagnostic delays, and assisting primary care physicians in high-burden healthcare environments~\cite{shortliffe2018clinical, topol2019high}. In ambulatory and telehealth settings, patient-reported symptoms represent the primary point of clinical contact. Consequently, formulating accurate and reliable multi-disease prediction models from categorical symptom indicators has garnered substantial scholarly and industrial interest~\cite{chen2016xgboost, breiman2001random}.
+
+Despite rapid algorithmic advancements, a critical disconnect persists between experimental machine learning (ML) claims and prospective clinical reality. Many published studies and reproducible repositories benchmark conventional classifiers on synthetic or semi-synthetic symptom repositories, routinely reporting classification accuracies exceeding 99\% or even achieving 100\%~\cite{kaushil2020kaggle}. In clinical practice, such results are unrealistic. Real-world diagnostic encounters are characterized by:
+\begin{enumerate}
+    \item \textbf{Symptom Sparsity}: Patients present only a few chief complaints (typically 3 to 8 symptoms) rather than an exhaustive 130+ symptom checklist.
+    \item \textbf{Reporting Noise}: Patient recall is inherently noisy, subject to omission (false negatives), somatic over-reporting (false positives), and non-specific overlap.
+    \item \textbf{Diagnostic Uncertainty}: Symptoms frequently overlap across infectious, autoimmune, and gastrointestinal conditions, necessitating a probabilistic \emph{differential diagnosis} rather than a rigid single-label prediction.
+\end{enumerate}
+
+Furthermore, as recently established by Kapoor and Narayanan~\cite{kapoor2023leakage}, data leakage and synthetic duplication represent pervasive causes of reproducibility failure across computational science. When a benchmark dataset contains replicated synthetic instances, standard cross-validation or random train-test splitting enables models to memorize duplicate vectors rather than learning generalizable medical pathology.
+
+\subsection{Research Vision and Core Question}
+This research investigates a fundamental clinical AI question:
+\begin{quote}
+\emph{``Can machine learning reliably predict multiple diseases from reported symptoms when the symptom information is incomplete, noisy, and potentially ambiguous?''}
+\end{quote}
+
+Rather than framing disease prediction as a simplistic $\text{Symptoms} \to \text{Disease}$ black-box classifier, this study establishes an uncertainty-aware, interpretable framework designed explicitly for clinical decision support.
+
+\subsection{Core Contributions}
+The primary contributions of this Master's research are:
+\begin{itemize}
+    \item \textbf{Empirical Dataset Forensic Audit}: We conduct an exhaustive, code-verified audit of the Kaggle Disease Prediction dataset, uncovering the 41 vs. 42 disease class discrepancy, quantifying an exact 93.8\% row duplication rate, and establishing that 97.6\% of the official test set is leaked verbatim from training data.
+    \item \textbf{Leakage-Aware Evaluation Framework}: We formulate and compare three evaluation protocols: Protocol A (Kaggle split), Protocol B (Stratified CV), and Protocol C (Duplicate-Aware Group CV), isolating genuine pattern generalization from vector memorization.
+    \item \textbf{Robustness Profiling Under Clinical Degradation}: We systematically stress-test a four-tier model hierarchy across simulated symptom sparsity ($132 \to 2$ symptoms) and stochastic reporting noise ($0\% \to 30\%$).
+    \item \textbf{Uncertainty Quantification and Differential Diagnosis}: We evaluate Expected Calibration Error (ECE) and Brier scores, proving that calibrated posterior probabilities yield reliable Top-1, Top-3, and Top-5 differential diagnostic candidate sets.
+    \item \textbf{Explainability and Stability Audit}: We employ SHAP (SHapley Additive exPlanations) to evaluate feature attribution stability and benchmark model reasoning against authoritative medical diagnostic literature (WHO / CDC).
+\end{itemize}

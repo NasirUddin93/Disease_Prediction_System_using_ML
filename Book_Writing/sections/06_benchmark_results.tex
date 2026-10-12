@@ -1,0 +1,66 @@
+% ==============================================================================
+% SECTION 6: EMPIRICAL BENCHMARK RESULTS & PROTOCOL COMPARISON
+% ==============================================================================
+\section{Empirical Benchmark Results and Protocol Comparison}
+\label{sec:benchmark_results}
+
+The structured nine-model hierarchy was evaluated across all three experimental protocols. The complete empirical results are presented in Table~\ref{tab:protocol_benchmark_results} and visualized in Fig.~\ref{fig:protocol_comparison} and Fig.~\ref{fig:model_performance}.
+
+\begin{table*}[!t]
+\caption{Multi-Protocol Benchmark Results Across the 9-Model Hierarchy}
+\label{tab:protocol_benchmark_results}
+\centering
+\begin{tabular}{l|cc|cc|cccc}
+\toprule
+\multirow{2}{*}{\textbf{Algorithm}} & \multicolumn{2}{c|}{\textbf{Protocol A (Kaggle Split)}} & \multicolumn{2}{c|}{\textbf{Protocol B (Stratified 10-Fold)}} & \multicolumn{4}{c}{\textbf{Protocol C (Duplicate-Aware Group 10-Fold)}} \\
+\cmidrule{2-9}
+& \textbf{Accuracy} & \textbf{Macro F1} & \textbf{Accuracy} & \textbf{Macro F1} & \textbf{Accuracy} & \textbf{Macro F1} & \textbf{Top-3 Acc} & \textbf{Top-5 Acc} \\
+\midrule
+Dummy Classifier & 0.0000 & 0.0000 & 0.0242 & 0.0234 & 0.0152 & 0.0151 & 0.0650 & 0.1159 \\
+Logistic Regression & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 1.0000 \\
+Naive Bayes (Bernoulli) & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 1.0000 \\
+Decision Tree (CART) & 0.9762 & 0.9837 & 1.0000 & 1.0000 & \textbf{0.8256} & \textbf{0.8300} & 0.8402 & 0.8427 \\
+Random Forest & 0.9762 & 0.9837 & 1.0000 & 1.0000 & 0.9939 & 0.9939 & 1.0000 & 1.0000 \\
+Extra Trees & 0.9762 & 0.9837 & 1.0000 & 1.0000 & 0.9720 & 0.9721 & 0.9988 & 1.0000 \\
+SVM (RBF Kernel) & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 1.0000 \\
+XGBoost & 0.9762 & 0.9837 & 1.0000 & 1.0000 & \textbf{0.8720} & \textbf{0.8748} & 0.9037 & 0.9085 \\
+Multi-Layer Perceptron (MLP) & 0.9762 & 0.9837 & 0.9998 & 0.9998 & 1.0000 & 1.0000 & 1.0000 & 1.0000 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Empirical Assessment of Hypothesis H1: Architectural Leakage Sensitivity}
+Our empirical findings confirm Hypothesis \textbf{H1} specifically for partitioned tree-based models, while revealing notable architectural divergence:
+\begin{enumerate}
+    \item Under \textbf{Protocol B} (standard Stratified 10-Fold CV), all tree-based architectures (Decision Tree, Random Forest, Extra Trees, and XGBoost) attain an artificial \textbf{100.0\% accuracy and 1.0000 Macro F1}. This is directly attributable to synthetic duplicate symptom vectors straddling both training and validation folds.
+    \item When evaluated under \textbf{Protocol C} (Duplicate-Aware Group 10-Fold CV), where identical symptom vectors are clustered and prevented from leaking across folds, performance diverges sharply:
+    \begin{itemize}
+        \item \textbf{Decision Tree}: Accuracy collapses from \textbf{100.0\% to 82.56\%} (Macro F1: 0.8300).
+        \item \textbf{XGBoost}: Accuracy degrades from \textbf{100.0\% to 87.20\%} (Macro F1: 0.8748).
+        \item \textbf{Extra Trees}: Accuracy drops to \textbf{97.20\%} (Macro F1: 0.9721).
+        \item \textbf{Random Forest}: Retains robust ensemble generalization at \textbf{99.39\%} accuracy.
+    \end{itemize}
+\end{enumerate}
+
+The severe drop observed for single Decision Trees (-17.44\%) and gradient boosted trees (-12.80\%) demonstrates that tree splits overfit to the exact synthetic symptom combinations seen during training. When an unseen symptom vector for that disease appears in the validation fold, rigid orthogonal decision boundaries fail. In contrast, linear models (Logistic Regression), probabilistic models (Naive Bayes), kernel methods (SVM), and Multi-Layer Perceptrons (MLP) maintain 100\% accuracy because they perform smooth, additive weighting across all reported symptoms, exhibiting superior generalization when duplicate memorization is eliminated.
+
+\subsection{Differential Diagnostic Utility (\texorpdfstring{Top-$k$}{Top-k} Ranking)}
+As shown in Table~\ref{tab:protocol_benchmark_results}, evaluating Top-$k$ differential diagnostic candidates provides crucial clinical resilience:
+\begin{itemize}
+    \item For Decision Trees, while Top-1 accuracy is 82.56\%, the Top-3 accuracy improves to 84.02\%.
+    \item For XGBoost, Top-3 accuracy rises to \textbf{90.37\%}, and Top-5 accuracy reaches \textbf{90.85\%}, confirming that the true disease resides within the top differential candidates in over 90\% of unseen symptom presentations.
+\end{itemize}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{protocol_comparison.png}
+\caption{Cross-protocol performance comparison across the 9-model hierarchy. Notice the sharp degradation of Decision Tree and XGBoost under Protocol C.}
+\label{fig:protocol_comparison}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{model_performance.png}
+\caption{Comprehensive metric breakdown under Protocol C (Zero Pattern Leakage), comparing Accuracy, Balanced Accuracy, Macro F1, Top-3, and Top-5 Accuracy.}
+\label{fig:model_performance}
+\end{figure}

@@ -1,0 +1,105 @@
+% ==============================================================================
+% SECTION 7: LEAKAGE-AWARE FEATURE SELECTION & DIMENSIONALITY REDUCTION
+% ==============================================================================
+\section{Leakage-Aware Feature Selection and Dimensionality Reduction}
+\label{sec:feature_selection}
+
+To investigate whether multi-disease prediction requires all 132 symptoms or can operate on a compact clinical subset, we evaluated five feature-selection paradigms: Filter methods (Mutual Information, Chi-Square), Embedded methods ($L_1$-regularized Logistic Regression, Random Forest Gini importance), and Wrapper methods (Recursive Feature Elimination, RFE). Crucially, to prevent validation contamination, all feature ranking and selection procedures were fitted \emph{strictly inside each training fold} under Protocol C.
+
+\begin{table*}[!t]
+\caption{Predictive Performance Across Feature Subsets ($k \in \{132, 100, 75, 50, 30, 20, 10\}$) Under Protocol C}
+\label{tab:feature_selection_summary}
+\centering
+\begin{tabular}{cc|cccc|cccc}
+\toprule
+\multirow{2}{*}{\textbf{Method}} & \multirow{2}{*}{\textbf{Subset ($k$)}} & \multicolumn{4}{c|}{\textbf{Logistic Regression}} & \multicolumn{4}{c}{\textbf{Random Forest}} \\
+\cmidrule{3-10}
+& & \textbf{Accuracy} & \textbf{Macro F1} & \textbf{Top-3 Acc} & \textbf{Retained F1} & \textbf{Accuracy} & \textbf{Macro F1} & \textbf{Top-3 Acc} & \textbf{Retained F1} \\
+\midrule
+Full Feature Set & 132 (Baseline) & 1.0000 & 1.0000 & 1.0000 & 100.0\% & 0.9939 & 0.9939 & 1.0000 & 100.0\% \\
+\midrule
+\multirow{6}{*}{Mutual Information} 
+& 100 & 0.9988 & 0.9988 & 1.0000 & 99.9\% & 0.9854 & 0.9854 & 0.9988 & 99.1\% \\
+& 75  & 0.9939 & 0.9939 & 0.9988 & 99.4\% & 0.9817 & 0.9819 & 0.9988 & 98.8\% \\
+& 50  & 0.9683 & 0.9687 & 0.9866 & \textbf{96.9\%}* & 0.9463 & 0.9471 & 0.9805 & \textbf{95.3\%}* \\
+& 30  & 0.8354 & 0.8349 & 0.9585 & 83.5\% & 0.8098 & 0.8112 & 0.9512 & 81.6\% \\
+& 20  & 0.7512 & 0.7520 & 0.9134 & 75.2\% & 0.7220 & 0.7237 & 0.8902 & 72.8\% \\
+& 10  & 0.4329 & 0.4328 & 0.6707 & 43.3\% & 0.4329 & 0.4326 & 0.6500 & 43.5\% \\
+\midrule
+\multirow{6}{*}{$L_1$ Logistic (Embedded)} 
+& 100 & 0.9988 & 0.9988 & 1.0000 & 99.9\% & 0.9866 & 0.9866 & 1.0000 & 99.3\% \\
+& 75  & 0.9939 & 0.9939 & 1.0000 & 99.4\% & 0.9793 & 0.9792 & 1.0000 & \textbf{98.5\%}* \\
+& 50  & 0.9671 & 0.9671 & 0.9951 & \textbf{96.7\%}* & 0.9256 & 0.9263 & 0.9744 & 93.2\% \\
+& 30  & 0.9110 & 0.9104 & 0.9805 & 91.0\% & 0.8915 & 0.8915 & 0.9659 & 89.7\% \\
+& 20  & 0.8305 & 0.8313 & 0.9707 & 83.1\% & 0.8049 & 0.8052 & 0.9549 & 81.0\% \\
+& 10  & 0.5280 & 0.5289 & 0.7976 & 52.9\% & 0.5098 & 0.5103 & 0.7610 & 51.3\% \\
+\midrule
+\multirow{6}{*}{Chi-Square (Filter)} 
+& 100 & 0.7134 & 0.7139 & 0.7476 & 71.4\% & 0.7183 & 0.7183 & 0.7537 & 72.3\% \\
+& 75  & 0.5829 & 0.5836 & 0.5659 & 58.4\% & 0.5951 & 0.5958 & 0.5732 & 59.9\% \\
+& 50  & 0.3537 & 0.3539 & 0.3732 & 35.4\% & 0.3524 & 0.3533 & 0.3732 & 35.5\% \\
+& 30  & 0.2939 & 0.2948 & 0.3183 & 29.5\% & 0.2805 & 0.2810 & 0.3183 & 28.3\% \\
+& 20  & 0.2146 & 0.2144 & 0.2098 & 21.4\% & 0.2146 & 0.2144 & 0.2098 & 21.6\% \\
+& 10  & 0.1915 & 0.1918 & 0.1707 & 19.2\% & 0.1915 & 0.1918 & 0.1707 & 19.3\% \\
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+\par\noindent{\footnotesize *Meets the predefined operational retention criterion of $\ge 95.0\%$ retained Macro F1 relative to the 132-feature baseline.}
+\end{table*}
+
+\subsection{Smallest Subset Satisfying the \texorpdfstring{$\ge 95\%$}{>= 95\%} Retained Criterion}
+As documented in Table~\ref{tab:feature_selection_summary} and Fig.~\ref{fig:feature_count_vs_f1}:
+\begin{enumerate}
+    \item Under both \textbf{Mutual Information} and \textbf{$L_1$ Logistic Regression}, \textbf{$k = 50$ symptoms} is the smallest feature subset that satisfies the predefined operational criterion of $\ge 95\%$ retained Macro-F1:
+    \begin{itemize}
+        \item Logistic Regression achieves \textbf{96.9\% retained F1} (F1: 0.9687, Top-3: 98.66\%) with Mutual Information.
+        \item Multi-Layer Perceptron (MLP) achieves \textbf{97.7\% retained F1} (F1: 0.9773, Top-3: 98.78\%) with Mutual Information.
+        \item Random Forest achieves \textbf{95.3\% retained F1} (F1: 0.9471, Top-3: 98.05\%) with Mutual Information.
+    \end{itemize}
+    \item We emphasize that the $\ge 95\%$ retained threshold is an \emph{operational benchmark threshold} defined for comparative evaluation, not clinical proof of exhaustive medical coverage.
+\end{enumerate}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{feature_count_vs_macro_f1.png}
+\caption{Macro F1-score as a function of symptom subset size ($k$) across models under Mutual Information feature selection. The dashed line marks the 95\% operational retention threshold.}
+\label{fig:feature_count_vs_f1}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{feature_selection_comparison.png}
+\caption{Feature selection method comparison on Random Forest under Protocol C. Notice the severe performance degradation of Chi-Square due to the suppression of high-information shared symptoms across overlapping diseases.}
+\label{fig:feature_selection_comparison}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{feature_selection_stability.png}
+\caption{Cross-method consensus: Top 20 symptoms identified consistently across independent feature selection methods within the top 50 ranked features.}
+\label{fig:feature_selection_stability}
+\end{figure}
+
+\subsection{Differential Diagnosis Resilience at Aggressive Compression}
+When symptom dimensionality is aggressively reduced below $k=50$ (e.g., $k \in \{30, 20\}$):
+\begin{itemize}
+    \item Under $L_1$ Logistic feature selection at \textbf{$k=30$ symptoms}, Top-1 Macro F1 declines to 0.9104, yet \textbf{Top-3 accuracy remains at 98.05\%} and \textbf{Top-5 accuracy reaches 99.02\%}.
+    \item Even at \textbf{$k=20$ symptoms}, Top-3 accuracy is maintained at \textbf{97.07\%} and Top-5 accuracy at \textbf{98.29\%}.
+    \item These results indicate that Top-$k$ evaluation can preserve substantially higher candidate-ranking performance than Top-1 classification under aggressive feature reduction, maintaining $\ge 97\%$ Top-3 inclusion even when over 80\% of features are removed.
+\end{itemize}
+
+\subsection{Empirical Analysis of Chi-Square Ranking Behavior}
+Under the duplicate-aware evaluation and feature-selection protocol used in this study, chi-square-based ranking produced substantially poorer predictive performance than the other evaluated feature-ranking methods (declining to 71.4\% at $k=100$ and 35.4\% at $k=50$; Fig.~\ref{fig:feature_selection_comparison}). A dataset-level audit of feature metrics revealed that its ranking was strongly associated with symptom frequency and disease breadth ($r = -0.9069$ between $\chi^2$ score and prevalence; $r = -0.9129$ with disease count):
+\begin{enumerate}
+    \item In a balanced 41-class cohort, binary symptoms occurring in only one disease achieve the maximum theoretical $\chi^2$ score ($\chi^2 = 4800.0$). Consequently, $\chi^2$ ranked ultra-specific single-disease symptoms at the very top (20 symptoms covering only 9 of the 41 diseases).
+    \item Conversely, high-information shared symptoms present across multiple conditions (e.g., \emph{vomiting} in 17 diseases, \emph{fatigue} in 17 diseases, \emph{high fever} in 12 diseases) received the lowest $\chi^2$ scores in the dataset ($\chi^2 \approx 2704$).
+    \item Because 32 of the 41 diseases lack exclusive private symptoms and depend primarily on combinations of shared symptoms, ranking symptoms primarily by class-concentration stripped the models of the combinatorial features required to differentiate overlapping pathologies in this dataset.
+\end{enumerate}
+
+\subsection{Feature Selection Stability Across Independent Folds}
+To verify that the $k=50$ threshold does not reflect an artifact of a single lucky split, we audited selection stability across all 10 independent duplicate-aware folds:
+\begin{itemize}
+    \item For Mutual Information, the top 15 features exhibited \textbf{10/10 selection stability} across all 10 folds: \emph{fatigue, vomiting, high fever, loss of appetite, nausea, headache, abdominal pain, yellowish skin, yellowing of eyes, chills, skin rash, malaise, chest pain, joint pain,} and \emph{sweating}.
+    \item For $L_1$ Logistic Regression, 15 symptoms also achieved 10/10 fold stability.
+    \item Across all five independent feature-selection paradigms, 31 symptoms achieved $\ge 80\%$ cross-method consensus (Fig.~\ref{fig:feature_selection_stability}), confirming that the compressed feature space captures clinically established core diagnostic indicators.
+\end{itemize}
