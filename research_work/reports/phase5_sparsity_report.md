@@ -1,19 +1,23 @@
-# Phase 5: Clinical Symptom Sparsity & Cold-Start Robustness Report
+# Phase 5: Clinical Symptom Sparsity & Cold-Start Robustness Final Report
 
-**Investigation Date**: 2026-09-18  
-**Protocol**: Protocol C (Duplicate-Aware Group 10-Fold Cross-Validation, zero vector leakage)  
-**Sample Space**: 4,920 samples, 41 balanced classes, 304 unique symptom templates  
-**Evaluated Symptom Budgets**: s in {Full (natural), 10, 8, 6, 5, 4, 3, 2, 1}  
-**Perturbations**: 5 independent stochastic sampling seeds per sample  
+**Investigation Date**: October 2026  
+**Protocol**: Protocol C (Duplicate-Aware Group 10-Fold Cross-Validation, zero pattern leakage)  
+**Sample Space**: 4,920 records, 41 balanced classes, 304 unique symptom templates  
+**Evaluated Symptom Budgets**: s in {Natural_Unmasked, 10, 8, 6, 5, 4, 3, 2, 1}  
+**Perturbations**: 5 independent stochastic sampling seeds per sample (nested prefix selection)  
+**Feature Spaces**: Full (132 features) vs. Fold-Specific Top-50 (leakage-free fold selection)  
+**Aggregation**: Two-stage hierarchical (seed-average within fold -> fold mean +- SD)  
 
 ---
 
-## 1. Executive Summary & Research Motivation
+## 1. Executive Summary & Research Scope
 
-In prospective clinical deployment (e.g., patient-facing symptom checkers, emergency room triage, telemedicine intake), patients rarely present with an exhaustive checklist of all 132 or 50 potential symptoms. Instead, patients present with an acute, restricted cluster of primary chief complaints.
+In prospective clinical deployment (e.g., patient-facing symptom checkers, emergency room triage, telemedicine intake), patients rarely present with an exhaustive checklist of all 132 potential symptoms. Instead, patients present with an acute, restricted cluster of primary chief complaints.
 
-While Phase 4 established that a static model architecture requires **50 symptoms** to maintain operational retention (>= 95% Macro-F1), **Phase 5 investigates runtime dynamic resilience**:
+While Phase 4 established that a model architecture requires **50 symptoms** to maintain operational retention (>= 95% Macro-F1), **Phase 5 investigates runtime dynamic resilience**:
 > *How robust is the diagnostic model when an intake patient presents only s in [1, 10] active symptoms out of their true pathology?*
+
+**Scientific Framing**: This experiment measures algorithmic sensitivity under synthetic masking on the benchmark dataset. It demonstrates how models respond to missing binary indicators at inference time; it does not claim to validate prospective human diagnostic accuracy.
 
 ---
 
@@ -21,69 +25,69 @@ While Phase 4 established that a static model architecture requires **50 symptom
 
 The table below summarizes performance as the presenting symptom budget is progressively restricted from full natural presentation (~7.45 symptoms) down to an isolated chief complaint ($s = 1$):
 
-| Model Architecture | Presenting Symptoms (s) | Top-1 Accuracy (Mean ± SD) | Macro-F1 (Mean ± SD) | Top-3 Accuracy | Top-5 Accuracy | Brier Score |
+| Model Architecture | Presenting Symptoms (s) | Top-1 Accuracy (Mean +- Fold SD) | Macro-F1 (Mean +- Fold SD) | Top-3 Accuracy | Top-5 Accuracy | Brier Score |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Logistic Regression** | Full | $1.0000 ± 0.0000$ | $1.0000 ± 0.0000$ | $1.0000$ | $1.0000$ | $0.0022$ |
-| **Logistic Regression** | 8 | $0.9826 ± 0.0169$ | $0.9604 ± 0.0353$ | $0.9998$ | $1.0000$ | $0.0469$ |
-| **Logistic Regression** | 5 | $0.9018 ± 0.0543$ | $0.7750 ± 0.0543$ | $0.9825$ | $0.9973$ | $0.2010$ |
-| **Logistic Regression** | 3 | $0.7586 ± 0.0757$ | $0.5533 ± 0.0486$ | $0.8862$ | $0.9355$ | $0.4265$ |
-| **Logistic Regression** | 2 | $0.6226 ± 0.0996$ | $0.3998 ± 0.0508$ | $0.7494$ | $0.8173$ | $0.6213$ |
-| **Logistic Regression** | 1 | $0.4202 ± 0.0892$ | $0.2349 ± 0.0390$ | $0.5442$ | $0.5718$ | $0.8552$ |
-| **MLP** | Full | $1.0000 ± 0.0000$ | $1.0000 ± 0.0000$ | $1.0000$ | $1.0000$ | $0.1294$ |
-| **MLP** | 8 | $0.9784 ± 0.0182$ | $0.9522 ± 0.0400$ | $0.9985$ | $0.9995$ | $0.2131$ |
-| **MLP** | 5 | $0.9001 ± 0.0485$ | $0.7924 ± 0.0664$ | $0.9726$ | $0.9893$ | $0.3903$ |
-| **MLP** | 3 | $0.7360 ± 0.1055$ | $0.5801 ± 0.0646$ | $0.8872$ | $0.9307$ | $0.6418$ |
-| **MLP** | 2 | $0.5605 ± 0.1220$ | $0.4301 ± 0.0480$ | $0.7535$ | $0.8257$ | $0.7989$ |
-| **MLP** | 1 | $0.2963 ± 0.1193$ | $0.2150 ± 0.0409$ | $0.5004$ | $0.6140$ | $0.9179$ |
-| **Naive Bayes** | Full | $1.0000 ± 0.0000$ | $1.0000 ± 0.0000$ | $1.0000$ | $1.0000$ | $0.0026$ |
-| **Naive Bayes** | 8 | $0.9985 ± 0.0044$ | $0.9983 ± 0.0044$ | $1.0000$ | $1.0000$ | $0.0056$ |
-| **Naive Bayes** | 5 | $0.9771 ± 0.0217$ | $0.9685 ± 0.0234$ | $0.9996$ | $1.0000$ | $0.0353$ |
-| **Naive Bayes** | 3 | $0.8838 ± 0.0529$ | $0.8291 ± 0.0426$ | $0.9681$ | $0.9981$ | $0.1389$ |
-| **Naive Bayes** | 2 | $0.7331 ± 0.0933$ | $0.6333 ± 0.0411$ | $0.8930$ | $0.9581$ | $0.3105$ |
-| **Naive Bayes** | 1 | $0.3717 ± 0.0811$ | $0.3127 ± 0.0325$ | $0.6019$ | $0.7169$ | $0.7152$ |
-| **Random Forest** | Full | $0.9939 ± 0.0104$ | $0.9866 ± 0.0220$ | $1.0000$ | $1.0000$ | $0.0581$ |
-| **Random Forest** | 8 | $0.9727 ± 0.0182$ | $0.9323 ± 0.0388$ | $0.9988$ | $0.9994$ | $0.1281$ |
-| **Random Forest** | 5 | $0.8929 ± 0.0582$ | $0.7708 ± 0.0697$ | $0.9759$ | $0.9897$ | $0.2445$ |
-| **Random Forest** | 3 | $0.7654 ± 0.0925$ | $0.5712 ± 0.0621$ | $0.8957$ | $0.9395$ | $0.3994$ |
-| **Random Forest** | 2 | $0.6707 ± 0.1016$ | $0.4603 ± 0.0552$ | $0.8145$ | $0.8665$ | $0.5326$ |
-| **Random Forest** | 1 | $0.5036 ± 0.0869$ | $0.3098 ± 0.0460$ | $0.6482$ | $0.7082$ | $0.7347$ |
-| **SVM** | Full | $1.0000 ± 0.0000$ | $1.0000 ± 0.0000$ | $1.0000$ | $1.0000$ | $0.1110$ |
-| **SVM** | 8 | $0.9614 ± 0.0292$ | $0.9036 ± 0.0512$ | $0.9771$ | $0.9919$ | $0.2964$ |
-| **SVM** | 5 | $0.8038 ± 0.0871$ | $0.6179 ± 0.0450$ | $0.8263$ | $0.8684$ | $0.4695$ |
-| **SVM** | 3 | $0.5934 ± 0.1123$ | $0.3735 ± 0.0555$ | $0.6238$ | $0.6520$ | $0.6892$ |
-| **SVM** | 2 | $0.4922 ± 0.1037$ | $0.2961 ± 0.0550$ | $0.5203$ | $0.5819$ | $0.8273$ |
-| **SVM** | 1 | $0.2792 ± 0.1229$ | $0.1498 ± 0.0455$ | $0.2987$ | $0.3410$ | $0.9426$ |
-| **XGBoost** | Full | $0.8843 ± 0.0448$ | $0.6802 ± 0.1094$ | $0.9027$ | $0.9196$ | $0.1287$ |
-| **XGBoost** | 8 | $0.7933 ± 0.0446$ | $0.5470 ± 0.0857$ | $0.8158$ | $0.8443$ | $0.2477$ |
-| **XGBoost** | 5 | $0.7090 ± 0.0553$ | $0.4348 ± 0.0652$ | $0.7434$ | $0.7786$ | $0.3546$ |
-| **XGBoost** | 3 | $0.6074 ± 0.0631$ | $0.3394 ± 0.0547$ | $0.6785$ | $0.7120$ | $0.4871$ |
-| **XGBoost** | 2 | $0.5295 ± 0.0712$ | $0.2796 ± 0.0476$ | $0.6245$ | $0.6467$ | $0.6025$ |
-| **XGBoost** | 1 | $0.3898 ± 0.0766$ | $0.2094 ± 0.0395$ | $0.4952$ | $0.5171$ | $0.7900$ |
+| **Logistic Regression** | Natural_Unmasked | $1.0000 \pm 0.0000$ | $1.0000 \pm 0.0000$ | $1.0000$ | $1.0000$ | $0.0022$ |
+| **Logistic Regression** | 8 | $0.9814 \pm 0.0201$ | $0.9554 \pm 0.0384$ | $0.9998$ | $1.0000$ | $0.0476$ |
+| **Logistic Regression** | 5 | $0.9019 \pm 0.0591$ | $0.7827 \pm 0.0624$ | $0.9824$ | $0.9971$ | $0.2023$ |
+| **Logistic Regression** | 3 | $0.7581 \pm 0.0794$ | $0.5511 \pm 0.0447$ | $0.8848$ | $0.9338$ | $0.4256$ |
+| **Logistic Regression** | 2 | $0.6243 \pm 0.1085$ | $0.3983 \pm 0.0560$ | $0.7507$ | $0.8169$ | $0.6221$ |
+| **Logistic Regression** | 1 | $0.4173 \pm 0.0917$ | $0.2353 \pm 0.0365$ | $0.5465$ | $0.5735$ | $0.8557$ |
+| **MLP** | Natural_Unmasked | $1.0000 \pm 0.0000$ | $1.0000 \pm 0.0000$ | $1.0000$ | $1.0000$ | $0.1294$ |
+| **MLP** | 8 | $0.9779 \pm 0.0186$ | $0.9456 \pm 0.0396$ | $0.9984$ | $0.9998$ | $0.2134$ |
+| **MLP** | 5 | $0.8969 \pm 0.0508$ | $0.7904 \pm 0.0684$ | $0.9708$ | $0.9885$ | $0.3902$ |
+| **MLP** | 3 | $0.7345 \pm 0.1139$ | $0.5827 \pm 0.0694$ | $0.8826$ | $0.9272$ | $0.6410$ |
+| **MLP** | 2 | $0.5569 \pm 0.1320$ | $0.4251 \pm 0.0545$ | $0.7523$ | $0.8268$ | $0.7985$ |
+| **MLP** | 1 | $0.2960 \pm 0.1229$ | $0.2148 \pm 0.0417$ | $0.4963$ | $0.6128$ | $0.9181$ |
+| **Naive Bayes** | Natural_Unmasked | $1.0000 \pm 0.0000$ | $1.0000 \pm 0.0000$ | $1.0000$ | $1.0000$ | $0.0026$ |
+| **Naive Bayes** | 8 | $0.9981 \pm 0.0052$ | $0.9982 \pm 0.0048$ | $1.0000$ | $1.0000$ | $0.0056$ |
+| **Naive Bayes** | 5 | $0.9758 \pm 0.0237$ | $0.9658 \pm 0.0186$ | $0.9994$ | $1.0000$ | $0.0362$ |
+| **Naive Bayes** | 3 | $0.8837 \pm 0.0543$ | $0.8380 \pm 0.0427$ | $0.9679$ | $0.9986$ | $0.1395$ |
+| **Naive Bayes** | 2 | $0.7283 \pm 0.1004$ | $0.6263 \pm 0.0398$ | $0.8937$ | $0.9568$ | $0.3133$ |
+| **Naive Bayes** | 1 | $0.3719 \pm 0.0790$ | $0.3167 \pm 0.0269$ | $0.6036$ | $0.7177$ | $0.7155$ |
+| **Random Forest** | Natural_Unmasked | $0.9939 \pm 0.0104$ | $0.9866 \pm 0.0220$ | $1.0000$ | $1.0000$ | $0.0581$ |
+| **Random Forest** | 8 | $0.9718 \pm 0.0194$ | $0.9303 \pm 0.0384$ | $0.9989$ | $0.9995$ | $0.1286$ |
+| **Random Forest** | 5 | $0.8938 \pm 0.0558$ | $0.7749 \pm 0.0666$ | $0.9765$ | $0.9894$ | $0.2439$ |
+| **Random Forest** | 3 | $0.7675 \pm 0.1000$ | $0.5789 \pm 0.0655$ | $0.8946$ | $0.9395$ | $0.3972$ |
+| **Random Forest** | 2 | $0.6701 \pm 0.1089$ | $0.4624 \pm 0.0533$ | $0.8174$ | $0.8666$ | $0.5332$ |
+| **Random Forest** | 1 | $0.5048 \pm 0.0914$ | $0.3165 \pm 0.0405$ | $0.6522$ | $0.7119$ | $0.7343$ |
+| **SVM** | Natural_Unmasked | $1.0000 \pm 0.0000$ | $1.0000 \pm 0.0000$ | $1.0000$ | $1.0000$ | $0.1110$ |
+| **SVM** | 8 | $0.9612 \pm 0.0334$ | $0.9013 \pm 0.0475$ | $0.9760$ | $0.9909$ | $0.2963$ |
+| **SVM** | 5 | $0.8038 \pm 0.0919$ | $0.6203 \pm 0.0481$ | $0.8262$ | $0.8678$ | $0.4696$ |
+| **SVM** | 3 | $0.5928 \pm 0.1167$ | $0.3730 \pm 0.0581$ | $0.6255$ | $0.6536$ | $0.6888$ |
+| **SVM** | 2 | $0.4938 \pm 0.1114$ | $0.2986 \pm 0.0544$ | $0.5205$ | $0.5825$ | $0.8279$ |
+| **SVM** | 1 | $0.2776 \pm 0.1269$ | $0.1480 \pm 0.0464$ | $0.2990$ | $0.3410$ | $0.9429$ |
+| **XGBoost** | Natural_Unmasked | $0.8843 \pm 0.0448$ | $0.6802 \pm 0.1094$ | $0.9027$ | $0.9196$ | $0.1287$ |
+| **XGBoost** | 8 | $0.7927 \pm 0.0475$ | $0.5466 \pm 0.0910$ | $0.8162$ | $0.8439$ | $0.2490$ |
+| **XGBoost** | 5 | $0.7102 \pm 0.0615$ | $0.4461 \pm 0.0794$ | $0.7435$ | $0.7784$ | $0.3544$ |
+| **XGBoost** | 3 | $0.6111 \pm 0.0664$ | $0.3435 \pm 0.0572$ | $0.6792$ | $0.7133$ | $0.4837$ |
+| **XGBoost** | 2 | $0.5307 \pm 0.0769$ | $0.2862 \pm 0.0457$ | $0.6260$ | $0.6487$ | $0.6020$ |
+| **XGBoost** | 1 | $0.3922 \pm 0.0771$ | $0.2153 \pm 0.0347$ | $0.5000$ | $0.5209$ | $0.7896$ |
 
 ---
 
-## 3. Core Scientific Discoveries
+## 3. Verified Empirical Discoveries
 
 ### 3.1 The Differential Diagnostic Buffer
-- As presenting symptoms drop from 8 down to 3:
-  - **Single-Label Top-1 Accuracy** suffers a steep decline across all model families. For instance, at s = 3 symptoms, Top-1 accuracy drops into the 40-60% range.
-  - In sharp contrast, **Top-3 Diagnostic Accuracy** remains remarkably resilient (retaining 75-88% across linear, neural, and tree ensembles).
-  - **Top-5 Diagnostic Accuracy** remains above 85-92% even at s = 3 symptoms.
-- **Clinical Implication**: In early patient triage where only 2-3 chief complaints are available, CDSS prototypes should **never emit a dogmatic single prediction**. Offering an ordered differential diagnosis (Top-3 to Top-5) ensures that the true etiology is retained in over 85% of early presentations.
+- As presenting symptoms drop to $s = 3$:
+  - **Single-Label Top-1 Accuracy** suffers a steep decline: Logistic Regression drops to 75.8%, Random Forest to 76.8%, MLP to 73.5%, and SVM to 59.3%.
+  - In sharp contrast, **Top-3 Differential Accuracy** provides substantial recovery: Logistic Regression retains 88.5%, Random Forest retains 89.5%, MLP retains 88.3%, and SVM achieves 62.5%.
+- **Clinical Implication**: In early intake triage where only 2-3 symptoms are reported, CDSS engines should **never emit a single dogmatic classification**. Providing a ranked candidate list (Top-3 to Top-5) provides a resilient decision-support safeguard before laboratory confirmation.
 
-### 3.2 Model Family Sensitivity to Sparsity
-- **Linear & Neural Models (Logistic Regression, MLP)** demonstrate superior graceful degradation under sparsity compared to shallow decision trees or unregularized boosting, because their additive weights distribute evidence across whatever subset of symptoms is reported.
-- **Tree Ensembles (Random Forest, XGBoost)** degrade more rapidly at severe sparsity (s <= 2) when high-level split nodes check for symptoms that the patient omitted.
-- **Probabilistic Baseline (Naive Bayes)** shows rapid probability dispersion and high Brier loss at s <= 2, though its Top-5 inclusion remains competitive.
+### 3.2 Architectural Sensitivity Under Sparsity
+- **Additive & Neural Models (Logistic Regression, MLP)** demonstrate the most graceful degradation down to $s = 4$, as their continuous decision surfaces aggregate evidence across whichever symptoms are present.
+- **Tree Ensembles (Random Forest, XGBoost)** degrade when high-level partition nodes check for symptoms omitted by the patient, though Random Forest retains competitive Top-3 and Top-5 retrieval at severe sparsity.
+- **Kernel Models (SVM RBF)** degrade more rapidly at severe sparsity ($s <= 2$) because zeroing out active coordinates distorts geometric margins in kernel space.
 
-### 3.3 Representation Comparison: Full (132) vs. Frozen (50) Feature Spaces
-- Models trained on the **frozen 50-symptom space** demonstrate near-identical sparsity degradation curves to models trained on the full 132-symptom space.
-- This confirms that the Phase 4 feature reduction from 132 down to 50 symptoms discarded non-essential redundancy without compromising cold-start robustness under dynamic patient symptom reporting.
+### 3.3 Representation Comparison: Full (132) vs. Fold-Specific Top-50
+- Evaluating models on the **fold-specific 50-symptom space** (strictly isolated per fold with zero leakage) shows close tracking to the 132-symptom curves down to $s = 5$.
+- Below $s = 4$, the compressed 50-feature space degrades somewhat faster because masking active symptoms leaves fewer alternative informative features within the 50-symptom subspace.
 
 ---
 
-## 4. Transition to Phase 6 (Clinical Noise & Stochastic Misreporting)
-
-Having mapped the degradation boundary under missing information (Phase 5), Phase 6 will examine **incorrect information**:
-- False negatives (symptom omission dropout: p_drop in [0.05, 0.30])
-- False positives (hypochondriacal / noisy erroneous symptom activation: p_noise in [0.01, 0.10])
+## 4. Methodological Verification Status
+- [x] Protocol C duplicate-aware grouping strictly enforced (0 leaking vector patterns).
+- [x] Zero feature-selection leakage in the 50-feature space (fold-isolated MI).
+- [x] Nested subset property mathematically guaranteed (reproducible seed permutation prefix).
+- [x] Exactly 4,920 raw fold-level rows and 108 summary rows verified.
+- [x] Two-stage aggregation separating fold cross-validation variance from seed perturbation variance.

@@ -6,74 +6,80 @@ While feature selection (\cref{chap:results_feature_selection}) identifies a com
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{sparsity_decay_curves.png}
-\caption{Diagnostic performance degradation curves under simulated patient intake sparsity ($s \in [1, 10]$ presenting chief complaints) across six model architectures evaluated under Protocol C. Left: Top-1 single-label accuracy. Centre: Top-3 differential diagnostic accuracy. Right: Top-5 differential diagnostic accuracy. The horizontal dashed line marks the 95\% operational retention threshold. \textit{Note: Curves reflect provisional Phase 5 benchmark outputs across available masking seeds; final parameter freezing awaits completed seed matrix execution.}}
+\caption{Diagnostic performance degradation curves under simulated patient intake sparsity ($s \in [1, 10]$ presenting chief complaints) across six model architectures evaluated under Protocol C. Left: Top-1 single-label accuracy. Centre: Top-3 differential diagnostic accuracy. Right: Top-5 differential diagnostic accuracy. The horizontal dashed line marks the 95\% operational retention threshold.}
 \label{fig:sparsity_decay_curves}
 \end{figure}
 
 \section{Experimental Design and Stochastic Sparsity Protocol}
 \label{sec:sparsity_design}
-To evaluate model resilience under controlled symptom restriction on this benchmark, models were evaluated under Protocol C across restricted symptom budgets $s \in \{\text{Full}, 10, 8, 6, 5, 4, 3, 2, 1\}$ using five independent random seeds applied across all test records. For each test sample presenting $P$ positive symptoms, if $P > s$, exactly $s$ positive symptoms were selected uniformly at random while remaining symptoms were masked to zero; if $P \le s$, the sample remained unmasked. Evaluations were conducted across both the Full 132-symptom space and the Frozen 50-symptom space identified in Phase 4.
+To evaluate model resilience under controlled symptom restriction on this benchmark, models were evaluated under Protocol C across restricted symptom budgets $s \in \{\text{Natural\_Unmasked}, 10, 8, 6, 5, 4, 3, 2, 1\}$ using five independent random seeds applied across all validation records. For each validation record presenting $P$ positive symptoms, if $P > s$, a reproducible random permutation was generated to extract the prefix of length $s$, guaranteeing nested subset monotonicity ($\mathcal{S}_{s=3} \subset \mathcal{S}_{s=5}$ for each seed); if $P \le s$, all natural symptoms were preserved.
 
-Crucially, these controlled masking experiments represent a benchmark-specific synthetic stress test designed to quantify how algorithmic architectures respond to incomplete binary feature vectors on this dataset; they do not establish clinical diagnostic efficacy in real-world patient encounters. Furthermore, the experimental outputs reported in this chapter are \textbf{provisional}, reflecting the currently available Phase 5 runs across available masking seeds. 
+Evaluations were conducted across two representations:
+\begin{enumerate}
+    \item \textbf{Full 132-Symptom Space}: The comprehensive clinical input space.
+    \item \textbf{Fold-Specific 50-Symptom Space}: Feature selection (Mutual Information) computed strictly on $X_{\text{train}}$ of each fold to guarantee zero validation leakage.
+\end{enumerate}
+
+Crucially, these controlled masking experiments represent a benchmark-specific synthetic stress test designed to quantify how algorithmic architectures respond to incomplete binary feature vectors on this dataset; they characterize algorithmic sensitivity rather than clinical diagnostic efficacy in real-world patient encounters.
 
 \begin{table}[H]
-\caption{Provisional Diagnostic Resilience Under Simulated Symptom Sparsity on the Kaggle Benchmark (Protocol C, Across Available Masking Seeds)}
+\caption{Diagnostic Resilience Under Simulated Symptom Sparsity on the Kaggle Benchmark (Protocol C, 10-Fold Hierarchical Mean $\pm$ Fold SD Across 5 Seeds)}
 \label{tab:sparsity_summary}
 \centering
 \scriptsize
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{cc|cccc|cccc}
 \toprule
-\multirow{2}{*}{\textbf{Model}} & \multirow{2}{*}{\textbf{Budget ($s$)}} & \multicolumn{4}{c|}{\textbf{Full 132-Symptom Space}} & \multicolumn{4}{c}{\textbf{Frozen 50-Symptom Space}} \\
+\multirow{2}{*}{\textbf{Model}} & \multirow{2}{*}{\textbf{Budget ($s$)}} & \multicolumn{4}{c|}{\textbf{Full 132-Symptom Space}} & \multicolumn{4}{c}{\textbf{Fold-Specific 50-Symptom Space (Zero Leakage)}} \\
 \cmidrule{3-10}
 & & \textbf{Top-1 Acc} & \textbf{Macro-F1} & \textbf{Top-3 Acc} & \textbf{Top-5 Acc} & \textbf{Top-1 Acc} & \textbf{Macro-F1} & \textbf{Top-3 Acc} & \textbf{Top-5 Acc} \\
 \midrule
 \multirow{5}{*}{Log. Reg.}
-& Full (7.45$\pm$3.59) & $1.000 \pm 0.000$ & $1.000 \pm 0.000$ & 1.000 & 1.000 & $0.961 \pm 0.029$ & $0.895 \pm 0.065$ & 0.987 & 0.995 \\
-& 8 Symptoms  & $0.983 \pm 0.017$ & $0.960 \pm 0.035$ & 1.000 & 1.000 & $0.942 \pm 0.028$ & $0.845 \pm 0.057$ & 0.987 & 0.995 \\
-& 5 Symptoms  & $0.902 \pm 0.054$ & $0.775 \pm 0.054$ & 0.983 & 0.997 & $0.755 \pm 0.066$ & $0.546 \pm 0.054$ & 0.930 & 0.976 \\
-& 3 Symptoms  & $0.759 \pm 0.076$ & $0.553 \pm 0.049$ & 0.886 & 0.936 & $0.533 \pm 0.130$ & $0.284 \pm 0.063$ & 0.743 & 0.873 \\
-& 1 Symptom   & $0.420 \pm 0.089$ & $0.235 \pm 0.039$ & 0.544 & 0.572 & $0.187 \pm 0.105$ & $0.070 \pm 0.028$ & 0.406 & 0.480 \\
+& Full (7.45$\pm$3.59) & $1.000 \pm 0.000$ & $1.000 \pm 0.000$ & 1.000 & 1.000 & $0.968 \pm 0.021$ & $0.912 \pm 0.052$ & 0.987 & 0.998 \\
+& 8 Symptoms  & $0.981 \pm 0.020$ & $0.955 \pm 0.038$ & 1.000 & 1.000 & $0.951 \pm 0.021$ & $0.862 \pm 0.045$ & 0.986 & 0.998 \\
+& 5 Symptoms  & $0.902 \pm 0.059$ & $0.783 \pm 0.062$ & 0.982 & 0.997 & $0.769 \pm 0.062$ & $0.562 \pm 0.041$ & 0.933 & 0.980 \\
+& 3 Symptoms  & $0.758 \pm 0.079$ & $0.551 \pm 0.045$ & 0.885 & 0.934 & $0.585 \pm 0.105$ & $0.337 \pm 0.050$ & 0.755 & 0.876 \\
+& 1 Symptom   & $0.417 \pm 0.092$ & $0.235 \pm 0.036$ & 0.546 & 0.574 & $0.243 \pm 0.114$ & $0.092 \pm 0.026$ & 0.394 & 0.471 \\
 \midrule
 \multirow{5}{*}{Rand. Forest}
-& Full (7.45$\pm$3.59) & $0.994 \pm 0.010$ & $0.987 \pm 0.022$ & 1.000 & 1.000 & $0.940 \pm 0.027$ & $0.844 \pm 0.057$ & 0.982 & 0.982 \\
-& 8 Symptoms  & $0.973 \pm 0.018$ & $0.932 \pm 0.039$ & 0.999 & 0.999 & $0.922 \pm 0.032$ & $0.797 \pm 0.049$ & 0.975 & 0.976 \\
-& 5 Symptoms  & $0.893 \pm 0.058$ & $0.771 \pm 0.070$ & 0.976 & 0.990 & $0.818 \pm 0.058$ & $0.598 \pm 0.058$ & 0.941 & 0.960 \\
-& 3 Symptoms  & $0.765 \pm 0.092$ & $0.571 \pm 0.062$ & 0.896 & 0.940 & $0.584 \pm 0.116$ & $0.330 \pm 0.050$ & 0.833 & 0.912 \\
-& 1 Symptom   & $0.504 \pm 0.087$ & $0.310 \pm 0.046$ & 0.648 & 0.708 & $0.240 \pm 0.127$ & $0.096 \pm 0.040$ & 0.556 & 0.629 \\
+& Full (7.45$\pm$3.59) & $0.994 \pm 0.010$ & $0.987 \pm 0.022$ & 1.000 & 1.000 & $0.946 \pm 0.025$ & $0.851 \pm 0.061$ & 0.981 & 0.982 \\
+& 8 Symptoms  & $0.972 \pm 0.019$ & $0.930 \pm 0.038$ & 0.999 & 1.000 & $0.928 \pm 0.028$ & $0.808 \pm 0.053$ & 0.976 & 0.978 \\
+& 5 Symptoms  & $0.894 \pm 0.056$ & $0.775 \pm 0.067$ & 0.977 & 0.989 & $0.832 \pm 0.054$ & $0.614 \pm 0.058$ & 0.941 & 0.962 \\
+& 3 Symptoms  & $0.767 \pm 0.100$ & $0.579 \pm 0.066$ & 0.895 & 0.940 & $0.604 \pm 0.118$ & $0.349 \pm 0.045$ & 0.838 & 0.914 \\
+& 1 Symptom   & $0.505 \pm 0.091$ & $0.317 \pm 0.041$ & 0.652 & 0.712 & $0.311 \pm 0.123$ & $0.126 \pm 0.033$ & 0.501 & 0.590 \\
 \midrule
 \multirow{5}{*}{SVM (RBF)}
-& Full (7.45$\pm$3.59) & $1.000 \pm 0.000$ & $1.000 \pm 0.000$ & 1.000 & 1.000 & $0.939 \pm 0.031$ & $0.844 \pm 0.069$ & 0.963 & 0.970 \\
-& 8 Symptoms  & $0.961 \pm 0.029$ & $0.904 \pm 0.051$ & 0.977 & 0.992 & $0.920 \pm 0.038$ & $0.803 \pm 0.068$ & 0.956 & 0.968 \\
-& 5 Symptoms  & $0.804 \pm 0.087$ & $0.618 \pm 0.045$ & 0.826 & 0.868 & $0.769 \pm 0.054$ & $0.517 \pm 0.054$ & 0.809 & 0.873 \\
-& 3 Symptoms  & $0.593 \pm 0.112$ & $0.374 \pm 0.056$ & 0.624 & 0.652 & $0.523 \pm 0.132$ & $0.260 \pm 0.055$ & 0.548 & 0.601 \\
-& 1 Symptom   & $0.279 \pm 0.123$ & $0.150 \pm 0.046$ & 0.299 & 0.341 & $0.206 \pm 0.125$ & $0.079 \pm 0.032$ & 0.253 & 0.331 \\
+& Full (7.45$\pm$3.59) & $1.000 \pm 0.000$ & $1.000 \pm 0.000$ & 1.000 & 1.000 & $0.935 \pm 0.029$ & $0.843 \pm 0.065$ & 0.965 & 0.967 \\
+& 8 Symptoms  & $0.961 \pm 0.033$ & $0.901 \pm 0.048$ & 0.976 & 0.991 & $0.917 \pm 0.037$ & $0.804 \pm 0.067$ & 0.956 & 0.965 \\
+& 5 Symptoms  & $0.804 \pm 0.092$ & $0.620 \pm 0.048$ & 0.826 & 0.868 & $0.769 \pm 0.061$ & $0.512 \pm 0.049$ & 0.820 & 0.876 \\
+& 3 Symptoms  & $0.593 \pm 0.117$ & $0.373 \pm 0.058$ & 0.625 & 0.654 & $0.542 \pm 0.127$ & $0.268 \pm 0.052$ & 0.570 & 0.614 \\
+& 1 Symptom   & $0.278 \pm 0.127$ & $0.148 \pm 0.046$ & 0.299 & 0.341 & $0.239 \pm 0.106$ & $0.083 \pm 0.033$ & 0.248 & 0.361 \\
 \midrule
 \multirow{5}{*}{MLP}
-& Full (7.45$\pm$3.59) & $1.000 \pm 0.000$ & $1.000 \pm 0.000$ & 1.000 & 1.000 & $0.977 \pm 0.024$ & $0.934 \pm 0.057$ & 0.990 & 1.000 \\
-& 8 Symptoms  & $0.978 \pm 0.018$ & $0.952 \pm 0.040$ & 0.999 & 1.000 & $0.957 \pm 0.029$ & $0.883 \pm 0.054$ & 0.990 & 1.000 \\
-& 5 Symptoms  & $0.900 \pm 0.049$ & $0.792 \pm 0.066$ & 0.973 & 0.989 & $0.836 \pm 0.053$ & $0.647 \pm 0.040$ & 0.948 & 0.986 \\
-& 3 Symptoms  & $0.736 \pm 0.106$ & $0.580 \pm 0.065$ & 0.887 & 0.931 & $0.618 \pm 0.086$ & $0.385 \pm 0.041$ & 0.811 & 0.893 \\
-& 1 Symptom   & $0.296 \pm 0.119$ & $0.215 \pm 0.041$ & 0.500 & 0.614 & $0.206 \pm 0.107$ & $0.090 \pm 0.033$ & 0.439 & 0.519 \\
+& Full (7.45$\pm$3.59) & $1.000 \pm 0.000$ & $1.000 \pm 0.000$ & 1.000 & 1.000 & $0.977 \pm 0.019$ & $0.938 \pm 0.053$ & 0.988 & 0.996 \\
+& 8 Symptoms  & $0.978 \pm 0.019$ & $0.946 \pm 0.040$ & 0.998 & 1.000 & $0.958 \pm 0.029$ & $0.893 \pm 0.057$ & 0.985 & 0.996 \\
+& 5 Symptoms  & $0.897 \pm 0.051$ & $0.790 \pm 0.068$ & 0.971 & 0.989 & $0.836 \pm 0.045$ & $0.641 \pm 0.035$ & 0.946 & 0.980 \\
+& 3 Symptoms  & $0.735 \pm 0.114$ & $0.583 \pm 0.069$ & 0.883 & 0.927 & $0.640 \pm 0.085$ & $0.411 \pm 0.033$ & 0.806 & 0.894 \\
+& 1 Symptom   & $0.296 \pm 0.123$ & $0.215 \pm 0.042$ & 0.496 & 0.613 & $0.251 \pm 0.085$ & $0.108 \pm 0.032$ & 0.447 & 0.538 \\
 \midrule
 \multirow{5}{*}{XGBoost}
-& Full (7.45$\pm$3.59) & $0.884 \pm 0.045$ & $0.680 \pm 0.109$ & 0.903 & 0.920 & $0.854 \pm 0.037$ & $0.580 \pm 0.078$ & 0.909 & 0.924 \\
-& 8 Symptoms  & $0.793 \pm 0.045$ & $0.547 \pm 0.086$ & 0.816 & 0.844 & $0.777 \pm 0.045$ & $0.471 \pm 0.067$ & 0.844 & 0.875 \\
-& 5 Symptoms  & $0.709 \pm 0.055$ & $0.435 \pm 0.065$ & 0.743 & 0.779 & $0.634 \pm 0.103$ & $0.326 \pm 0.072$ & 0.722 & 0.774 \\
-& 3 Symptoms  & $0.607 \pm 0.063$ & $0.339 \pm 0.055$ & 0.679 & 0.712 & $0.509 \pm 0.116$ & $0.229 \pm 0.066$ & 0.621 & 0.676 \\
-& 1 Symptom   & $0.390 \pm 0.077$ & $0.209 \pm 0.040$ & 0.495 & 0.517 & $0.217 \pm 0.111$ & $0.091 \pm 0.031$ & 0.373 & 0.487 \\
+& Full (7.45$\pm$3.59) & $0.884 \pm 0.045$ & $0.680 \pm 0.109$ & 0.903 & 0.920 & $0.859 \pm 0.035$ & $0.593 \pm 0.081$ & 0.907 & 0.921 \\
+& 8 Symptoms  & $0.793 \pm 0.048$ & $0.547 \pm 0.091$ & 0.816 & 0.844 & $0.784 \pm 0.050$ & $0.478 \pm 0.065$ & 0.847 & 0.874 \\
+& 5 Symptoms  & $0.710 \pm 0.061$ & $0.446 \pm 0.079$ & 0.744 & 0.778 & $0.646 \pm 0.100$ & $0.339 \pm 0.068$ & 0.729 & 0.777 \\
+& 3 Symptoms  & $0.611 \pm 0.066$ & $0.344 \pm 0.057$ & 0.679 & 0.713 & $0.522 \pm 0.123$ & $0.236 \pm 0.061$ & 0.620 & 0.673 \\
+& 1 Symptom   & $0.392 \pm 0.077$ & $0.215 \pm 0.035$ & 0.500 & 0.521 & $0.275 \pm 0.103$ & $0.115 \pm 0.031$ & 0.369 & 0.479 \\
 \midrule
 \multirow{5}{*}{Naive Bayes}
-& Full (7.45$\pm$3.59) & $1.000 \pm 0.000$ & $1.000 \pm 0.000$ & 1.000 & 1.000 & $0.864 \pm 0.094$ & $0.883 \pm 0.082$ & 0.965 & 0.972 \\
-& 8 Symptoms  & $0.999 \pm 0.004$ & $0.998 \pm 0.004$ & 1.000 & 1.000 & $0.859 \pm 0.085$ & $0.877 \pm 0.075$ & 0.965 & 0.972 \\
-& 5 Symptoms  & $0.977 \pm 0.022$ & $0.969 \pm 0.023$ & 1.000 & 1.000 & $0.832 \pm 0.084$ & $0.834 \pm 0.073$ & 0.964 & 0.972 \\
-& 3 Symptoms  & $0.884 \pm 0.053$ & $0.829 \pm 0.043$ & 0.968 & 0.998 & $0.722 \pm 0.077$ & $0.667 \pm 0.060$ & 0.926 & 0.970 \\
-& 1 Symptom   & $0.372 \pm 0.081$ & $0.313 \pm 0.033$ & 0.602 & 0.717 & $0.145 \pm 0.047$ & $0.137 \pm 0.020$ & 0.489 & 0.658 \\
+& Full (7.45$\pm$3.59) & $1.000 \pm 0.000$ & $1.000 \pm 0.000$ & 1.000 & 1.000 & $0.872 \pm 0.090$ & $0.904 \pm 0.077$ & 0.971 & 0.978 \\
+& 8 Symptoms  & $0.998 \pm 0.005$ & $0.998 \pm 0.005$ & 1.000 & 1.000 & $0.869 \pm 0.087$ & $0.898 \pm 0.075$ & 0.971 & 0.978 \\
+& 5 Symptoms  & $0.976 \pm 0.024$ & $0.966 \pm 0.019$ & 0.999 & 1.000 & $0.842 \pm 0.086$ & $0.856 \pm 0.074$ & 0.970 & 0.978 \\
+& 3 Symptoms  & $0.884 \pm 0.054$ & $0.838 \pm 0.043$ & 0.968 & 0.999 & $0.729 \pm 0.079$ & $0.684 \pm 0.056$ & 0.934 & 0.976 \\
+& 1 Symptom   & $0.372 \pm 0.079$ & $0.317 \pm 0.027$ & 0.604 & 0.718 & $0.159 \pm 0.056$ & $0.145 \pm 0.021$ & 0.502 & 0.666 \\
 \bottomrule
 \end{tabular}
 \begin{flushleft}
 \scriptsize
-\textit{Note: Results report mean $\pm$ standard deviation across evaluated masking seeds. These values are provisional pending complete model-by-budget-by-seed matrix completion. Baseline full-input OOF Macro-F1 scores exhibit variations across specific cross-validation splits and model configurations (e.g., Random Forest: 0.9866--0.9963; MLP: 0.9803--1.0000; SVM: 0.9915--1.0000; XGBoost: 0.6802--0.9137). Neither Table~\ref{tab:sparsity_summary} nor Figure~\ref{fig:sparsity_decay_curves} should be regarded as frozen parameters prior to final experimental reconciliation.}
+\textit{Note: Results report two-stage hierarchical cross-validation mean $\pm$ fold standard deviation across 10 duplicate-aware folds, where each fold aggregates 5 independent nested stochastic masking seeds. Feature selection for the 50-symptom representation was performed strictly within each training fold, guaranteeing zero data leakage.}
 \end{flushleft}
 \end{table}
 
@@ -81,18 +87,18 @@ Crucially, these controlled masking experiments represent a benchmark-specific s
 \label{sec:differential_safeguard}
 As documented in Table~\ref{tab:sparsity_summary} and \cref{fig:sparsity_decay_curves}, progressive symptom restriction induces two contrasting empirical regimes across the evaluated models:
 \begin{enumerate}
-    \item \textbf{Single-Label Accuracy Collapse}: Top-1 accuracy experiences a steep decline as presenting symptoms fall below $s = 5$. At $s = 3$ presenting symptoms (simulating acute reporting restriction), Top-1 accuracy declines to 75.9\% (Macro-F1: 55.3\%) for Logistic Regression, 76.5\% (Macro-F1: 57.1\%) for Random Forest, and 73.6\% (Macro-F1: 58.0\%) for MLP on the Full 132 space. At $s = 1$, Top-1 accuracy falls into the 27.9\%--50.4\% range (Macro-F1: 15.0\%--31.3\%) across all models.
-    \item \textbf{Differential Diagnostic Buffer}: In sharp contrast, multi-candidate ranking demonstrates remarkable resilience. At $s = 3$ symptoms, \textbf{Top-3 diagnostic accuracy remains above 88.6\%} for Logistic Regression (88.6\%), Random Forest (89.6\%), and MLP (88.7\%), with Naive Bayes reaching 96.8\%, while \textbf{Top-5 accuracy exceeds 93.0\%} across these architectures. Even at $s = 2$ presenting symptoms, Top-5 inclusion remains between 81.7\% and 86.7\% for the leading models.
+    \item \textbf{Single-Label Accuracy Collapse}: Top-1 accuracy experiences a steep decline as presenting symptoms fall below $s = 5$. At $s = 3$ presenting symptoms (simulating acute reporting restriction), Top-1 accuracy declines to 75.8\% (Macro-F1: 55.1\%) for Logistic Regression, 76.7\% (Macro-F1: 57.9\%) for Random Forest, and 73.5\% (Macro-F1: 58.3\%) for MLP on the Full 132 space. At $s = 1$, Top-1 accuracy falls into the 27.8\%--50.5\% range (Macro-F1: 14.8\%--31.7\%) across all models.
+    \item \textbf{Differential Diagnostic Buffer}: In sharp contrast, multi-candidate ranking demonstrates remarkable resilience. At $s = 3$ symptoms, \textbf{Top-3 diagnostic accuracy remains above 88.3\%} for Logistic Regression (88.5\%), Random Forest (89.5\%), and MLP (88.3\%), with Naive Bayes reaching 96.8\%, while \textbf{Top-5 accuracy exceeds 92.7\%} across these architectures. Even at $s = 2$ presenting symptoms, Top-5 inclusion remains between 81.7\% and 86.7\% for the leading models.
 \end{enumerate}
 
-These empirical observations highlight the vital safeguard provided by differential candidate ranking over rigid single-label classification under simulated sparsity: presenting an ordered candidate list (Top-3 to Top-5) ensures that the true disease label is captured in over 93\% of evaluated cases under moderate symptom restriction on this benchmark, providing a candidate buffer prior to confirmatory diagnostics.
+These empirical observations highlight the vital safeguard provided by differential candidate ranking over rigid single-label classification under simulated sparsity: presenting an ordered candidate list (Top-3 to Top-5) ensures that the true disease label is captured in over 92\% of evaluated cases under moderate symptom restriction on this benchmark, providing a candidate buffer prior to confirmatory diagnostics.
 
 \section{Architectural Sensitivity and Representation Resilience}
 \label{sec:arch_sensitivity}
 \begin{itemize}
-    \item \textbf{Additive vs.\ Partitioning Models}: Linear (Logistic Regression) and neural (MLP) architectures degrade gracefully under moderate sparsity ($s \ge 4$), as their additive decision boundaries aggregate evidence from whatever subset of features is present. Tree ensembles (Random Forest, XGBoost) experience steeper drops when higher-level tree split nodes interrogate features that the patient omitted, though Random Forest maintains higher Top-1 retention at extreme sparsity ($s=1$, 50.4\%) due to bootstrap feature subsampling.
-    \item \textbf{Kernel and Probabilistic Baselines}: SVM (RBF) degrades sharply at $s \le 3$ (Top-1 59.3\% at $s=3$ and 27.9\% at $s=1$) because geometric distances in the 132-dimensional kernel space are distorted by large fractions of zeroed dimensions. Conversely, Naive Bayes retains exceptionally high Top-3 and Top-5 candidate retention under moderate sparsity ($s=5$, Top-3 100.0\%), though its single-label accuracy collapses at $s=1$ (37.2\%).
-    \item \textbf{Representation Generalization (132 vs.\ 50 Features)}: Evaluating models trained on the Frozen 50-symptom space revealed that retaining only core consensus features achieves comparable sparsity decay trajectories to the uncompressed 132-symptom model down to $s=5$. Below $s=4$, the reduced feature pool accelerates degradation because masking active symptoms leaves fewer alternative informative features within the 50-symptom subspace.
+    \item \textbf{Additive vs.\ Partitioning Models}: Linear (Logistic Regression) and neural (MLP) architectures degrade gracefully under moderate sparsity ($s \ge 4$), as their additive decision boundaries aggregate evidence from whatever subset of features is present. Tree ensembles (Random Forest, XGBoost) experience steeper drops when higher-level tree split nodes interrogate features that the patient omitted, though Random Forest maintains higher Top-1 retention at extreme sparsity ($s=1$, 50.5\%) due to bootstrap feature subsampling.
+    \item \textbf{Kernel and Probabilistic Baselines}: SVM (RBF) degrades sharply at $s \le 3$ (Top-1 59.3\% at $s=3$ and 27.8\% at $s=1$) because geometric distances in the 132-dimensional kernel space are distorted by large fractions of zeroed dimensions. Conversely, Naive Bayes retains exceptionally high Top-3 and Top-5 candidate retention under moderate sparsity ($s=5$, Top-3 99.9\%), though its single-label accuracy collapses at $s=1$ (37.2\%).
+    \item \textbf{Representation Generalization (132 vs.\ Fold-Specific 50 Features)}: Evaluating models trained on the fold-specific 50-symptom space revealed that retaining core consensus features achieves comparable sparsity decay trajectories to the uncompressed 132-symptom model down to $s=5$. Below $s=4$, the reduced feature pool accelerates degradation because masking active symptoms leaves fewer alternative informative features within the 50-symptom subspace.
 \end{itemize}
 
-In summary, the degradation profiles underscore that candidate differential ranking mitigates information loss when symptom reporting is incomplete. However, final confirmation of these trajectories requires the ongoing full seed-by-budget re-run and ultimate validation against real-world clinical patient registries.
+In summary, the degradation profiles underscore that candidate differential ranking mitigates information loss when symptom reporting is incomplete on this benchmark.

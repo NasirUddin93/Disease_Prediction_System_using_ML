@@ -33,7 +33,7 @@ This document establishes the end-to-end traceability, verification, and consist
 | **Phase 2: Validation Protocols (`E3`)** | Protocol A (Kaggle), Protocol B (CV), Protocol C (Duplicate-Aware Group CV) | Formulated in Section 6 | `data_loader.py` (splits data into zero-leakage groups) | Chapter IV (Section 4.1) & Chapter V (Results) | ✅ **Fully Aligned** |
 | **Phase 3: Model Hierarchy (`E2`)** | 9-model evaluation (Baselines, Ensembles, SVM, MLP) | Formulated in Section 7 | `run_benchmarks.py`, `protocol_comparison.csv` | Chapter V (Table 5.1, Figs 5.1–5.2) | ✅ **Fully Aligned** |
 | **Phase 4: Feature Selection (`E4`)** | Dimensionality reduction across $\{132 \to 10\}$ symptoms; $\ge 95\%$ F1 retention | Formulated in Section 8 | `feature_selection.py`, `phase4_final_summary.csv` | Chapter V (Table 5.2 with LogReg, MLP, RF; Figs 5.3–5.5) | ✅ **Fully Aligned** |
-| **Phase 5: Symptom Sparsity (`E5`)** | Cold-start chief complaint restriction ($s \in [1, 10]$ active symptoms) | Formulated in Section 9.1 | `sparsity_experiment.py`, `sparsity_summary.csv` | Chapter VI (Table 6.1, Fig 6.1, differential buffer) | ✅ **Reconciled (Provisional)** |
+| **Phase 5: Symptom Sparsity (`E5`)** | Cold-start chief complaint restriction ($s \in [1, 10]$ active symptoms) | Formulated in Section 9.1 | `sparsity_experiment.py`, `sparsity_summary.csv` | Chapter VI (Table 6.1, Fig 6.1, differential buffer) | ✅ **Completed & Verified** |
 | **Phase 6: Reporting Noise (`E6`)** | False-negative dropout & false-positive misreporting ($0\% \to 30\%$) | Formulated in Section 9.2 (H3) | Not yet executed | Chapter IV (Formulation) & Chapter VII (Future Work) | ✅ **Consistent Roadmap** |
 | **Phase 7: Calibration (`E7`)** | ECE, Brier score, Platt scaling, Isotonic reliability diagrams | Formulated in Section 10 (H4) | Not yet executed | Chapter IV (Formulation) & Chapter VII (Future Work) | ✅ **Consistent Roadmap** |
 | **Phase 8: Explainable AI (`E8`)** | TreeSHAP attributions & WHO/CDC diagnostic guideline audit | Formulated in Section 11 (H5) | Not yet executed | Chapter IV (Formulation) & Chapter VII (Future Work) | ✅ **Consistent Roadmap** |
@@ -82,17 +82,21 @@ Chapter 8: Discussion & Conclusion                 (Integrates Noise, Calibratio
   * **$L_1$-Regularized Logistic**: Logistic Regression (96.7% retained F1), MLP (97.0% retained F1), Random Forest (93.2% retained F1).
 * **Chi-Square Anomaly**: Chi-Square ranking severely degraded performance (35.4% F1 at $k=50$) because it over-ranked ultra-specific single-disease symptoms while discarding high-information shared symptoms (e.g., *vomiting*, *fatigue*) necessary to differentiate overlapping diseases.
 
-### Phase 5: Symptom Sparsity Stress Test
+### Phase 5: Symptom Sparsity Stress Test (Completed & Verified)
 * **Cohort Natural Distribution**: Patients in the dataset present $7.45 \pm 3.59$ active symptoms (range: 3–17).
-* **Evaluated Budgets**: Controlled masking evaluated across $s \in \{\text{Full}, 10, 8, 6, 5, 4, 3, 2, 1\}$ presenting chief complaints.
-* **Differential Diagnostic Buffer**: While single-label Top-1 accuracy collapses steeply below $s=5$ (dropping to 73.6%–76.5% at $s=3$ and 27.9%–50.4% at $s=1$), multi-candidate **Top-3 accuracy remains $\ge 88.6\%$** and **Top-5 accuracy remains $\ge 93.0\%$** at $s=3$.
-* **Provisional Status**: Table 6.1 and Figure 6.1 are explicitly marked as provisional pending completion of the full model-by-budget-by-seed experimental matrix.
+* **Evaluated Budgets**: Controlled nested masking evaluated across $s \in \{\text{Natural\_Unmasked}, 10, 8, 6, 5, 4, 3, 2, 1\}$ presenting chief complaints.
+* **Methodological Audit Complete**:
+  * Evaluated across 10 duplicate-aware Protocol C folds with 5 nested stochastic seeds ($N = 4,920$ raw rows, 108 summary rows).
+  * Feature selection for the 50-symptom space performed strictly within each training fold (zero validation leakage).
+  * Two-stage hierarchical aggregation cleanly separating fold cross-validation standard deviation from seed perturbation variance.
+* **Differential Diagnostic Buffer**: While single-label Top-1 accuracy collapses steeply below $s=5$ (dropping to 73.5%–76.8% at $s=3$ and 27.8%–50.5% at $s=1$), multi-candidate **Top-3 accuracy remains $\ge 88.3\%$** and **Top-5 accuracy remains $\ge 92.7\%$** at $s=3$ across leading architectures (Logistic Regression, Random Forest, MLP, Naive Bayes).
+* **Final Status**: Fully completed, verified, and synchronized with Chapter VI and thesis figures.
 
 ---
 
 ## 5. Critical Editorial & Methodological Reconciliations Applied
 
-During recent peer-review audits, five critical inconsistencies were identified and formally resolved:
+During recent peer-review audits, six critical inconsistencies were identified and formally resolved:
 
 1. **Title Unification**:
    * *Issue*: `main.tex` had a short title, while `Declaration.tex` and `Certificate.tex` used the full thesis title.
@@ -114,6 +118,10 @@ During recent peer-review audits, five critical inconsistencies were identified 
 5. **Dataset-Level Evidence vs. Clinical Validation**:
    * *Issue*: Earlier drafts claimed feature subsets were "clinically validated".
    * *Resolution*: Replaced all such claims with *"dataset-level algorithmic stability and cross-method agreement on this benchmark"*, explicitly noting that external clinical validation requires prospective patient cohort studies.
+
+6. **Phase 05 Methodological Audit & Execution**:
+   * *Issue*: Review flagged potential feature-selection leakage in the 50-feature space, unaligned aggregation of seeds/folds, and provisional notes.
+   * *Resolution*: Implemented fold-isolated feature selection, nested permutation masking ($\mathcal{S}_{s=3} \subset \mathcal{S}_{s=5}$), two-stage aggregation, verified all 4,920 rows and 108 summary combinations, synchronized 300 DPI figures for `Book_Writing/figures/`, and updated Chapter VI with verified metrics.
 
 ---
 
