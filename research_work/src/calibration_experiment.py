@@ -43,15 +43,14 @@ import argparse
 from pathlib import Path
 from typing import Dict, List, Any, Tuple
 from collections import defaultdict
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
-
-import warnings
-warnings.filterwarnings("ignore", category=FutureWarning)
 
 from sklearn.base import clone
 from sklearn.linear_model import LogisticRegression
@@ -275,10 +274,26 @@ def run_calibration_benchmark(max_folds: int = 10, smoke_test: bool = False):
         max_folds = 1
         logger.info("[SMOKE TEST MODE ENABLED]: Running 1 fold across limited conditions")
 
+    # Output file paths
+    reports_dir = Path(REPORTS_DIR)
+    ensure_dir(reports_dir)
+    ensure_dir(THESIS_FIGURES_DIR)
+
+    fold_results_path = reports_dir / "calibration_fold_results.csv"
+    oof_prob_path = reports_dir / "calibration_oof_probabilities.csv"
+    summary_path = reports_dir / "calibration_summary.csv"
+
+    # Initialize OOF Probability File with full 41-class probability headers
+    oof_cols = ["fold", "representation", "model", "method", "sample_idx", "true_class", "confidence", "predicted_class", "is_correct"] + [f"prob_{c}" for c in range(n_classes)]
+    if oof_prob_path.exists():
+        oof_prob_path.unlink()
+    pd.DataFrame(columns=oof_cols).to_csv(oof_prob_path, index=False)
+    logger.info(f"Initialized full 41-class probability CSV at: {oof_prob_path}")
+
     sgkf_outer = StratifiedGroupKFold(n_splits=10, shuffle=True, random_state=42)
     
     fold_results = []
-    oof_prob_records = []
+    total_oof_rows = 0
     t_start = time.perf_counter()
 
     for fold_idx, (tr_idx, va_idx) in enumerate(sgkf_outer.split(X_full, y_full, groups=groups_full)):
@@ -379,42 +394,34 @@ def run_calibration_benchmark(max_folds: int = 10, smoke_test: bool = False):
                         }
                         fold_results.append(record)
 
-                        # Save OOF probabilities for clean baseline
+                        # Save full 41-class OOF probabilities for clean baseline in streaming mode
                         if cond_name == "clean_baseline":
-                            for i_sample in range(len(y_va)):
-                                oof_prob_records.append({
-                                    "fold": fold_idx + 1,
-                                    "representation": rep_name,
-                                    "model": model_name,
-                                    "method": method_name,
-                                    "sample_idx": va_idx[i_sample],
-                                    "true_class": int(y_va[i_sample]),
-                                    "confidence": float(np.max(probs[i_sample])),
-                                    "predicted_class": int(preds[i_sample]),
-                                    "is_correct": int(preds[i_sample] == y_va[i_sample]),
-                                })
+                            n_va = len(y_va)
+                            meta_dict = {
+                                "fold": np.full(n_va, fold_idx + 1, dtype=int),
+                                "representation": [rep_name] * n_va,
+                                "model": [model_name] * n_va,
+                                "method": [method_name] * n_va,
+                                "sample_idx": va_idx,
+                                "true_class": y_va,
+                                "confidence": np.max(probs, axis=1),
+                                "predicted_class": preds,
+                                "is_correct": (preds == y_va).astype(int),
+                            }
+                            batch_df = pd.DataFrame(meta_dict)
+                            for c in range(n_classes):
+                                batch_df[f"prob_{c}"] = probs[:, c]
+                            batch_df.to_csv(oof_prob_path, mode="a", header=False, index=False)
+                            total_oof_rows += n_va
 
     t_elapsed = time.perf_counter() - t_start
     logger.info(f"\nBenchmark completed {max_folds} folds in {t_elapsed:.2f}s.")
 
-    # Convert to DataFrames
+    # Convert fold results to DataFrame and save
     df_folds = pd.DataFrame(fold_results)
-    df_oof = pd.DataFrame(oof_prob_records)
-
-    # Export paths
-    reports_dir = Path(REPORTS_DIR)
-    ensure_dir(reports_dir)
-    ensure_dir(THESIS_FIGURES_DIR)
-
-    fold_results_path = reports_dir / "calibration_fold_results.csv"
-    oof_prob_path = reports_dir / "calibration_oof_probabilities.csv"
-    summary_path = reports_dir / "calibration_summary.csv"
-
     df_folds.to_csv(fold_results_path, index=False)
     logger.info(f"Saved fold results ({len(df_folds)} rows) to: {fold_results_path}")
-
-    df_oof.to_csv(oof_prob_path, index=False)
-    logger.info(f"Saved out-of-fold calibration predictions ({len(df_oof)} rows) to: {oof_prob_path}")
+    logger.info(f"Saved out-of-fold calibration predictions ({total_oof_rows} rows) to: {oof_prob_path}")
 
     # Hierarchical Summary Aggregation across folds
     group_cols = ["representation", "model", "is_tree_neural", "method", "condition"]
@@ -434,10 +441,10 @@ def run_calibration_benchmark(max_folds: int = 10, smoke_test: bool = False):
     df_summary.to_csv(summary_path, index=False)
     logger.info(f"Saved aggregated summary ({len(df_summary)} rows) to: {summary_path}")
 
-    # Generate Figures & Markdown Report
+    # Generate Figures & Dynamic Markdown Report
     if not smoke_test:
         logger.info("Generating publication-grade calibration visualizations...")
-        generate_calibration_figures(df_folds, df_oof, df_summary)
+        generate_calibration_figures(df_folds, oof_prob_path, df_summary)
         generate_markdown_report(df_folds, df_summary)
 
     return df_folds, df_summary
@@ -446,7 +453,7 @@ def run_calibration_benchmark(max_folds: int = 10, smoke_test: bool = False):
 # ------------------------------------------------------------------------------
 # Publication Figures Generation (300 DPI)
 # ------------------------------------------------------------------------------
-def generate_calibration_figures(df_folds: pd.DataFrame, df_oof: pd.DataFrame, df_summary: pd.DataFrame):
+def generate_calibration_figures(df_folds: pd.DataFrame, oof_prob_path: Path, df_summary: pd.DataFrame):
     plt.rcParams.update({
         "font.family": "serif",
         "font.size": 11,
@@ -467,7 +474,9 @@ def generate_calibration_figures(df_folds: pd.DataFrame, df_oof: pd.DataFrame, d
     # Figure 1: Reliability Diagrams for Core Classifiers (Clean Baseline, Full 132)
     # --------------------------------------------------------------------------
     core_models = ["Random_Forest", "XGBoost", "MLP_Neural_Net", "Logistic_Regression", "SVM_RBF", "Decision_Tree"]
-    sub_oof = df_oof[(df_oof["representation"] == "Full_132") & (df_oof["model"].isin(core_models))]
+    # Load only necessary columns for Figure 1 to optimize memory
+    sub_oof = pd.read_csv(oof_prob_path, usecols=["representation", "model", "method", "confidence", "is_correct"])
+    sub_oof = sub_oof[(sub_oof["representation"] == "Full_132") & (sub_oof["model"].isin(core_models))]
 
     fig, axes = plt.subplots(2, 3, figsize=(16, 10), sharex=True, sharey=True)
     axes = axes.flatten()
@@ -587,7 +596,7 @@ def generate_calibration_figures(df_folds: pd.DataFrame, df_oof: pd.DataFrame, d
 
 
 # ------------------------------------------------------------------------------
-# Markdown Report Generation
+# Dynamic Markdown Report Generation
 # ------------------------------------------------------------------------------
 def generate_markdown_report(df_folds: pd.DataFrame, df_summary: pd.DataFrame):
     report_path = Path(REPORTS_DIR) / "phase7_calibration_report.md"
@@ -597,6 +606,9 @@ def generate_markdown_report(df_folds: pd.DataFrame, df_summary: pd.DataFrame):
     clean_folds = df_folds[(df_folds["condition"] == "clean_baseline") & (df_folds["representation"] == "Full_132") & (df_folds["model"].isin(conf_models))]
 
     stat_findings = []
+    supported_models = []
+    partial_models = []
+
     for model_name in conf_models:
         m_folds = clean_folds[clean_folds["model"] == model_name]
         p_native_ece = m_folds[m_folds["method"] == "native"]["ece_15"].to_numpy()
@@ -606,6 +618,10 @@ def generate_markdown_report(df_folds: pd.DataFrame, df_summary: pd.DataFrame):
         p_native_brier = m_folds[m_folds["method"] == "native"]["brier_score"].to_numpy()
         p_sig_brier = m_folds[m_folds["method"] == "sigmoid"]["brier_score"].to_numpy()
         p_iso_brier = m_folds[m_folds["method"] == "isotonic"]["brier_score"].to_numpy()
+
+        p_native_acc = m_folds[m_folds["method"] == "native"]["top1_accuracy"].to_numpy()
+        p_sig_acc = m_folds[m_folds["method"] == "sigmoid"]["top1_accuracy"].to_numpy()
+        p_iso_acc = m_folds[m_folds["method"] == "isotonic"]["top1_accuracy"].to_numpy()
 
         delta_ece_sig = float(np.mean(p_sig_ece - p_native_ece))
         delta_ece_iso = float(np.mean(p_iso_ece - p_native_ece))
@@ -623,6 +639,16 @@ def generate_markdown_report(df_folds: pd.DataFrame, df_summary: pd.DataFrame):
         except Exception:
             p_val_ece_iso = 1.0
 
+        # Assess empirical support dynamically:
+        ece_improved = (delta_ece_sig < 0 or delta_ece_iso < 0)
+        bs_improved = (delta_bs_sig <= 0 or delta_bs_iso <= 0)
+        acc_preserved = (float(np.mean(p_sig_acc - p_native_acc)) >= -0.01)
+
+        if ece_improved and bs_improved and acc_preserved:
+            supported_models.append(model_name)
+        elif ece_improved:
+            partial_models.append(model_name)
+
         stat_findings.append({
             "model": model_name,
             "native_ece": float(np.mean(p_native_ece)),
@@ -637,7 +663,22 @@ def generate_markdown_report(df_folds: pd.DataFrame, df_summary: pd.DataFrame):
             "iso_bs": float(np.mean(p_iso_brier)),
             "delta_bs_sig": delta_bs_sig,
             "delta_bs_iso": delta_bs_iso,
+            "native_acc": float(np.mean(p_native_acc)),
+            "sig_acc": float(np.mean(p_sig_acc)),
+            "iso_acc": float(np.mean(p_iso_acc)),
         })
+
+    # Derive dynamic verdict based on empirical metric outcomes:
+    n_conf = len(conf_models)
+    if len(supported_models) == n_conf:
+        verdict_str = "**Fully Supported Across All Confirmatory Architectures**"
+        verdict_summary = f"All {n_conf} confirmatory architectures ({', '.join([m.replace('_', ' ') for m in supported_models])}) demonstrated measurable reductions in ECE and Brier score without accuracy compromise."
+    elif len(supported_models) > 0 or len(partial_models) > 0:
+        verdict_str = "**Partially Supported (Architecture-Dependent)**"
+        verdict_summary = f"Post-hoc calibration demonstrated clear efficacy on a subset of confirmatory models ({', '.join([m.replace('_', ' ') for m in supported_models + partial_models])}), while other models showed mixed or baseline-calibrated metrics."
+    else:
+        verdict_str = "**Not Supported by Empirical Findings**"
+        verdict_summary = "Calibration methods did not reliably reduce ECE or Brier scores across the evaluated models."
 
     # Summary table markdown
     clean_summary = df_summary[(df_summary["condition"] == "clean_baseline") & (df_summary["representation"] == "Full_132")]
@@ -655,14 +696,16 @@ def generate_markdown_report(df_folds: pd.DataFrame, df_summary: pd.DataFrame):
         f.write("Hypothesis H4 posits that *Platt scaling (sigmoid calibration) and Isotonic regression will reduce ECE and Brier score ")
         f.write("without degrading classification or candidate ranking, particularly for tree ensembles and neural networks.*\n\n")
 
-        f.write("### Empirical Verdict on Hypothesis H4: Confirmed for Tree Ensembles and Neural Models\n")
-        f.write("- **Substantial ECE Reductions**: Decision trees and random forests exhibit noticeable overconfidence natively (due to leaf purity and bootstrap voting). ")
-        f.write("Both Sigmoid and Isotonic calibrations markedly compress ECE-15 across all confirmatory tree models (Random Forest, XGBoost, Decision Tree, Extra Trees).\n")
-        f.write("- **Brier Score Improvements**: Multiclass Brier scores decrease substantially after calibration for Random Forest and Decision Tree.\n")
-        f.write("- **Preservation of Discrimination**: Calibrated probabilities maintain Top-1 accuracy, Macro-F1, and Top-3/Top-5 candidate rankings without degradation.\n")
-        f.write("- **Methodological Comparison**: Sigmoid calibration offers smooth parametric adjustments that generalize robustly, whereas Isotonic regression achieves lower empirical training ECE but exhibits higher variance when evaluated under input distribution shifts.\n\n")
+        f.write(f"### Empirical Verdict on Hypothesis H4: {verdict_str}\n\n")
+        f.write(f"{verdict_summary}\n\n")
+        f.write("Key empirical findings derived directly from the complete 10-fold cross-validation results:\n")
+        for s in stat_findings:
+            m_label = s["model"].replace("_", " ")
+            ece_drop = min(s["delta_ece_sig"], s["delta_ece_iso"])
+            bs_drop = min(s["delta_bs_sig"], s["delta_bs_iso"])
+            f.write(f"- **{m_label}**: Native ECE = {s['native_ece']:.4f}. Best calibrated ECE delta = {ece_drop:+.4f} (Sigmoid: {s['delta_ece_sig']:+.4f}, Isotonic: {s['delta_ece_iso']:+.4f}). Best Brier delta = {bs_drop:+.4f}.\n")
 
-        f.write("---\n\n")
+        f.write("\n---\n\n")
         f.write("## 2. Quantitative Performance Table (Clean Baseline, Full 132 Space)\n\n")
         f.write("| Model Architecture | Calibration Mode | ECE-15 (Mean +- SD) | Multiclass Brier Score | Multiclass Log Loss | Top-1 Acc | Top-3 Acc | Top-5 Acc |\n")
         f.write("| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n")
@@ -689,11 +732,11 @@ def generate_markdown_report(df_folds: pd.DataFrame, df_summary: pd.DataFrame):
 
         f.write("---\n\n")
         f.write("## 5. Verification & Reproducibility Metadata\n")
-        f.write("- [x] Protocol C duplicate-aware grouping strictly maintained across outer folds.\n")
+        f.write(f"- [x] Protocol C duplicate-aware grouping strictly maintained across all {len(df_folds['fold'].unique())} outer folds.\n")
         f.write("- [x] Nested inner 5-fold StratifiedGroupKFold on outer train guarantees zero calibration leakage.\n")
         f.write("- [x] Evaluated across 9 model architectures and 2 feature spaces.\n")
         f.write("- [x] 15-bin fixed and 10-bin quantile ECE sensitivity checks verified.\n")
-        f.write("- [x] Full out-of-fold probability vectors saved for exact reproduction.\n")
+        f.write("- [x] Full 41-class out-of-fold probability vectors saved to calibration_oof_probabilities.csv.\n")
 
     logger.info(f"Saved complete Phase 7 report to: {report_path}")
 
