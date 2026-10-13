@@ -2,8 +2,10 @@
 
 This folder contains the master consistency, traceability, and architectural documentation for the Master's project:
 
-* **[Research Consistency & Project Overview](file:///home/nasir-uddin/Data/MAS/Disease_Prediciton_System_ML/Overview/research_consistency_overview.md)**:  
-  Detailed end-to-end mapping and consistency audit across `plan/research_plan.md`, `research_work/`, and `Book_Writing/`.
+* **[Research Consistency Audit Report](file:///home/nasir-uddin/data/MAS/Disease_Prediction_System_using_ML/Overview/consistency_audit_report.md)**:  
+  Formal end-to-end verification and discrepancy audit across `plan/`, `research_work/`, and `Book_Writing/`.
+* **[Research Consistency & Project Overview](file:///home/nasir-uddin/data/MAS/Disease_Prediction_System_using_ML/Overview/research_consistency_overview.md)**:  
+  High-level overview and historical editorial reconciliations.
 
 ---
 
