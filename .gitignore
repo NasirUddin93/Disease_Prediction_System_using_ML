@@ -79,6 +79,10 @@ wheels/
 *.rar
 *.7z
 
+# Large data artifacts (>100MB GitHub limit)
+research_work/reports/calibration_oof_probabilities.csv
+!research_work/reports/calibration_oof_probabilities.csv.gz
+
 # ==============================================================================
 # Operating System & IDE / Editors
 # ==============================================================================

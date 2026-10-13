@@ -1,0 +1,2051 @@
+model,disease,rank,feature,mean_abs_shap
+Random_Forest,(vertigo) Paroymsal  Positional Vertigo,1,unsteadiness,0.09085141739661487
+Random_Forest,(vertigo) Paroymsal  Positional Vertigo,2,loss_of_balance,0.0333013611710337
+Random_Forest,(vertigo) Paroymsal  Positional Vertigo,3,spinning_movements,0.03322133007180379
+Random_Forest,(vertigo) Paroymsal  Positional Vertigo,4,nausea,0.010655306211565525
+Random_Forest,(vertigo) Paroymsal  Positional Vertigo,5,vomiting,0.003009550138336922
+Random_Forest,(vertigo) Paroymsal  Positional Vertigo,6,lack_of_concentration,0.002438946438879666
+Random_Forest,(vertigo) Paroymsal  Positional Vertigo,7,headache,0.0021952272306140054
+Random_Forest,(vertigo) Paroymsal  Positional Vertigo,8,muscle_pain,0.002093989455102273
+Random_Forest,(vertigo) Paroymsal  Positional Vertigo,9,dizziness,0.001918316165202174
+Random_Forest,(vertigo) Paroymsal  Positional Vertigo,10,yellowing_of_eyes,0.001775081425897994
+Random_Forest,AIDS,1,extra_marital_contacts,0.02180515225806669
+Random_Forest,AIDS,2,patches_in_throat,0.014686514993989588
+Random_Forest,AIDS,3,muscle_wasting,0.014107219769966714
+Random_Forest,AIDS,4,high_fever,0.0013845349029579918
+Random_Forest,AIDS,5,mild_fever,0.0007933214367601612
+Random_Forest,AIDS,6,muscle_pain,0.000780914237246586
+Random_Forest,AIDS,7,irritability,0.0007262552750646115
+Random_Forest,AIDS,8,family_history,0.0007165642969319007
+Random_Forest,AIDS,9,yellowing_of_eyes,0.0007152712082884179
+Random_Forest,AIDS,10,loss_of_balance,0.0006929136790607347
+Random_Forest,Acne,1,pus_filled_pimples,0.02083193191188277
+Random_Forest,Acne,2,scurring,0.019499573425571435
+Random_Forest,Acne,3,blackheads,0.015694667744264878
+Random_Forest,Acne,4,skin_rash,0.0032378163638587497
+Random_Forest,Acne,5,muscle_pain,0.0010011904870587125
+Random_Forest,Acne,6,itching,0.0009599112764569713
+Random_Forest,Acne,7,loss_of_appetite,0.0007596249783901096
+Random_Forest,Acne,8,yellowing_of_eyes,0.0007582860390329275
+Random_Forest,Acne,9,nausea,0.0007348321603354281
+Random_Forest,Acne,10,irritability,0.000693029454958842
+Random_Forest,Alcoholic hepatitis,1,fluid_overload.1,0.07874120534002749
+Random_Forest,Alcoholic hepatitis,2,distention_of_abdomen,0.06782265931712105
+Random_Forest,Alcoholic hepatitis,3,history_of_alcohol_consumption,0.05473754827430248
+Random_Forest,Alcoholic hepatitis,4,swelling_of_stomach,0.052731153645118364
+Random_Forest,Alcoholic hepatitis,5,abdominal_pain,0.006553907863992225
+Random_Forest,Alcoholic hepatitis,6,yellowish_skin,0.00480315816898036
+Random_Forest,Alcoholic hepatitis,7,nausea,0.0018613006352339177
+Random_Forest,Alcoholic hepatitis,8,muscle_pain,0.0018536476728657641
+Random_Forest,Alcoholic hepatitis,9,mild_fever,0.0017821744988414556
+Random_Forest,Alcoholic hepatitis,10,yellowing_of_eyes,0.0016943246764551452
+Random_Forest,Allergy,1,shivering,0.014585911872372107
+Random_Forest,Allergy,2,watering_from_eyes,0.011197592709724168
+Random_Forest,Allergy,3,continuous_sneezing,0.00852246974918695
+Random_Forest,Allergy,4,chills,0.0029701311057126777
+Random_Forest,Allergy,5,muscle_pain,0.0015228988880134492
+Random_Forest,Allergy,6,mild_fever,0.0008591957116924778
+Random_Forest,Allergy,7,high_fever,0.0007645996004898986
+Random_Forest,Allergy,8,nausea,0.0007250078444224299
+Random_Forest,Allergy,9,yellowing_of_eyes,0.0006431115051589758
+Random_Forest,Allergy,10,chest_pain,0.00061210511201209
+Random_Forest,Arthritis,1,movement_stiffness,0.05338979861941551
+Random_Forest,Arthritis,2,painful_walking,0.030816332425917047
+Random_Forest,Arthritis,3,swelling_joints,0.027912151786460754
+Random_Forest,Arthritis,4,muscle_weakness,0.024349289040129157
+Random_Forest,Arthritis,5,stiff_neck,0.021917731201704257
+Random_Forest,Arthritis,6,neck_pain,0.003998851825482061
+Random_Forest,Arthritis,7,joint_pain,0.0037895684998905067
+Random_Forest,Arthritis,8,knee_pain,0.0033995985173079627
+Random_Forest,Arthritis,9,abnormal_menstruation,0.0020324716993637146
+Random_Forest,Arthritis,10,hip_joint_pain,0.0017320267522113516
+Random_Forest,Bronchial Asthma,1,mucoid_sputum,0.08481214681445397
+Random_Forest,Bronchial Asthma,2,family_history,0.04260405312129008
+Random_Forest,Bronchial Asthma,3,breathlessness,0.012019691866710007
+Random_Forest,Bronchial Asthma,4,cough,0.010553263561731084
+Random_Forest,Bronchial Asthma,5,yellowish_skin,0.005142206339238198
+Random_Forest,Bronchial Asthma,6,loss_of_appetite,0.003588519812916486
+Random_Forest,Bronchial Asthma,7,high_fever,0.0032298680640909863
+Random_Forest,Bronchial Asthma,8,chest_pain,0.002636983093596051
+Random_Forest,Bronchial Asthma,9,nausea,0.002268255741362891
+Random_Forest,Bronchial Asthma,10,yellowing_of_eyes,0.0022109148141728993
+Random_Forest,Cervical spondylosis,1,weakness_in_limbs,0.03192291469816549
+Random_Forest,Cervical spondylosis,2,neck_pain,0.022758137832406263
+Random_Forest,Cervical spondylosis,3,back_pain,0.021311440895213137
+Random_Forest,Cervical spondylosis,4,loss_of_balance,0.019133197186499213
+Random_Forest,Cervical spondylosis,5,dizziness,0.012717187160080032
+Random_Forest,Cervical spondylosis,6,headache,0.0029815165563023514
+Random_Forest,Cervical spondylosis,7,chest_pain,0.0024796343626976507
+Random_Forest,Cervical spondylosis,8,lack_of_concentration,0.0023267534347928276
+Random_Forest,Cervical spondylosis,9,nausea,0.0022023141114277155
+Random_Forest,Cervical spondylosis,10,pain_behind_the_eyes,0.0017712333906390297
+Random_Forest,Chicken pox,1,red_spots_over_body,0.1357467992607617
+Random_Forest,Chicken pox,2,mild_fever,0.07156651618712842
+Random_Forest,Chicken pox,3,swelled_lymph_nodes,0.062397705966538854
+Random_Forest,Chicken pox,4,malaise,0.0332061190840509
+Random_Forest,Chicken pox,5,lethargy,0.02457956125486497
+Random_Forest,Chicken pox,6,itching,0.01503781747331263
+Random_Forest,Chicken pox,7,yellowing_of_eyes,0.00918001082340233
+Random_Forest,Chicken pox,8,skin_rash,0.008985593662278673
+Random_Forest,Chicken pox,9,muscle_pain,0.007913238270934552
+Random_Forest,Chicken pox,10,loss_of_appetite,0.0074366166726378986
+Random_Forest,Chronic cholestasis,1,itching,0.0196996869286922
+Random_Forest,Chronic cholestasis,2,yellowing_of_eyes,0.01835026831203004
+Random_Forest,Chronic cholestasis,3,abdominal_pain,0.008585011633709137
+Random_Forest,Chronic cholestasis,4,loss_of_appetite,0.005938257177459267
+Random_Forest,Chronic cholestasis,5,yellowish_skin,0.005867593133203815
+Random_Forest,Chronic cholestasis,6,nausea,0.005682269562947588
+Random_Forest,Chronic cholestasis,7,fatigue,0.005213077093308106
+Random_Forest,Chronic cholestasis,8,dark_urine,0.003986480125250415
+Random_Forest,Chronic cholestasis,9,joint_pain,0.0032593620494664453
+Random_Forest,Chronic cholestasis,10,muscle_pain,0.002948199248856497
+Random_Forest,Common Cold,1,redness_of_eyes,0.09810352960227767
+Random_Forest,Common Cold,2,throat_irritation,0.08851513051740577
+Random_Forest,Common Cold,3,runny_nose,0.08254958427914684
+Random_Forest,Common Cold,4,sinus_pressure,0.07000503953113
+Random_Forest,Common Cold,5,congestion,0.06301776162491103
+Random_Forest,Common Cold,6,loss_of_smell,0.05948274201658704
+Random_Forest,Common Cold,7,muscle_pain,0.037578107456006246
+Random_Forest,Common Cold,8,phlegm,0.02666777274918064
+Random_Forest,Common Cold,9,swelled_lymph_nodes,0.017895264731649808
+Random_Forest,Common Cold,10,continuous_sneezing,0.013335852758954717
+Random_Forest,Dengue,1,pain_behind_the_eyes,0.22611853211142785
+Random_Forest,Dengue,2,back_pain,0.07970607155940038
+Random_Forest,Dengue,3,red_spots_over_body,0.061977314461727585
+Random_Forest,Dengue,4,muscle_pain,0.05149351547297848
+Random_Forest,Dengue,5,malaise,0.018564485336956198
+Random_Forest,Dengue,6,nausea,0.01301562382893183
+Random_Forest,Dengue,7,joint_pain,0.012883787305371758
+Random_Forest,Dengue,8,loss_of_appetite,0.012713142120432886
+Random_Forest,Dengue,9,skin_rash,0.008516769925465233
+Random_Forest,Dengue,10,chills,0.006501273976406767
+Random_Forest,Diabetes ,1,polyuria,0.16616460712063386
+Random_Forest,Diabetes ,2,increased_appetite,0.12871561394832304
+Random_Forest,Diabetes ,3,irregular_sugar_level,0.04216049971923321
+Random_Forest,Diabetes ,4,restlessness,0.025607160455441747
+Random_Forest,Diabetes ,5,weight_loss,0.021314350199483422
+Random_Forest,Diabetes ,6,obesity,0.020727463706814074
+Random_Forest,Diabetes ,7,blurred_and_distorted_vision,0.020644583583782582
+Random_Forest,Diabetes ,8,lethargy,0.011218932673593283
+Random_Forest,Diabetes ,9,excessive_hunger,0.008928394955289406
+Random_Forest,Diabetes ,10,irritability,0.002679192794627372
+Random_Forest,Dimorphic hemmorhoids(piles),1,irritation_in_anus,0.04433445535177076
+Random_Forest,Dimorphic hemmorhoids(piles),2,pain_in_anal_region,0.03446973276596101
+Random_Forest,Dimorphic hemmorhoids(piles),3,pain_during_bowel_movements,0.03279219714455624
+Random_Forest,Dimorphic hemmorhoids(piles),4,bloody_stool,0.030115631400830872
+Random_Forest,Dimorphic hemmorhoids(piles),5,constipation,0.023433142690429412
+Random_Forest,Dimorphic hemmorhoids(piles),6,chills,0.0014798997924214338
+Random_Forest,Dimorphic hemmorhoids(piles),7,diarrhoea,0.0011253258178824921
+Random_Forest,Dimorphic hemmorhoids(piles),8,abdominal_pain,0.001120903292367671
+Random_Forest,Dimorphic hemmorhoids(piles),9,headache,0.001039598432906215
+Random_Forest,Dimorphic hemmorhoids(piles),10,nausea,0.001036233629436652
+Random_Forest,Drug Reaction,1,spotting_ urination,0.017944725982613742
+Random_Forest,Drug Reaction,2,stomach_pain,0.01169086985410855
+Random_Forest,Drug Reaction,3,itching,0.0074926602125279605
+Random_Forest,Drug Reaction,4,burning_micturition,0.007386280866503818
+Random_Forest,Drug Reaction,5,skin_rash,0.00295087905655718
+Random_Forest,Drug Reaction,6,chest_pain,0.0014263880154220664
+Random_Forest,Drug Reaction,7,yellowing_of_eyes,0.001139804122929994
+Random_Forest,Drug Reaction,8,bladder_discomfort,0.001100825654127112
+Random_Forest,Drug Reaction,9,loss_of_appetite,0.0010722500196202241
+Random_Forest,Drug Reaction,10,cough,0.0009787614923398894
+Random_Forest,Fungal infection,1,dischromic _patches,0.014895165736263205
+Random_Forest,Fungal infection,2,nodal_skin_eruptions,0.013989991514260613
+Random_Forest,Fungal infection,3,itching,0.005711843114982686
+Random_Forest,Fungal infection,4,skin_rash,0.0030614671217662854
+Random_Forest,Fungal infection,5,abdominal_pain,0.0011431561553072837
+Random_Forest,Fungal infection,6,muscle_pain,0.001063701886504767
+Random_Forest,Fungal infection,7,mild_fever,0.0007917264611840219
+Random_Forest,Fungal infection,8,stomach_pain,0.0007743443890882277
+Random_Forest,Fungal infection,9,loss_of_appetite,0.0007549394699849021
+Random_Forest,Fungal infection,10,nausea,0.0007055940690276839
+Random_Forest,GERD,1,ulcers_on_tongue,0.03715413300910562
+Random_Forest,GERD,2,stomach_pain,0.022046491741490894
+Random_Forest,GERD,3,acidity,0.016023627896892566
+Random_Forest,GERD,4,chest_pain,0.01387918817483016
+Random_Forest,GERD,5,cough,0.007800533651815635
+Random_Forest,GERD,6,vomiting,0.0028009496669443306
+Random_Forest,GERD,7,itching,0.0017615947402996404
+Random_Forest,GERD,8,muscle_pain,0.001650043057274031
+Random_Forest,GERD,9,irritability,0.0014451702331867938
+Random_Forest,GERD,10,breathlessness,0.0013099823434709504
+Random_Forest,Gastroenteritis,1,sunken_eyes,0.017883056733125846
+Random_Forest,Gastroenteritis,2,dehydration,0.011975866233909392
+Random_Forest,Gastroenteritis,3,diarrhoea,0.00716052978620699
+Random_Forest,Gastroenteritis,4,muscle_pain,0.0012426887190254505
+Random_Forest,Gastroenteritis,5,abdominal_pain,0.000794059100187937
+Random_Forest,Gastroenteritis,6,yellowing_of_eyes,0.0007866376676106325
+Random_Forest,Gastroenteritis,7,nausea,0.0007805608241767048
+Random_Forest,Gastroenteritis,8,mild_fever,0.0007523157464770927
+Random_Forest,Gastroenteritis,9,fatigue,0.000742545534864232
+Random_Forest,Gastroenteritis,10,loss_of_appetite,0.0007111043394726643
+Random_Forest,Heart attack,1,breathlessness,0.010721080292333856
+Random_Forest,Heart attack,2,chest_pain,0.007454210461589558
+Random_Forest,Heart attack,3,sweating,0.0053347939520024
+Random_Forest,Heart attack,4,cough,0.0017768335758545969
+Random_Forest,Heart attack,5,fatigue,0.0016717255612156718
+Random_Forest,Heart attack,6,high_fever,0.001420018929532346
+Random_Forest,Heart attack,7,vomiting,0.001389701245444202
+Random_Forest,Heart attack,8,muscle_pain,0.001345152490156542
+Random_Forest,Heart attack,9,phlegm,0.001257364770538318
+Random_Forest,Heart attack,10,yellowing_of_eyes,0.0012008732589744782
+Random_Forest,Hepatitis B,1,receiving_unsterile_injections,0.1308212096861135
+Random_Forest,Hepatitis B,2,receiving_blood_transfusion,0.11893708015134326
+Random_Forest,Hepatitis B,3,yellow_urine,0.06507491483533903
+Random_Forest,Hepatitis B,4,malaise,0.024477959211483595
+Random_Forest,Hepatitis B,5,yellowing_of_eyes,0.01801303337933079
+Random_Forest,Hepatitis B,6,dark_urine,0.016268168995732277
+Random_Forest,Hepatitis B,7,lethargy,0.015189463768117995
+Random_Forest,Hepatitis B,8,itching,0.01215466760866431
+Random_Forest,Hepatitis B,9,yellowish_skin,0.005491662343255681
+Random_Forest,Hepatitis B,10,loss_of_appetite,0.0051436011080739025
+Random_Forest,Hepatitis C,1,family_history,0.061392850054948954
+Random_Forest,Hepatitis C,2,yellowing_of_eyes,0.010593371415759435
+Random_Forest,Hepatitis C,3,nausea,0.00894145021773628
+Random_Forest,Hepatitis C,4,loss_of_appetite,0.006972255957958769
+Random_Forest,Hepatitis C,5,yellowish_skin,0.006038018548955061
+Random_Forest,Hepatitis C,6,mucoid_sputum,0.003272233283149805
+Random_Forest,Hepatitis C,7,dark_urine,0.0030080229405729736
+Random_Forest,Hepatitis C,8,abdominal_pain,0.0029847768773792528
+Random_Forest,Hepatitis C,9,high_fever,0.0029116367215013443
+Random_Forest,Hepatitis C,10,breathlessness,0.00287003443825539
+Random_Forest,Hepatitis D,1,dark_urine,0.03401783461495247
+Random_Forest,Hepatitis D,2,joint_pain,0.02101967518140665
+Random_Forest,Hepatitis D,3,yellowing_of_eyes,0.018382565384580444
+Random_Forest,Hepatitis D,4,loss_of_appetite,0.009487257437215638
+Random_Forest,Hepatitis D,5,nausea,0.00928490774845076
+Random_Forest,Hepatitis D,6,abdominal_pain,0.009276871141174372
+Random_Forest,Hepatitis D,7,yellowish_skin,0.006980576412594907
+Random_Forest,Hepatitis D,8,muscle_pain,0.006659041457030094
+Random_Forest,Hepatitis D,9,fatigue,0.00661833366291454
+Random_Forest,Hepatitis D,10,itching,0.005484642555736138
+Random_Forest,Hepatitis E,1,stomach_bleeding,0.19296998291375173
+Random_Forest,Hepatitis E,2,coma,0.17036671211126658
+Random_Forest,Hepatitis E,3,acute_liver_failure,0.056595499091901834
+Random_Forest,Hepatitis E,4,yellowing_of_eyes,0.013783329122810517
+Random_Forest,Hepatitis E,5,dark_urine,0.012314797221006044
+Random_Forest,Hepatitis E,6,abdominal_pain,0.007231549714946654
+Random_Forest,Hepatitis E,7,high_fever,0.006403057629303851
+Random_Forest,Hepatitis E,8,joint_pain,0.005317147705444822
+Random_Forest,Hepatitis E,9,loss_of_appetite,0.0050743108016658555
+Random_Forest,Hepatitis E,10,nausea,0.004103427265336561
+Random_Forest,Hypertension ,1,lack_of_concentration,0.05953067476664409
+Random_Forest,Hypertension ,2,loss_of_balance,0.019449991255549394
+Random_Forest,Hypertension ,3,chest_pain,0.010666933501175289
+Random_Forest,Hypertension ,4,dizziness,0.009833360618968157
+Random_Forest,Hypertension ,5,headache,0.0029716692218973014
+Random_Forest,Hypertension ,6,neck_pain,0.0020324333741626997
+Random_Forest,Hypertension ,7,nausea,0.001959494381451307
+Random_Forest,Hypertension ,8,weakness_in_limbs,0.0018194950490660684
+Random_Forest,Hypertension ,9,back_pain,0.0015229069208094487
+Random_Forest,Hypertension ,10,unsteadiness,0.0013090671938163862
+Random_Forest,Hyperthyroidism,1,abnormal_menstruation,0.10400013833705168
+Random_Forest,Hyperthyroidism,2,muscle_weakness,0.09177749109225242
+Random_Forest,Hyperthyroidism,3,fast_heart_rate,0.05751532646186919
+Random_Forest,Hyperthyroidism,4,irritability,0.04413424292080912
+Random_Forest,Hyperthyroidism,5,restlessness,0.03497900444335999
+Random_Forest,Hyperthyroidism,6,mood_swings,0.02603275636354794
+Random_Forest,Hyperthyroidism,7,weight_loss,0.023661372090133224
+Random_Forest,Hyperthyroidism,8,diarrhoea,0.015017294318245038
+Random_Forest,Hyperthyroidism,9,excessive_hunger,0.010372845199851122
+Random_Forest,Hyperthyroidism,10,sweating,0.006510747099389129
+Random_Forest,Hypoglycemia,1,slurred_speech,0.1504040996532623
+Random_Forest,Hypoglycemia,2,palpitations,0.14463944631477604
+Random_Forest,Hypoglycemia,3,anxiety,0.04581591445218786
+Random_Forest,Hypoglycemia,4,drying_and_tingling_lips,0.03756226620563489
+Random_Forest,Hypoglycemia,5,irritability,0.03710371966984829
+Random_Forest,Hypoglycemia,6,blurred_and_distorted_vision,0.013204470127819395
+Random_Forest,Hypoglycemia,7,excessive_hunger,0.012042904872004314
+Random_Forest,Hypoglycemia,8,sweating,0.006143952418418942
+Random_Forest,Hypoglycemia,9,nausea,0.005687679243538224
+Random_Forest,Hypoglycemia,10,muscle_pain,0.0032063200181014022
+Random_Forest,Hypothyroidism,1,swollen_extremeties,0.10552223791364763
+Random_Forest,Hypothyroidism,2,enlarged_thyroid,0.08487824088496468
+Random_Forest,Hypothyroidism,3,brittle_nails,0.07534080037458772
+Random_Forest,Hypothyroidism,4,abnormal_menstruation,0.05396358240115371
+Random_Forest,Hypothyroidism,5,depression,0.026449226286222823
+Random_Forest,Hypothyroidism,6,irritability,0.025304726934547377
+Random_Forest,Hypothyroidism,7,cold_hands_and_feets,0.022108729253233834
+Random_Forest,Hypothyroidism,8,puffy_face_and_eyes,0.01882749688436604
+Random_Forest,Hypothyroidism,9,weight_gain,0.01397050317601605
+Random_Forest,Hypothyroidism,10,lethargy,0.007521217664946794
+Random_Forest,Impetigo,1,yellow_crust_ooze,0.05561163388092749
+Random_Forest,Impetigo,2,red_sore_around_nose,0.05099590818005184
+Random_Forest,Impetigo,3,blister,0.042008476969994726
+Random_Forest,Impetigo,4,skin_rash,0.001948339977386839
+Random_Forest,Impetigo,5,muscle_pain,0.0014736198358515033
+Random_Forest,Impetigo,6,dark_urine,0.0009512022609218455
+Random_Forest,Impetigo,7,yellowing_of_eyes,0.0008907181189585598
+Random_Forest,Impetigo,8,loss_of_balance,0.0008894062245357046
+Random_Forest,Impetigo,9,fast_heart_rate,0.0008866570224939415
+Random_Forest,Impetigo,10,nausea,0.000846193763752972
+Random_Forest,Jaundice,1,weight_loss,0.044721438541932335
+Random_Forest,Jaundice,2,dark_urine,0.03032463329389377
+Random_Forest,Jaundice,3,itching,0.01849446021076493
+Random_Forest,Jaundice,4,yellowish_skin,0.011212858849744593
+Random_Forest,Jaundice,5,abdominal_pain,0.009048416907210297
+Random_Forest,Jaundice,6,high_fever,0.007399261466946092
+Random_Forest,Jaundice,7,yellowing_of_eyes,0.006353089810246186
+Random_Forest,Jaundice,8,loss_of_appetite,0.0061887082184628114
+Random_Forest,Jaundice,9,nausea,0.0041511778424550535
+Random_Forest,Jaundice,10,joint_pain,0.003362387650768695
+Random_Forest,Malaria,1,muscle_pain,0.07524551521062657
+Random_Forest,Malaria,2,diarrhoea,0.015983483905028163
+Random_Forest,Malaria,3,sweating,0.012918586964788906
+Random_Forest,Malaria,4,chills,0.008932850516339536
+Random_Forest,Malaria,5,high_fever,0.006034443811416989
+Random_Forest,Malaria,6,nausea,0.005981069280776468
+Random_Forest,Malaria,7,headache,0.005740553228010518
+Random_Forest,Malaria,8,yellowing_of_eyes,0.004614016957281154
+Random_Forest,Malaria,9,loss_of_appetite,0.004574510805192045
+Random_Forest,Malaria,10,mild_fever,0.004114581476707666
+Random_Forest,Migraine,1,visual_disturbances,0.0926984856759527
+Random_Forest,Migraine,2,depression,0.059288588365191394
+Random_Forest,Migraine,3,stiff_neck,0.04129559345706774
+Random_Forest,Migraine,4,irritability,0.03306589882728944
+Random_Forest,Migraine,5,acidity,0.030382349293346694
+Random_Forest,Migraine,6,indigestion,0.02775521351573749
+Random_Forest,Migraine,7,blurred_and_distorted_vision,0.02408990179816388
+Random_Forest,Migraine,8,excessive_hunger,0.020014127552749426
+Random_Forest,Migraine,9,abnormal_menstruation,0.0048914015203468065
+Random_Forest,Migraine,10,slurred_speech,0.004677827210275769
+Random_Forest,Osteoarthristis,1,hip_joint_pain,0.05752747252641105
+Random_Forest,Osteoarthristis,2,knee_pain,0.053989496023436445
+Random_Forest,Osteoarthristis,3,neck_pain,0.03648256042427001
+Random_Forest,Osteoarthristis,4,painful_walking,0.03250275827214934
+Random_Forest,Osteoarthristis,5,swelling_joints,0.03205897788123542
+Random_Forest,Osteoarthristis,6,joint_pain,0.011419588137000145
+Random_Forest,Osteoarthristis,7,movement_stiffness,0.004539318363531257
+Random_Forest,Osteoarthristis,8,stiff_neck,0.00453362919461089
+Random_Forest,Osteoarthristis,9,muscle_weakness,0.004067561335818377
+Random_Forest,Osteoarthristis,10,loss_of_balance,0.003305094518178903
+Random_Forest,Paralysis (brain hemorrhage),1,altered_sensorium,0.041492449450780115
+Random_Forest,Paralysis (brain hemorrhage),2,weakness_of_one_body_side,0.017860142406887325
+Random_Forest,Paralysis (brain hemorrhage),3,muscle_pain,0.001133922493115456
+Random_Forest,Paralysis (brain hemorrhage),4,headache,0.0008990991330340214
+Random_Forest,Paralysis (brain hemorrhage),5,mild_fever,0.0008835403423072711
+Random_Forest,Paralysis (brain hemorrhage),6,yellowing_of_eyes,0.0007736530806960231
+Random_Forest,Paralysis (brain hemorrhage),7,yellowish_skin,0.0007177922400747183
+Random_Forest,Paralysis (brain hemorrhage),8,loss_of_balance,0.0006706185477390901
+Random_Forest,Paralysis (brain hemorrhage),9,nausea,0.0005997073884943756
+Random_Forest,Paralysis (brain hemorrhage),10,abdominal_pain,0.0005995729367262398
+Random_Forest,Peptic ulcer diseae,1,internal_itching,0.06966677620231435
+Random_Forest,Peptic ulcer diseae,2,passage_of_gases,0.0664769018746423
+Random_Forest,Peptic ulcer diseae,3,indigestion,0.014077370777732554
+Random_Forest,Peptic ulcer diseae,4,abdominal_pain,0.0051878075221266735
+Random_Forest,Peptic ulcer diseae,5,loss_of_appetite,0.0032143210837444424
+Random_Forest,Peptic ulcer diseae,6,yellowing_of_eyes,0.0019602023826587453
+Random_Forest,Peptic ulcer diseae,7,muscle_pain,0.0014622449726045298
+Random_Forest,Peptic ulcer diseae,8,acidity,0.0013334754847538028
+Random_Forest,Peptic ulcer diseae,9,nausea,0.0011637876404502487
+Random_Forest,Peptic ulcer diseae,10,mild_fever,0.0010512854238617696
+Random_Forest,Pneumonia,1,rusty_sputum,0.2090100567030358
+Random_Forest,Pneumonia,2,fast_heart_rate,0.10073626376211857
+Random_Forest,Pneumonia,3,phlegm,0.04832228167477841
+Random_Forest,Pneumonia,4,chest_pain,0.021365343392913176
+Random_Forest,Pneumonia,5,breathlessness,0.020174159844516405
+Random_Forest,Pneumonia,6,malaise,0.015757846591392077
+Random_Forest,Pneumonia,7,cough,0.010225047626121263
+Random_Forest,Pneumonia,8,chills,0.006845715814735066
+Random_Forest,Pneumonia,9,swelled_lymph_nodes,0.005510064118039382
+Random_Forest,Pneumonia,10,sweating,0.005463246375103544
+Random_Forest,Psoriasis,1,inflammatory_nails,0.06537565078669076
+Random_Forest,Psoriasis,2,silver_like_dusting,0.05634462971294059
+Random_Forest,Psoriasis,3,small_dents_in_nails,0.05183225930633153
+Random_Forest,Psoriasis,4,skin_peeling,0.04764271854219705
+Random_Forest,Psoriasis,5,joint_pain,0.0070246005164785715
+Random_Forest,Psoriasis,6,skin_rash,0.0027968550978858435
+Random_Forest,Psoriasis,7,nausea,0.0017196106360082622
+Random_Forest,Psoriasis,8,muscle_pain,0.0013432390113385835
+Random_Forest,Psoriasis,9,itching,0.0009704612603045816
+Random_Forest,Psoriasis,10,yellowing_of_eyes,0.0008987693910213973
+Random_Forest,Tuberculosis,1,blood_in_sputum,0.1677809711513583
+Random_Forest,Tuberculosis,2,mild_fever,0.0686685133532019
+Random_Forest,Tuberculosis,3,phlegm,0.0609964697772145
+Random_Forest,Tuberculosis,4,swelled_lymph_nodes,0.05624356691470559
+Random_Forest,Tuberculosis,5,chest_pain,0.02832494469598859
+Random_Forest,Tuberculosis,6,yellowing_of_eyes,0.025355510838836887
+Random_Forest,Tuberculosis,7,weight_loss,0.02427833422535857
+Random_Forest,Tuberculosis,8,malaise,0.02353570193967342
+Random_Forest,Tuberculosis,9,breathlessness,0.019169186781920578
+Random_Forest,Tuberculosis,10,loss_of_appetite,0.013193768549908617
+Random_Forest,Typhoid,1,toxic_look_(typhos),0.08425055811975421
+Random_Forest,Typhoid,2,belly_pain,0.07847919216557941
+Random_Forest,Typhoid,3,constipation,0.05187609928936302
+Random_Forest,Typhoid,4,diarrhoea,0.020310283228644668
+Random_Forest,Typhoid,5,chills,0.017219914104830307
+Random_Forest,Typhoid,6,abdominal_pain,0.008720321455688667
+Random_Forest,Typhoid,7,nausea,0.00800149653099107
+Random_Forest,Typhoid,8,muscle_pain,0.006161323227144122
+Random_Forest,Typhoid,9,high_fever,0.005292620366204761
+Random_Forest,Typhoid,10,fatigue,0.004387934028423123
+Random_Forest,Urinary tract infection,1,continuous_feel_of_urine,0.029233994775456913
+Random_Forest,Urinary tract infection,2,bladder_discomfort,0.028100956676033156
+Random_Forest,Urinary tract infection,3,burning_micturition,0.004370595081971658
+Random_Forest,Urinary tract infection,4,foul_smell_of urine,0.0032015326334806577
+Random_Forest,Urinary tract infection,5,muscle_pain,0.0009139347446944647
+Random_Forest,Urinary tract infection,6,itching,0.0008489141878501449
+Random_Forest,Urinary tract infection,7,loss_of_balance,0.0005853572077648744
+Random_Forest,Urinary tract infection,8,nausea,0.0005828549310346324
+Random_Forest,Urinary tract infection,9,spotting_ urination,0.0005795467254397806
+Random_Forest,Urinary tract infection,10,mild_fever,0.0005562888738232061
+Random_Forest,Varicose veins,1,prominent_veins_on_calf,0.054973966590667236
+Random_Forest,Varicose veins,2,swollen_legs,0.04679554527114048
+Random_Forest,Varicose veins,3,cramps,0.045034400609751155
+Random_Forest,Varicose veins,4,bruising,0.043233635282485056
+Random_Forest,Varicose veins,5,obesity,0.027488159021036167
+Random_Forest,Varicose veins,6,swollen_blood_vessels,0.017600678961290465
+Random_Forest,Varicose veins,7,increased_appetite,0.0014986519982832422
+Random_Forest,Varicose veins,8,weight_loss,0.0014449021869712094
+Random_Forest,Varicose veins,9,muscle_pain,0.00143062459096251
+Random_Forest,Varicose veins,10,excessive_hunger,0.0013146099707203414
+Random_Forest,hepatitis A,1,mild_fever,0.10089601659550831
+Random_Forest,hepatitis A,2,muscle_pain,0.09415474493605899
+Random_Forest,hepatitis A,3,yellowing_of_eyes,0.026090661246759482
+Random_Forest,hepatitis A,4,dark_urine,0.022749705517379152
+Random_Forest,hepatitis A,5,diarrhoea,0.02202836892049866
+Random_Forest,hepatitis A,6,joint_pain,0.013845198708056488
+Random_Forest,hepatitis A,7,yellowish_skin,0.010162278130505594
+Random_Forest,hepatitis A,8,nausea,0.009807976964469708
+Random_Forest,hepatitis A,9,abdominal_pain,0.00905194142482504
+Random_Forest,hepatitis A,10,loss_of_appetite,0.00873071341718462
+Extra_Trees,(vertigo) Paroymsal  Positional Vertigo,1,unsteadiness,0.042549391404626616
+Extra_Trees,(vertigo) Paroymsal  Positional Vertigo,2,loss_of_balance,0.032874875288484415
+Extra_Trees,(vertigo) Paroymsal  Positional Vertigo,3,nausea,0.005073251264301088
+Extra_Trees,(vertigo) Paroymsal  Positional Vertigo,4,spinning_movements,0.004650823419903613
+Extra_Trees,(vertigo) Paroymsal  Positional Vertigo,5,vomiting,0.0033570560246175426
+Extra_Trees,(vertigo) Paroymsal  Positional Vertigo,6,dizziness,0.002935187731670867
+Extra_Trees,(vertigo) Paroymsal  Positional Vertigo,7,lack_of_concentration,0.0023824828375918435
+Extra_Trees,(vertigo) Paroymsal  Positional Vertigo,8,chest_pain,0.001882877332047579
+Extra_Trees,(vertigo) Paroymsal  Positional Vertigo,9,neck_pain,0.0017295061247102135
+Extra_Trees,(vertigo) Paroymsal  Positional Vertigo,10,headache,0.0013787771288370312
+Extra_Trees,AIDS,1,extra_marital_contacts,0.002102875049415479
+Extra_Trees,AIDS,2,patches_in_throat,0.0019223731121184578
+Extra_Trees,AIDS,3,muscle_wasting,0.001732097963659492
+Extra_Trees,AIDS,4,mild_fever,0.0008734900917696322
+Extra_Trees,AIDS,5,muscle_pain,0.0008223793777670718
+Extra_Trees,AIDS,6,loss_of_balance,0.0005988244958787937
+Extra_Trees,AIDS,7,rusty_sputum,0.0005515045011765725
+Extra_Trees,AIDS,8,pain_behind_the_eyes,0.0005089429664830432
+Extra_Trees,AIDS,9,abnormal_menstruation,0.0005036782518692806
+Extra_Trees,AIDS,10,blood_in_sputum,0.0005012642915676148
+Extra_Trees,Acne,1,blackheads,0.0020568373638152606
+Extra_Trees,Acne,2,pus_filled_pimples,0.0019615954579573353
+Extra_Trees,Acne,3,scurring,0.0013256933793944691
+Extra_Trees,Acne,4,muscle_pain,0.0009990252141567793
+Extra_Trees,Acne,5,mild_fever,0.00078223305773678
+Extra_Trees,Acne,6,skin_rash,0.0006974298525945029
+Extra_Trees,Acne,7,abnormal_menstruation,0.0005880502249206095
+Extra_Trees,Acne,8,rusty_sputum,0.0005354589472779771
+Extra_Trees,Acne,9,pain_behind_the_eyes,0.0005284246343210104
+Extra_Trees,Acne,10,loss_of_balance,0.0004937639434127311
+Extra_Trees,Alcoholic hepatitis,1,history_of_alcohol_consumption,0.04247191831731264
+Extra_Trees,Alcoholic hepatitis,2,distention_of_abdomen,0.040105399236343084
+Extra_Trees,Alcoholic hepatitis,3,swelling_of_stomach,0.030530510319842642
+Extra_Trees,Alcoholic hepatitis,4,fluid_overload.1,0.028820704382583995
+Extra_Trees,Alcoholic hepatitis,5,abdominal_pain,0.002077959411910304
+Extra_Trees,Alcoholic hepatitis,6,muscle_pain,0.0020453085429061957
+Extra_Trees,Alcoholic hepatitis,7,mild_fever,0.001633772577744877
+Extra_Trees,Alcoholic hepatitis,8,joint_pain,0.0015639741691721304
+Extra_Trees,Alcoholic hepatitis,9,stomach_bleeding,0.0011417894330050826
+Extra_Trees,Alcoholic hepatitis,10,yellowish_skin,0.0011388812245036763
+Extra_Trees,Allergy,1,continuous_sneezing,0.0018345481607865053
+Extra_Trees,Allergy,2,watering_from_eyes,0.0017882016163034465
+Extra_Trees,Allergy,3,chills,0.001252091392656772
+Extra_Trees,Allergy,4,shivering,0.0010002941416003069
+Extra_Trees,Allergy,5,muscle_pain,0.0009198674945555339
+Extra_Trees,Allergy,6,mild_fever,0.0008412571590810126
+Extra_Trees,Allergy,7,loss_of_balance,0.0005590634277129956
+Extra_Trees,Allergy,8,red_spots_over_body,0.0005320896018339543
+Extra_Trees,Allergy,9,rusty_sputum,0.0005214756931098941
+Extra_Trees,Allergy,10,pain_behind_the_eyes,0.0005135167571622396
+Extra_Trees,Arthritis,1,muscle_weakness,0.029917392854647402
+Extra_Trees,Arthritis,2,movement_stiffness,0.029270762543447865
+Extra_Trees,Arthritis,3,painful_walking,0.02025104233940945
+Extra_Trees,Arthritis,4,swelling_joints,0.019690900551004677
+Extra_Trees,Arthritis,5,stiff_neck,0.008758913072793285
+Extra_Trees,Arthritis,6,knee_pain,0.0026284884272555287
+Extra_Trees,Arthritis,7,abnormal_menstruation,0.0020471741478604684
+Extra_Trees,Arthritis,8,joint_pain,0.001957934185242941
+Extra_Trees,Arthritis,9,hip_joint_pain,0.0017790588299638709
+Extra_Trees,Arthritis,10,neck_pain,0.0017633181776144102
+Extra_Trees,Bronchial Asthma,1,mucoid_sputum,0.025362084089657556
+Extra_Trees,Bronchial Asthma,2,family_history,0.02508001564191171
+Extra_Trees,Bronchial Asthma,3,breathlessness,0.004459791227187138
+Extra_Trees,Bronchial Asthma,4,nausea,0.0019865369818982868
+Extra_Trees,Bronchial Asthma,5,yellowish_skin,0.0019640684308739544
+Extra_Trees,Bronchial Asthma,6,cough,0.0016540775278265137
+Extra_Trees,Bronchial Asthma,7,high_fever,0.0015269172686804696
+Extra_Trees,Bronchial Asthma,8,loss_of_appetite,0.0014359174176537598
+Extra_Trees,Bronchial Asthma,9,mild_fever,0.0010726477801061797
+Extra_Trees,Bronchial Asthma,10,muscle_pain,0.0010169815020007393
+Extra_Trees,Cervical spondylosis,1,neck_pain,0.019976687444169295
+Extra_Trees,Cervical spondylosis,2,loss_of_balance,0.01407613791346277
+Extra_Trees,Cervical spondylosis,3,back_pain,0.007538819599600098
+Extra_Trees,Cervical spondylosis,4,weakness_in_limbs,0.004527060776308153
+Extra_Trees,Cervical spondylosis,5,dizziness,0.0044060836367112825
+Extra_Trees,Cervical spondylosis,6,headache,0.0013763352920131346
+Extra_Trees,Cervical spondylosis,7,joint_pain,0.0012720020857583455
+Extra_Trees,Cervical spondylosis,8,lack_of_concentration,0.0011490694131103417
+Extra_Trees,Cervical spondylosis,9,muscle_pain,0.0011451910948248546
+Extra_Trees,Cervical spondylosis,10,chest_pain,0.0010530304135459659
+Extra_Trees,Chicken pox,1,red_spots_over_body,0.18611495553661944
+Extra_Trees,Chicken pox,2,mild_fever,0.08579192174040504
+Extra_Trees,Chicken pox,3,swelled_lymph_nodes,0.05266506810407081
+Extra_Trees,Chicken pox,4,malaise,0.0503389901705967
+Extra_Trees,Chicken pox,5,lethargy,0.012982152471624394
+Extra_Trees,Chicken pox,6,muscle_pain,0.008201266884743045
+Extra_Trees,Chicken pox,7,pain_behind_the_eyes,0.007333864160352354
+Extra_Trees,Chicken pox,8,yellowing_of_eyes,0.006496790061289932
+Extra_Trees,Chicken pox,9,blood_in_sputum,0.006085414318232932
+Extra_Trees,Chicken pox,10,chest_pain,0.005991631659161287
+Extra_Trees,Chronic cholestasis,1,yellowing_of_eyes,0.007362702664927478
+Extra_Trees,Chronic cholestasis,2,itching,0.005322681574570022
+Extra_Trees,Chronic cholestasis,3,abdominal_pain,0.0027882102068919534
+Extra_Trees,Chronic cholestasis,4,nausea,0.002276269460269116
+Extra_Trees,Chronic cholestasis,5,yellowish_skin,0.0020574760235742002
+Extra_Trees,Chronic cholestasis,6,dark_urine,0.0020359315769099178
+Extra_Trees,Chronic cholestasis,7,loss_of_appetite,0.0017501992914645253
+Extra_Trees,Chronic cholestasis,8,muscle_pain,0.0015968245999888066
+Extra_Trees,Chronic cholestasis,9,fatigue,0.0015074259282687793
+Extra_Trees,Chronic cholestasis,10,joint_pain,0.0013123034830545427
+Extra_Trees,Common Cold,1,loss_of_smell,0.1599217329674504
+Extra_Trees,Common Cold,2,sinus_pressure,0.12368766299844103
+Extra_Trees,Common Cold,3,redness_of_eyes,0.12303176115132677
+Extra_Trees,Common Cold,4,congestion,0.1115290350473489
+Extra_Trees,Common Cold,5,runny_nose,0.09298269463984395
+Extra_Trees,Common Cold,6,throat_irritation,0.07655033457814756
+Extra_Trees,Common Cold,7,phlegm,0.01797720821693847
+Extra_Trees,Common Cold,8,muscle_pain,0.01614378557465601
+Extra_Trees,Common Cold,9,swelled_lymph_nodes,0.004859124647535679
+Extra_Trees,Common Cold,10,chest_pain,0.003836174142409935
+Extra_Trees,Dengue,1,pain_behind_the_eyes,0.39256643713381967
+Extra_Trees,Dengue,2,back_pain,0.04824459542906797
+Extra_Trees,Dengue,3,muscle_pain,0.03946540932984331
+Extra_Trees,Dengue,4,red_spots_over_body,0.03574917658721203
+Extra_Trees,Dengue,5,malaise,0.02408079831926662
+Extra_Trees,Dengue,6,joint_pain,0.009976389976246145
+Extra_Trees,Dengue,7,nausea,0.008823502150331498
+Extra_Trees,Dengue,8,mild_fever,0.005890572967388105
+Extra_Trees,Dengue,9,loss_of_appetite,0.005472943303014815
+Extra_Trees,Dengue,10,chills,0.004950789734368396
+Extra_Trees,Diabetes ,1,increased_appetite,0.2563718272346974
+Extra_Trees,Diabetes ,2,polyuria,0.23503996975511007
+Extra_Trees,Diabetes ,3,blurred_and_distorted_vision,0.01153300555104704
+Extra_Trees,Diabetes ,4,irregular_sugar_level,0.011304607909201198
+Extra_Trees,Diabetes ,5,weight_loss,0.00850693588450283
+Extra_Trees,Diabetes ,6,restlessness,0.007473845305322455
+Extra_Trees,Diabetes ,7,obesity,0.007012741994237124
+Extra_Trees,Diabetes ,8,lethargy,0.004814843118258787
+Extra_Trees,Diabetes ,9,excessive_hunger,0.004017545815013027
+Extra_Trees,Diabetes ,10,mild_fever,0.0021685100600152534
+Extra_Trees,Dimorphic hemmorhoids(piles),1,pain_in_anal_region,0.02135181657942719
+Extra_Trees,Dimorphic hemmorhoids(piles),2,bloody_stool,0.018258340534567458
+Extra_Trees,Dimorphic hemmorhoids(piles),3,pain_during_bowel_movements,0.01714298177949253
+Extra_Trees,Dimorphic hemmorhoids(piles),4,irritation_in_anus,0.014227798873197233
+Extra_Trees,Dimorphic hemmorhoids(piles),5,constipation,0.013663872912728072
+Extra_Trees,Dimorphic hemmorhoids(piles),6,mild_fever,0.0010520640577635237
+Extra_Trees,Dimorphic hemmorhoids(piles),7,chills,0.0008632191727177791
+Extra_Trees,Dimorphic hemmorhoids(piles),8,muscle_pain,0.0008509502844753873
+Extra_Trees,Dimorphic hemmorhoids(piles),9,headache,0.0007188622066504406
+Extra_Trees,Dimorphic hemmorhoids(piles),10,fast_heart_rate,0.0007012371728161066
+Extra_Trees,Drug Reaction,1,spotting_ urination,0.0019846804083131775
+Extra_Trees,Drug Reaction,2,stomach_pain,0.0012264534737041462
+Extra_Trees,Drug Reaction,3,itching,0.0011559438695727734
+Extra_Trees,Drug Reaction,4,muscle_pain,0.0009191757814100501
+Extra_Trees,Drug Reaction,5,mild_fever,0.0007515731675012242
+Extra_Trees,Drug Reaction,6,skin_rash,0.0006785691333351982
+Extra_Trees,Drug Reaction,7,abnormal_menstruation,0.0005740350396884395
+Extra_Trees,Drug Reaction,8,rusty_sputum,0.0005510615317415692
+Extra_Trees,Drug Reaction,9,pain_behind_the_eyes,0.0005355336765565837
+Extra_Trees,Drug Reaction,10,loss_of_balance,0.000535020239038067
+Extra_Trees,Fungal infection,1,nodal_skin_eruptions,0.0023970294999414903
+Extra_Trees,Fungal infection,2,dischromic _patches,0.001173599724222926
+Extra_Trees,Fungal infection,3,muscle_pain,0.0008706627549025552
+Extra_Trees,Fungal infection,4,itching,0.0008083772613462501
+Extra_Trees,Fungal infection,5,mild_fever,0.0007320378969482042
+Extra_Trees,Fungal infection,6,skin_rash,0.0007030015686084392
+Extra_Trees,Fungal infection,7,loss_of_balance,0.0006320335965779476
+Extra_Trees,Fungal infection,8,rusty_sputum,0.0005391995251305966
+Extra_Trees,Fungal infection,9,abnormal_menstruation,0.0005245623807867692
+Extra_Trees,Fungal infection,10,pain_behind_the_eyes,0.0005132188761501201
+Extra_Trees,GERD,1,chest_pain,0.008437385998011917
+Extra_Trees,GERD,2,acidity,0.00527597097319134
+Extra_Trees,GERD,3,stomach_pain,0.005228493969611033
+Extra_Trees,GERD,4,ulcers_on_tongue,0.0030679305020120673
+Extra_Trees,GERD,5,cough,0.0026123217437699375
+Extra_Trees,GERD,6,muscle_pain,0.0011266121324960137
+Extra_Trees,GERD,7,sweating,0.0011144181124448742
+Extra_Trees,GERD,8,rusty_sputum,0.0008767714115592058
+Extra_Trees,GERD,9,mild_fever,0.0008706870137088051
+Extra_Trees,GERD,10,lack_of_concentration,0.000705434604951266
+Extra_Trees,Gastroenteritis,1,diarrhoea,0.0021794674351178905
+Extra_Trees,Gastroenteritis,2,sunken_eyes,0.0019776598813372203
+Extra_Trees,Gastroenteritis,3,dehydration,0.0013921105107280412
+Extra_Trees,Gastroenteritis,4,muscle_pain,0.0009599095855861156
+Extra_Trees,Gastroenteritis,5,mild_fever,0.0008749281518407251
+Extra_Trees,Gastroenteritis,6,abnormal_menstruation,0.0006003064607597384
+Extra_Trees,Gastroenteritis,7,loss_of_balance,0.0005888891472037216
+Extra_Trees,Gastroenteritis,8,constipation,0.0005297898702454829
+Extra_Trees,Gastroenteritis,9,rusty_sputum,0.0005230557945617479
+Extra_Trees,Gastroenteritis,10,pain_behind_the_eyes,0.0004971328965735537
+Extra_Trees,Heart attack,1,chest_pain,0.0040918041793760835
+Extra_Trees,Heart attack,2,breathlessness,0.0026660594111148845
+Extra_Trees,Heart attack,3,sweating,0.0011817341753901835
+Extra_Trees,Heart attack,4,muscle_pain,0.0009325863246794965
+Extra_Trees,Heart attack,5,mild_fever,0.0007727698292792351
+Extra_Trees,Heart attack,6,cough,0.000733277360541686
+Extra_Trees,Heart attack,7,rusty_sputum,0.0007187186006732467
+Extra_Trees,Heart attack,8,loss_of_balance,0.0006560404276564651
+Extra_Trees,Heart attack,9,blood_in_sputum,0.0005628134415607501
+Extra_Trees,Heart attack,10,abnormal_menstruation,0.0005414550536360791
+Extra_Trees,Hepatitis B,1,receiving_blood_transfusion,0.28492383282001266
+Extra_Trees,Hepatitis B,2,receiving_unsterile_injections,0.27083023896540176
+Extra_Trees,Hepatitis B,3,yellow_urine,0.01845003616278749
+Extra_Trees,Hepatitis B,4,malaise,0.018337513046229804
+Extra_Trees,Hepatitis B,5,yellowing_of_eyes,0.004687827012093292
+Extra_Trees,Hepatitis B,6,mild_fever,0.003035591869144835
+Extra_Trees,Hepatitis B,7,dark_urine,0.002728073507322252
+Extra_Trees,Hepatitis B,8,abnormal_menstruation,0.002588687679872423
+Extra_Trees,Hepatitis B,9,pain_behind_the_eyes,0.002577201929474425
+Extra_Trees,Hepatitis B,10,rusty_sputum,0.002445953045124616
+Extra_Trees,Hepatitis C,1,family_history,0.03100180236251048
+Extra_Trees,Hepatitis C,2,yellowing_of_eyes,0.004651822732223728
+Extra_Trees,Hepatitis C,3,nausea,0.00431466921464838
+Extra_Trees,Hepatitis C,4,breathlessness,0.0024205997486266484
+Extra_Trees,Hepatitis C,5,yellowish_skin,0.0019085638858270088
+Extra_Trees,Hepatitis C,6,mucoid_sputum,0.0019007321970065355
+Extra_Trees,Hepatitis C,7,loss_of_appetite,0.0018628177914906158
+Extra_Trees,Hepatitis C,8,high_fever,0.001711660599745608
+Extra_Trees,Hepatitis C,9,muscle_pain,0.0015853587943602892
+Extra_Trees,Hepatitis C,10,mild_fever,0.0012909566790265266
+Extra_Trees,Hepatitis D,1,joint_pain,0.024785981615446866
+Extra_Trees,Hepatitis D,2,dark_urine,0.01804603180796271
+Extra_Trees,Hepatitis D,3,yellowing_of_eyes,0.011301149947073916
+Extra_Trees,Hepatitis D,4,abdominal_pain,0.005216260503560232
+Extra_Trees,Hepatitis D,5,nausea,0.00497710491199879
+Extra_Trees,Hepatitis D,6,mild_fever,0.004848887756717925
+Extra_Trees,Hepatitis D,7,muscle_pain,0.004182942626364876
+Extra_Trees,Hepatitis D,8,fatigue,0.003992892560663546
+Extra_Trees,Hepatitis D,9,loss_of_appetite,0.0032602496219445594
+Extra_Trees,Hepatitis D,10,yellowish_skin,0.0028676167975103285
+Extra_Trees,Hepatitis E,1,stomach_bleeding,0.30035295623348424
+Extra_Trees,Hepatitis E,2,coma,0.2592055778012007
+Extra_Trees,Hepatitis E,3,acute_liver_failure,0.010581336545399552
+Extra_Trees,Hepatitis E,4,joint_pain,0.00609731239049109
+Extra_Trees,Hepatitis E,5,yellowing_of_eyes,0.0036856069997166507
+Extra_Trees,Hepatitis E,6,mild_fever,0.0025169000668587562
+Extra_Trees,Hepatitis E,7,dark_urine,0.0022129616832848235
+Extra_Trees,Hepatitis E,8,pain_behind_the_eyes,0.002109540852497877
+Extra_Trees,Hepatitis E,9,receiving_blood_transfusion,0.002040893892126257
+Extra_Trees,Hepatitis E,10,abnormal_menstruation,0.0018790301845986296
+Extra_Trees,Hypertension ,1,lack_of_concentration,0.01726475463006228
+Extra_Trees,Hypertension ,2,loss_of_balance,0.0124875585329566
+Extra_Trees,Hypertension ,3,chest_pain,0.008416029269598484
+Extra_Trees,Hypertension ,4,dizziness,0.0058745461904906255
+Extra_Trees,Hypertension ,5,headache,0.00221565995540793
+Extra_Trees,Hypertension ,6,vomiting,0.0012347390219879426
+Extra_Trees,Hypertension ,7,back_pain,0.0010282991592044867
+Extra_Trees,Hypertension ,8,weakness_in_limbs,0.0010025745758210814
+Extra_Trees,Hypertension ,9,neck_pain,0.0009717538356158835
+Extra_Trees,Hypertension ,10,mild_fever,0.0008190789828169678
+Extra_Trees,Hyperthyroidism,1,abnormal_menstruation,0.22290276399200662
+Extra_Trees,Hyperthyroidism,2,muscle_weakness,0.08915174231510668
+Extra_Trees,Hyperthyroidism,3,irritability,0.053563302035542625
+Extra_Trees,Hyperthyroidism,4,fast_heart_rate,0.03628650713087116
+Extra_Trees,Hyperthyroidism,5,restlessness,0.02284579346290185
+Extra_Trees,Hyperthyroidism,6,mood_swings,0.01762976635657252
+Extra_Trees,Hyperthyroidism,7,excessive_hunger,0.01605902447269242
+Extra_Trees,Hyperthyroidism,8,weight_loss,0.01501223312000021
+Extra_Trees,Hyperthyroidism,9,diarrhoea,0.008469138901580034
+Extra_Trees,Hyperthyroidism,10,sweating,0.005426415546121335
+Extra_Trees,Hypoglycemia,1,palpitations,0.2732077181732629
+Extra_Trees,Hypoglycemia,2,slurred_speech,0.24868159217664676
+Extra_Trees,Hypoglycemia,3,irritability,0.02375766926022044
+Extra_Trees,Hypoglycemia,4,drying_and_tingling_lips,0.020162732948246477
+Extra_Trees,Hypoglycemia,5,excessive_hunger,0.015461440845957347
+Extra_Trees,Hypoglycemia,6,anxiety,0.014582357484758288
+Extra_Trees,Hypoglycemia,7,blurred_and_distorted_vision,0.0076190323506543185
+Extra_Trees,Hypoglycemia,8,muscle_weakness,0.00255623058455836
+Extra_Trees,Hypoglycemia,9,stomach_bleeding,0.0025147073895440395
+Extra_Trees,Hypoglycemia,10,abnormal_menstruation,0.0024709005436248264
+Extra_Trees,Hypothyroidism,1,enlarged_thyroid,0.1483564523681868
+Extra_Trees,Hypothyroidism,2,brittle_nails,0.14544875532561546
+Extra_Trees,Hypothyroidism,3,swollen_extremeties,0.13148119982070267
+Extra_Trees,Hypothyroidism,4,abnormal_menstruation,0.06686690017720345
+Extra_Trees,Hypothyroidism,5,depression,0.020940833107596583
+Extra_Trees,Hypothyroidism,6,irritability,0.016082953326887143
+Extra_Trees,Hypothyroidism,7,weight_gain,0.005596676852283387
+Extra_Trees,Hypothyroidism,8,puffy_face_and_eyes,0.0055325446653282625
+Extra_Trees,Hypothyroidism,9,cold_hands_and_feets,0.005352461444689102
+Extra_Trees,Hypothyroidism,10,lethargy,0.0037204621697396064
+Extra_Trees,Impetigo,1,blister,0.027105474911292827
+Extra_Trees,Impetigo,2,yellow_crust_ooze,0.022894969046354262
+Extra_Trees,Impetigo,3,red_sore_around_nose,0.012604915788432624
+Extra_Trees,Impetigo,4,muscle_pain,0.0009874767104257663
+Extra_Trees,Impetigo,5,abnormal_menstruation,0.0006913193512920911
+Extra_Trees,Impetigo,6,rusty_sputum,0.0006865847152946215
+Extra_Trees,Impetigo,7,muscle_weakness,0.0006437173393209773
+Extra_Trees,Impetigo,8,chest_pain,0.0005670450809698105
+Extra_Trees,Impetigo,9,pain_behind_the_eyes,0.0005443003700085874
+Extra_Trees,Impetigo,10,receiving_blood_transfusion,0.0005330274202146442
+Extra_Trees,Jaundice,1,weight_loss,0.03148634240279431
+Extra_Trees,Jaundice,2,dark_urine,0.007856137018388552
+Extra_Trees,Jaundice,3,itching,0.00374867674619112
+Extra_Trees,Jaundice,4,abdominal_pain,0.003427094638091822
+Extra_Trees,Jaundice,5,high_fever,0.0022323736651249514
+Extra_Trees,Jaundice,6,yellowing_of_eyes,0.002189658516852389
+Extra_Trees,Jaundice,7,yellowish_skin,0.0019365163786760717
+Extra_Trees,Jaundice,8,nausea,0.0017820159834178776
+Extra_Trees,Jaundice,9,mild_fever,0.0017563909944530696
+Extra_Trees,Jaundice,10,muscle_pain,0.001486660417862338
+Extra_Trees,Malaria,1,muscle_pain,0.10046300747335397
+Extra_Trees,Malaria,2,diarrhoea,0.006267885174012335
+Extra_Trees,Malaria,3,sweating,0.006243783062403969
+Extra_Trees,Malaria,4,chills,0.005755385026206834
+Extra_Trees,Malaria,5,loss_of_appetite,0.005730585113581349
+Extra_Trees,Malaria,6,mild_fever,0.0054465696364499865
+Extra_Trees,Malaria,7,high_fever,0.004166645378449421
+Extra_Trees,Malaria,8,joint_pain,0.003917410188155401
+Extra_Trees,Malaria,9,yellowing_of_eyes,0.003613459706090652
+Extra_Trees,Malaria,10,malaise,0.002915075865834271
+Extra_Trees,Migraine,1,visual_disturbances,0.04754779538769528
+Extra_Trees,Migraine,2,depression,0.04465236936924985
+Extra_Trees,Migraine,3,irritability,0.03728508521032918
+Extra_Trees,Migraine,4,stiff_neck,0.02811411633302364
+Extra_Trees,Migraine,5,excessive_hunger,0.020845318283337903
+Extra_Trees,Migraine,6,indigestion,0.019918290280225768
+Extra_Trees,Migraine,7,blurred_and_distorted_vision,0.019401213210809603
+Extra_Trees,Migraine,8,acidity,0.008778083630025465
+Extra_Trees,Migraine,9,abnormal_menstruation,0.00425147879258248
+Extra_Trees,Migraine,10,muscle_weakness,0.0031911958339905107
+Extra_Trees,Osteoarthristis,1,knee_pain,0.03188429716989073
+Extra_Trees,Osteoarthristis,2,neck_pain,0.031008535198372343
+Extra_Trees,Osteoarthristis,3,painful_walking,0.029950062856001696
+Extra_Trees,Osteoarthristis,4,hip_joint_pain,0.02789613461156034
+Extra_Trees,Osteoarthristis,5,joint_pain,0.01712556986171446
+Extra_Trees,Osteoarthristis,6,swelling_joints,0.015250849233936298
+Extra_Trees,Osteoarthristis,7,muscle_weakness,0.003404117374625604
+Extra_Trees,Osteoarthristis,8,loss_of_balance,0.002545043780127828
+Extra_Trees,Osteoarthristis,9,stiff_neck,0.0025032918165024897
+Extra_Trees,Osteoarthristis,10,movement_stiffness,0.0025026697482734557
+Extra_Trees,Paralysis (brain hemorrhage),1,altered_sensorium,0.010914554304443875
+Extra_Trees,Paralysis (brain hemorrhage),2,weakness_of_one_body_side,0.0016096317006333756
+Extra_Trees,Paralysis (brain hemorrhage),3,muscle_pain,0.0007289057807541314
+Extra_Trees,Paralysis (brain hemorrhage),4,mild_fever,0.0006680433648953426
+Extra_Trees,Paralysis (brain hemorrhage),5,abnormal_menstruation,0.0004729283273998369
+Extra_Trees,Paralysis (brain hemorrhage),6,rusty_sputum,0.0004578616785219047
+Extra_Trees,Paralysis (brain hemorrhage),7,pain_behind_the_eyes,0.00044792632197592126
+Extra_Trees,Paralysis (brain hemorrhage),8,loss_of_balance,0.00044299954590642815
+Extra_Trees,Paralysis (brain hemorrhage),9,stomach_bleeding,0.00042981096729050055
+Extra_Trees,Paralysis (brain hemorrhage),10,blood_in_sputum,0.000401671400684055
+Extra_Trees,Peptic ulcer diseae,1,passage_of_gases,0.024616866725379008
+Extra_Trees,Peptic ulcer diseae,2,internal_itching,0.020568735580488655
+Extra_Trees,Peptic ulcer diseae,3,indigestion,0.005556373168728928
+Extra_Trees,Peptic ulcer diseae,4,abdominal_pain,0.0021033349876413035
+Extra_Trees,Peptic ulcer diseae,5,loss_of_appetite,0.0014590153767178413
+Extra_Trees,Peptic ulcer diseae,6,muscle_pain,0.0010877409728164533
+Extra_Trees,Peptic ulcer diseae,7,abnormal_menstruation,0.0007603949588497726
+Extra_Trees,Peptic ulcer diseae,8,malaise,0.0007387593391636115
+Extra_Trees,Peptic ulcer diseae,9,mild_fever,0.0007038737807930135
+Extra_Trees,Peptic ulcer diseae,10,fast_heart_rate,0.0006744250908826252
+Extra_Trees,Pneumonia,1,rusty_sputum,0.3548592712783364
+Extra_Trees,Pneumonia,2,fast_heart_rate,0.1109698381486159
+Extra_Trees,Pneumonia,3,phlegm,0.03447646351989113
+Extra_Trees,Pneumonia,4,chest_pain,0.01977603813669282
+Extra_Trees,Pneumonia,5,malaise,0.015475881531719287
+Extra_Trees,Pneumonia,6,yellowing_of_eyes,0.004760249856582382
+Extra_Trees,Pneumonia,7,mild_fever,0.004633452164236202
+Extra_Trees,Pneumonia,8,blood_in_sputum,0.004384618117940675
+Extra_Trees,Pneumonia,9,cough,0.004226018396152471
+Extra_Trees,Pneumonia,10,breathlessness,0.003261915690890253
+Extra_Trees,Psoriasis,1,skin_peeling,0.029840080006261167
+Extra_Trees,Psoriasis,2,silver_like_dusting,0.028658826454949337
+Extra_Trees,Psoriasis,3,inflammatory_nails,0.027823891269119733
+Extra_Trees,Psoriasis,4,small_dents_in_nails,0.020407314013352416
+Extra_Trees,Psoriasis,5,joint_pain,0.009841883474628296
+Extra_Trees,Psoriasis,6,muscle_pain,0.0015553963590406675
+Extra_Trees,Psoriasis,7,stomach_bleeding,0.0011681316661050173
+Extra_Trees,Psoriasis,8,skin_rash,0.0010900796683162282
+Extra_Trees,Psoriasis,9,pain_behind_the_eyes,0.0010834186318054474
+Extra_Trees,Psoriasis,10,mild_fever,0.0010662818967756467
+Extra_Trees,Tuberculosis,1,blood_in_sputum,0.32642463477601447
+Extra_Trees,Tuberculosis,2,phlegm,0.07692697688738398
+Extra_Trees,Tuberculosis,3,mild_fever,0.05514132298736986
+Extra_Trees,Tuberculosis,4,swelled_lymph_nodes,0.049040067907626286
+Extra_Trees,Tuberculosis,5,malaise,0.02633730962867582
+Extra_Trees,Tuberculosis,6,chest_pain,0.017455366499683492
+Extra_Trees,Tuberculosis,7,yellowing_of_eyes,0.016079583268142055
+Extra_Trees,Tuberculosis,8,weight_loss,0.015784098380488866
+Extra_Trees,Tuberculosis,9,breathlessness,0.006160263798848433
+Extra_Trees,Tuberculosis,10,red_spots_over_body,0.0051495364408244825
+Extra_Trees,Typhoid,1,belly_pain,0.057152573414015584
+Extra_Trees,Typhoid,2,toxic_look_(typhos),0.049095110654211425
+Extra_Trees,Typhoid,3,constipation,0.04023879321485457
+Extra_Trees,Typhoid,4,diarrhoea,0.01483024645935295
+Extra_Trees,Typhoid,5,chills,0.008554883522994716
+Extra_Trees,Typhoid,6,abdominal_pain,0.007171850641878291
+Extra_Trees,Typhoid,7,high_fever,0.004890217657997009
+Extra_Trees,Typhoid,8,nausea,0.0039546985977249646
+Extra_Trees,Typhoid,9,fatigue,0.003834390518721449
+Extra_Trees,Typhoid,10,muscle_pain,0.003719125854678681
+Extra_Trees,Urinary tract infection,1,bladder_discomfort,0.013950268678676634
+Extra_Trees,Urinary tract infection,2,continuous_feel_of_urine,0.012576966095963548
+Extra_Trees,Urinary tract infection,3,muscle_pain,0.0007299658833707443
+Extra_Trees,Urinary tract infection,4,mild_fever,0.000644459354742057
+Extra_Trees,Urinary tract infection,5,loss_of_balance,0.0005976675049041974
+Extra_Trees,Urinary tract infection,6,muscle_weakness,0.0004904868858022011
+Extra_Trees,Urinary tract infection,7,rusty_sputum,0.00042627676465214576
+Extra_Trees,Urinary tract infection,8,pain_behind_the_eyes,0.00042482555389763066
+Extra_Trees,Urinary tract infection,9,stomach_bleeding,0.00041334858446273587
+Extra_Trees,Urinary tract infection,10,red_spots_over_body,0.0004082912411018769
+Extra_Trees,Varicose veins,1,prominent_veins_on_calf,0.026283859834113393
+Extra_Trees,Varicose veins,2,cramps,0.025605035340107052
+Extra_Trees,Varicose veins,3,obesity,0.02430802951949764
+Extra_Trees,Varicose veins,4,bruising,0.020993257801474517
+Extra_Trees,Varicose veins,5,swollen_legs,0.016128427018100685
+Extra_Trees,Varicose veins,6,mild_fever,0.0016685961270230202
+Extra_Trees,Varicose veins,7,swollen_blood_vessels,0.0013229063543603995
+Extra_Trees,Varicose veins,8,muscle_pain,0.0011415433449848812
+Extra_Trees,Varicose veins,9,abnormal_menstruation,0.0011306825441027033
+Extra_Trees,Varicose veins,10,loss_of_balance,0.0009842370164068015
+Extra_Trees,hepatitis A,1,mild_fever,0.15456552148022334
+Extra_Trees,hepatitis A,2,muscle_pain,0.1261577606176086
+Extra_Trees,hepatitis A,3,yellowing_of_eyes,0.019509366293863475
+Extra_Trees,hepatitis A,4,joint_pain,0.014835324249388451
+Extra_Trees,hepatitis A,5,dark_urine,0.009122056974643399
+Extra_Trees,hepatitis A,6,abdominal_pain,0.009022828077780438
+Extra_Trees,hepatitis A,7,loss_of_appetite,0.007560307183268183
+Extra_Trees,hepatitis A,8,malaise,0.007099563095297556
+Extra_Trees,hepatitis A,9,diarrhoea,0.006881315677044848
+Extra_Trees,hepatitis A,10,high_fever,0.006356292518412384
+Decision_Tree,(vertigo) Paroymsal  Positional Vertigo,1,unsteadiness,0.0032500244144389864
+Decision_Tree,(vertigo) Paroymsal  Positional Vertigo,2,mild_fever,0.0010904655776822236
+Decision_Tree,(vertigo) Paroymsal  Positional Vertigo,3,muscle_pain,0.0009854668788594268
+Decision_Tree,(vertigo) Paroymsal  Positional Vertigo,4,pain_behind_the_eyes,0.000951373852972677
+Decision_Tree,(vertigo) Paroymsal  Positional Vertigo,5,blood_in_sputum,0.0008162959880799325
+Decision_Tree,(vertigo) Paroymsal  Positional Vertigo,6,rusty_sputum,0.0007872119797496101
+Decision_Tree,(vertigo) Paroymsal  Positional Vertigo,7,abnormal_menstruation,0.0007755778022337037
+Decision_Tree,(vertigo) Paroymsal  Positional Vertigo,8,red_spots_over_body,0.0006364214234102349
+Decision_Tree,(vertigo) Paroymsal  Positional Vertigo,9,receiving_blood_transfusion,0.0006359724692835155
+Decision_Tree,(vertigo) Paroymsal  Positional Vertigo,10,polyuria,0.0005184687445312175
+Decision_Tree,AIDS,1,mild_fever,0.0013365846757109217
+Decision_Tree,AIDS,2,pain_behind_the_eyes,0.0010365836956581535
+Decision_Tree,AIDS,3,rusty_sputum,0.0009629995079288925
+Decision_Tree,AIDS,4,blood_in_sputum,0.0009420443470361393
+Decision_Tree,AIDS,5,muscle_pain,0.000900051674791524
+Decision_Tree,AIDS,6,abnormal_menstruation,0.0007458169720748261
+Decision_Tree,AIDS,7,red_spots_over_body,0.0007406499197785257
+Decision_Tree,AIDS,8,receiving_blood_transfusion,0.0007149325877587837
+Decision_Tree,AIDS,9,polyuria,0.0006758517790928602
+Decision_Tree,AIDS,10,coma,0.0006311955433811803
+Decision_Tree,Acne,1,mild_fever,0.0011783941891714187
+Decision_Tree,Acne,2,muscle_pain,0.001158752538011213
+Decision_Tree,Acne,3,pain_behind_the_eyes,0.0010845200384992566
+Decision_Tree,Acne,4,abnormal_menstruation,0.0009325144723109332
+Decision_Tree,Acne,5,rusty_sputum,0.0009191478911723562
+Decision_Tree,Acne,6,blood_in_sputum,0.000865513229615894
+Decision_Tree,Acne,7,red_spots_over_body,0.0008624532582212496
+Decision_Tree,Acne,8,receiving_blood_transfusion,0.0006726256709707777
+Decision_Tree,Acne,9,polyuria,0.0006575856221706586
+Decision_Tree,Acne,10,coma,0.000590122358968026
+Decision_Tree,Alcoholic hepatitis,1,distention_of_abdomen,0.005827518726934547
+Decision_Tree,Alcoholic hepatitis,2,history_of_alcohol_consumption,0.005597126384215817
+Decision_Tree,Alcoholic hepatitis,3,swelling_of_stomach,0.0032638421693496145
+Decision_Tree,Alcoholic hepatitis,4,fluid_overload.1,0.0030640895079646346
+Decision_Tree,Alcoholic hepatitis,5,mild_fever,0.0006528146284227316
+Decision_Tree,Alcoholic hepatitis,6,pain_behind_the_eyes,0.0006061725689078757
+Decision_Tree,Alcoholic hepatitis,7,muscle_pain,0.0005088896680103966
+Decision_Tree,Alcoholic hepatitis,8,blood_in_sputum,0.0004699554705528113
+Decision_Tree,Alcoholic hepatitis,9,rusty_sputum,0.00044565160188949124
+Decision_Tree,Alcoholic hepatitis,10,abnormal_menstruation,0.00044387190249537214
+Decision_Tree,Allergy,1,mild_fever,0.001260154932583455
+Decision_Tree,Allergy,2,muscle_pain,0.0010667220457903108
+Decision_Tree,Allergy,3,pain_behind_the_eyes,0.0009948795657017308
+Decision_Tree,Allergy,4,rusty_sputum,0.0009620654175885712
+Decision_Tree,Allergy,5,blood_in_sputum,0.0009376763718082373
+Decision_Tree,Allergy,6,red_spots_over_body,0.0008935466341915037
+Decision_Tree,Allergy,7,abnormal_menstruation,0.0008138077674830477
+Decision_Tree,Allergy,8,receiving_blood_transfusion,0.0007566915237127957
+Decision_Tree,Allergy,9,polyuria,0.0007378211957006645
+Decision_Tree,Allergy,10,coma,0.0004894811607969361
+Decision_Tree,Arthritis,1,painful_walking,0.004139034406890318
+Decision_Tree,Arthritis,2,stiff_neck,0.003327248040311281
+Decision_Tree,Arthritis,3,muscle_weakness,0.0030636924633399387
+Decision_Tree,Arthritis,4,pain_behind_the_eyes,0.0009222028535657275
+Decision_Tree,Arthritis,5,mild_fever,0.0008584854652486297
+Decision_Tree,Arthritis,6,abnormal_menstruation,0.0008270189729339273
+Decision_Tree,Arthritis,7,muscle_pain,0.000794241785362527
+Decision_Tree,Arthritis,8,rusty_sputum,0.0007813942155317159
+Decision_Tree,Arthritis,9,blood_in_sputum,0.0006683060697873101
+Decision_Tree,Arthritis,10,red_spots_over_body,0.0006197776135414607
+Decision_Tree,Bronchial Asthma,1,family_history,0.00475312454484289
+Decision_Tree,Bronchial Asthma,2,mucoid_sputum,0.0028547801220651374
+Decision_Tree,Bronchial Asthma,3,loss_of_appetite,0.0013422743929366698
+Decision_Tree,Bronchial Asthma,4,mild_fever,0.0010026119331041981
+Decision_Tree,Bronchial Asthma,5,pain_behind_the_eyes,0.0009016617384815411
+Decision_Tree,Bronchial Asthma,6,rusty_sputum,0.0008494257535981462
+Decision_Tree,Bronchial Asthma,7,blood_in_sputum,0.0007741822543686776
+Decision_Tree,Bronchial Asthma,8,abnormal_menstruation,0.0006816658280554841
+Decision_Tree,Bronchial Asthma,9,red_spots_over_body,0.0006468329248033993
+Decision_Tree,Bronchial Asthma,10,polyuria,0.0006343128736457945
+Decision_Tree,Cervical spondylosis,1,mild_fever,0.001323083019090715
+Decision_Tree,Cervical spondylosis,2,pain_behind_the_eyes,0.001041119919163044
+Decision_Tree,Cervical spondylosis,3,muscle_pain,0.0009517218592556964
+Decision_Tree,Cervical spondylosis,4,rusty_sputum,0.000936002699185565
+Decision_Tree,Cervical spondylosis,5,abnormal_menstruation,0.0009003822129346362
+Decision_Tree,Cervical spondylosis,6,blood_in_sputum,0.0008175969188101172
+Decision_Tree,Cervical spondylosis,7,red_spots_over_body,0.0008019414953735289
+Decision_Tree,Cervical spondylosis,8,receiving_blood_transfusion,0.0006368572725456957
+Decision_Tree,Cervical spondylosis,9,polyuria,0.0006361227694132019
+Decision_Tree,Cervical spondylosis,10,coma,0.0005854588034094006
+Decision_Tree,Chicken pox,1,red_spots_over_body,0.49605794855715235
+Decision_Tree,Chicken pox,2,malaise,0.08048647990953463
+Decision_Tree,Chicken pox,3,mild_fever,0.055926606364122555
+Decision_Tree,Chicken pox,4,yellowing_of_eyes,0.024399381241301067
+Decision_Tree,Chicken pox,5,pain_behind_the_eyes,0.010784645716936192
+Decision_Tree,Chicken pox,6,blood_in_sputum,0.009848506026738995
+Decision_Tree,Chicken pox,7,rusty_sputum,0.00852335010335301
+Decision_Tree,Chicken pox,8,polyuria,0.008035224135363889
+Decision_Tree,Chicken pox,9,receiving_blood_transfusion,0.007303331388782103
+Decision_Tree,Chicken pox,10,abnormal_menstruation,0.00561129573966614
+Decision_Tree,Chronic cholestasis,1,mild_fever,0.001065978699886965
+Decision_Tree,Chronic cholestasis,2,pain_behind_the_eyes,0.0009788307803518625
+Decision_Tree,Chronic cholestasis,3,muscle_pain,0.0009158380465049924
+Decision_Tree,Chronic cholestasis,4,rusty_sputum,0.0008770670182533409
+Decision_Tree,Chronic cholestasis,5,blood_in_sputum,0.0008535078942606543
+Decision_Tree,Chronic cholestasis,6,red_spots_over_body,0.0008080903551914643
+Decision_Tree,Chronic cholestasis,7,abnormal_menstruation,0.0007681190252472875
+Decision_Tree,Chronic cholestasis,8,receiving_blood_transfusion,0.0006358691173538208
+Decision_Tree,Chronic cholestasis,9,polyuria,0.0006282705634226586
+Decision_Tree,Chronic cholestasis,10,coma,0.00045021365600758124
+Decision_Tree,Common Cold,1,throat_irritation,0.18939218729636137
+Decision_Tree,Common Cold,2,redness_of_eyes,0.18373804922508988
+Decision_Tree,Common Cold,3,congestion,0.17695537620542068
+Decision_Tree,Common Cold,4,sinus_pressure,0.09206073426057627
+Decision_Tree,Common Cold,5,loss_of_smell,0.09069735445175385
+Decision_Tree,Common Cold,6,receiving_blood_transfusion,0.006683980133696835
+Decision_Tree,Common Cold,7,blood_in_sputum,0.0042078597598773654
+Decision_Tree,Common Cold,8,coma,0.003942285189030832
+Decision_Tree,Common Cold,9,rusty_sputum,0.002895697455741055
+Decision_Tree,Common Cold,10,brittle_nails,0.002836307693850082
+Decision_Tree,Dengue,1,pain_behind_the_eyes,0.774729816247728
+Decision_Tree,Dengue,2,receiving_blood_transfusion,0.007767142589157998
+Decision_Tree,Dengue,3,blood_in_sputum,0.0057775505889705965
+Decision_Tree,Dengue,4,abnormal_menstruation,0.005739632154876348
+Decision_Tree,Dengue,5,rusty_sputum,0.005597325130849029
+Decision_Tree,Dengue,6,polyuria,0.0055838852798932226
+Decision_Tree,Dengue,7,coma,0.005417817300997191
+Decision_Tree,Dengue,8,slurred_speech,0.004133012738738929
+Decision_Tree,Dengue,9,brittle_nails,0.0028226945530058977
+Decision_Tree,Dengue,10,increased_appetite,0.0027848883381865266
+Decision_Tree,Diabetes ,1,polyuria,0.4586165944127867
+Decision_Tree,Diabetes ,2,increased_appetite,0.18395388781103603
+Decision_Tree,Diabetes ,3,receiving_blood_transfusion,0.009254541925629795
+Decision_Tree,Diabetes ,4,excessive_hunger,0.0031241941865510475
+Decision_Tree,Diabetes ,5,swollen_extremeties,0.0029274558483171707
+Decision_Tree,Diabetes ,6,blood_in_sputum,0.0027694785723559835
+Decision_Tree,Diabetes ,7,throat_irritation,0.0027332435603951923
+Decision_Tree,Diabetes ,8,slurred_speech,0.0027068543547502304
+Decision_Tree,Diabetes ,9,rusty_sputum,0.001543595227261768
+Decision_Tree,Diabetes ,10,distention_of_abdomen,0.001469903289170992
+Decision_Tree,Dimorphic hemmorhoids(piles),1,pain_in_anal_region,0.005431013749288705
+Decision_Tree,Dimorphic hemmorhoids(piles),2,bloody_stool,0.003416291928878723
+Decision_Tree,Dimorphic hemmorhoids(piles),3,pain_during_bowel_movements,0.002763439037378495
+Decision_Tree,Dimorphic hemmorhoids(piles),4,irritation_in_anus,0.0027203016344493768
+Decision_Tree,Dimorphic hemmorhoids(piles),5,pain_behind_the_eyes,0.0007028966197260846
+Decision_Tree,Dimorphic hemmorhoids(piles),6,abnormal_menstruation,0.0006231961734485603
+Decision_Tree,Dimorphic hemmorhoids(piles),7,muscle_pain,0.0005979664584519729
+Decision_Tree,Dimorphic hemmorhoids(piles),8,receiving_blood_transfusion,0.0005254059977327773
+Decision_Tree,Dimorphic hemmorhoids(piles),9,mild_fever,0.0005028271512807143
+Decision_Tree,Dimorphic hemmorhoids(piles),10,rusty_sputum,0.0005016546260553706
+Decision_Tree,Drug Reaction,1,pain_behind_the_eyes,0.0010992576731664338
+Decision_Tree,Drug Reaction,2,muscle_pain,0.0010618684696313105
+Decision_Tree,Drug Reaction,3,mild_fever,0.0010446545617013607
+Decision_Tree,Drug Reaction,4,blood_in_sputum,0.0009073464243501944
+Decision_Tree,Drug Reaction,5,abnormal_menstruation,0.0009037201575428794
+Decision_Tree,Drug Reaction,6,rusty_sputum,0.0008881986863308863
+Decision_Tree,Drug Reaction,7,red_spots_over_body,0.0008382520627042757
+Decision_Tree,Drug Reaction,8,receiving_blood_transfusion,0.0007103665102245698
+Decision_Tree,Drug Reaction,9,polyuria,0.0006039500892620088
+Decision_Tree,Drug Reaction,10,coma,0.0005404169811761165
+Decision_Tree,Fungal infection,1,mild_fever,0.0011989226330591757
+Decision_Tree,Fungal infection,2,pain_behind_the_eyes,0.0010515991166003204
+Decision_Tree,Fungal infection,3,muscle_pain,0.000988185448104884
+Decision_Tree,Fungal infection,4,rusty_sputum,0.0009140570395348421
+Decision_Tree,Fungal infection,5,blood_in_sputum,0.0009123884813593509
+Decision_Tree,Fungal infection,6,abnormal_menstruation,0.0007984359851641615
+Decision_Tree,Fungal infection,7,red_spots_over_body,0.0007900926828419278
+Decision_Tree,Fungal infection,8,receiving_blood_transfusion,0.0007065677089747721
+Decision_Tree,Fungal infection,9,polyuria,0.0006251846214818149
+Decision_Tree,Fungal infection,10,coma,0.0005268427923717954
+Decision_Tree,GERD,1,mild_fever,0.0011328833348035873
+Decision_Tree,GERD,2,muscle_pain,0.0010816880909884934
+Decision_Tree,GERD,3,pain_behind_the_eyes,0.000966908432114406
+Decision_Tree,GERD,4,rusty_sputum,0.0009206386138342446
+Decision_Tree,GERD,5,blood_in_sputum,0.0009125593830780537
+Decision_Tree,GERD,6,abnormal_menstruation,0.0007749623552221735
+Decision_Tree,GERD,7,red_spots_over_body,0.0007568041408299021
+Decision_Tree,GERD,8,receiving_blood_transfusion,0.0006959082538786176
+Decision_Tree,GERD,9,polyuria,0.0006566336024346228
+Decision_Tree,GERD,10,coma,0.00054312829299678
+Decision_Tree,Gastroenteritis,1,mild_fever,0.0013446887982603247
+Decision_Tree,Gastroenteritis,2,pain_behind_the_eyes,0.0010212000292939985
+Decision_Tree,Gastroenteritis,3,blood_in_sputum,0.0009643093749929409
+Decision_Tree,Gastroenteritis,4,rusty_sputum,0.0009634002760503689
+Decision_Tree,Gastroenteritis,5,muscle_pain,0.0008116636099726017
+Decision_Tree,Gastroenteritis,6,receiving_blood_transfusion,0.0008042623569499814
+Decision_Tree,Gastroenteritis,7,abnormal_menstruation,0.0007941504713248314
+Decision_Tree,Gastroenteritis,8,red_spots_over_body,0.0007840036371318454
+Decision_Tree,Gastroenteritis,9,polyuria,0.0007163415656069046
+Decision_Tree,Gastroenteritis,10,coma,0.0005463275400077642
+Decision_Tree,Heart attack,1,mild_fever,0.0011418280210535713
+Decision_Tree,Heart attack,2,pain_behind_the_eyes,0.0010489484751790026
+Decision_Tree,Heart attack,3,muscle_pain,0.0009752512801561239
+Decision_Tree,Heart attack,4,rusty_sputum,0.0009165449927118756
+Decision_Tree,Heart attack,5,blood_in_sputum,0.0009124286401418628
+Decision_Tree,Heart attack,6,red_spots_over_body,0.0009046800927003587
+Decision_Tree,Heart attack,7,abnormal_menstruation,0.0008480456559455006
+Decision_Tree,Heart attack,8,receiving_blood_transfusion,0.0007488449242183056
+Decision_Tree,Heart attack,9,polyuria,0.0006951582625918786
+Decision_Tree,Heart attack,10,coma,0.00047295905298354546
+Decision_Tree,Hepatitis B,1,receiving_blood_transfusion,0.5791263109734297
+Decision_Tree,Hepatitis B,2,receiving_unsterile_injections,0.09192908516610622
+Decision_Tree,Hepatitis B,3,abnormal_menstruation,0.0027907443355476404
+Decision_Tree,Hepatitis B,4,redness_of_eyes,0.0027904800833790295
+Decision_Tree,Hepatitis B,5,yellow_urine,0.0027656639134111417
+Decision_Tree,Hepatitis B,6,blood_in_sputum,0.0014340212898597085
+Decision_Tree,Hepatitis B,7,swollen_extremeties,0.0014311273806339344
+Decision_Tree,Hepatitis B,8,coma,0.0013981153955494642
+Decision_Tree,Hepatitis B,9,red_sore_around_nose,0.0013811346711594132
+Decision_Tree,Hepatitis B,10,rusty_sputum,0.0013550816992230603
+Decision_Tree,Hepatitis C,1,family_history,0.00529677084373354
+Decision_Tree,Hepatitis C,2,pain_behind_the_eyes,0.001035399993543868
+Decision_Tree,Hepatitis C,3,loss_of_appetite,0.0009450378023120031
+Decision_Tree,Hepatitis C,4,nausea,0.000945037802312002
+Decision_Tree,Hepatitis C,5,muscle_pain,0.0009058330654489069
+Decision_Tree,Hepatitis C,6,abnormal_menstruation,0.0008856193971318977
+Decision_Tree,Hepatitis C,7,blood_in_sputum,0.0008470596199115391
+Decision_Tree,Hepatitis C,8,rusty_sputum,0.0008446443661471045
+Decision_Tree,Hepatitis C,9,mild_fever,0.0007764885487498407
+Decision_Tree,Hepatitis C,10,red_spots_over_body,0.0007468114245560464
+Decision_Tree,Hepatitis D,1,mild_fever,0.0010226150069632964
+Decision_Tree,Hepatitis D,2,pain_behind_the_eyes,0.0009794568859207951
+Decision_Tree,Hepatitis D,3,muscle_pain,0.0009300468313051402
+Decision_Tree,Hepatitis D,4,rusty_sputum,0.0008465041325879357
+Decision_Tree,Hepatitis D,5,blood_in_sputum,0.0008314735438703002
+Decision_Tree,Hepatitis D,6,abnormal_menstruation,0.0007995421508044321
+Decision_Tree,Hepatitis D,7,red_spots_over_body,0.000683311690584773
+Decision_Tree,Hepatitis D,8,receiving_blood_transfusion,0.0006018526448948138
+Decision_Tree,Hepatitis D,9,polyuria,0.0005543094798791126
+Decision_Tree,Hepatitis D,10,coma,0.0005211403619873534
+Decision_Tree,Hepatitis E,1,coma,0.3616350444435935
+Decision_Tree,Hepatitis E,2,stomach_bleeding,0.2630589478452573
+Decision_Tree,Hepatitis E,3,receiving_blood_transfusion,0.006425381171589982
+Decision_Tree,Hepatitis E,4,rusty_sputum,0.004651268571702354
+Decision_Tree,Hepatitis E,5,pain_behind_the_eyes,0.0029462160158439782
+Decision_Tree,Hepatitis E,6,muscle_pain,0.002875543691636457
+Decision_Tree,Hepatitis E,7,polyuria,0.0028394908764020916
+Decision_Tree,Hepatitis E,8,acute_liver_failure,0.00276602304994896
+Decision_Tree,Hepatitis E,9,blood_in_sputum,0.0027587751938122685
+Decision_Tree,Hepatitis E,10,increased_appetite,0.0027355535907150974
+Decision_Tree,Hypertension ,1,lack_of_concentration,0.008689813227321467
+Decision_Tree,Hypertension ,2,mild_fever,0.0009116953077518919
+Decision_Tree,Hypertension ,3,muscle_pain,0.0008815134743857314
+Decision_Tree,Hypertension ,4,pain_behind_the_eyes,0.0007558445057588254
+Decision_Tree,Hypertension ,5,blood_in_sputum,0.000751034546901502
+Decision_Tree,Hypertension ,6,rusty_sputum,0.0006961615193014609
+Decision_Tree,Hypertension ,7,abnormal_menstruation,0.0006557247676987197
+Decision_Tree,Hypertension ,8,red_spots_over_body,0.0006274943939672556
+Decision_Tree,Hypertension ,9,receiving_blood_transfusion,0.0006137317214086246
+Decision_Tree,Hypertension ,10,polyuria,0.0005049817236689994
+Decision_Tree,Hyperthyroidism,1,abnormal_menstruation,0.42297723480924987
+Decision_Tree,Hyperthyroidism,2,blood_in_sputum,0.005573531051350202
+Decision_Tree,Hyperthyroidism,3,coma,0.00534895582410227
+Decision_Tree,Hyperthyroidism,4,rusty_sputum,0.004793606385312034
+Decision_Tree,Hyperthyroidism,5,brittle_nails,0.0044239493788809075
+Decision_Tree,Hyperthyroidism,6,polyuria,0.004323552018755441
+Decision_Tree,Hyperthyroidism,7,pain_behind_the_eyes,0.004185081870860774
+Decision_Tree,Hyperthyroidism,8,receiving_blood_transfusion,0.003955355139163156
+Decision_Tree,Hyperthyroidism,9,red_spots_over_body,0.003148196720549569
+Decision_Tree,Hyperthyroidism,10,fast_heart_rate,0.0029476165633521454
+Decision_Tree,Hypoglycemia,1,slurred_speech,0.36913450756607685
+Decision_Tree,Hypoglycemia,2,palpitations,0.17499108249050677
+Decision_Tree,Hypoglycemia,3,receiving_blood_transfusion,0.006606753512711625
+Decision_Tree,Hypoglycemia,4,drying_and_tingling_lips,0.00300716346650303
+Decision_Tree,Hypoglycemia,5,stomach_bleeding,0.002966656208671102
+Decision_Tree,Hypoglycemia,6,muscle_pain,0.002813361218209118
+Decision_Tree,Hypoglycemia,7,polyuria,0.0028036674518533778
+Decision_Tree,Hypoglycemia,8,coma,0.0026888799882949527
+Decision_Tree,Hypoglycemia,9,anxiety,0.002683323347560412
+Decision_Tree,Hypoglycemia,10,throat_irritation,0.002616329874555655
+Decision_Tree,Hypothyroidism,1,brittle_nails,0.3013776467855753
+Decision_Tree,Hypothyroidism,2,enlarged_thyroid,0.09469974888053435
+Decision_Tree,Hypothyroidism,3,swollen_extremeties,0.0933456583139568
+Decision_Tree,Hypothyroidism,4,abnormal_menstruation,0.06947665436466757
+Decision_Tree,Hypothyroidism,5,receiving_blood_transfusion,0.005423074035457539
+Decision_Tree,Hypothyroidism,6,blood_in_sputum,0.004378571683808727
+Decision_Tree,Hypothyroidism,7,polyuria,0.004317362042180791
+Decision_Tree,Hypothyroidism,8,slurred_speech,0.004117753110323591
+Decision_Tree,Hypothyroidism,9,pain_behind_the_eyes,0.002875830235815581
+Decision_Tree,Hypothyroidism,10,coma,0.0026077600666713496
+Decision_Tree,Impetigo,1,red_sore_around_nose,0.005645072198692598
+Decision_Tree,Impetigo,2,blister,0.0029534906343649725
+Decision_Tree,Impetigo,3,yellow_crust_ooze,0.0026440979597887907
+Decision_Tree,Impetigo,4,muscle_pain,0.0007852106562417763
+Decision_Tree,Impetigo,5,pain_behind_the_eyes,0.000676531920606491
+Decision_Tree,Impetigo,6,mild_fever,0.0006744397639224413
+Decision_Tree,Impetigo,7,rusty_sputum,0.0006269748891687486
+Decision_Tree,Impetigo,8,abnormal_menstruation,0.0006114252681676051
+Decision_Tree,Impetigo,9,blood_in_sputum,0.0005875529207358414
+Decision_Tree,Impetigo,10,coma,0.0005777584342704804
+Decision_Tree,Jaundice,1,weight_loss,0.0033232395389011606
+Decision_Tree,Jaundice,2,mild_fever,0.001015301987725819
+Decision_Tree,Jaundice,3,pain_behind_the_eyes,0.0009365446612305449
+Decision_Tree,Jaundice,4,muscle_pain,0.0009227931461431929
+Decision_Tree,Jaundice,5,blood_in_sputum,0.000823507629844424
+Decision_Tree,Jaundice,6,rusty_sputum,0.0007756616794991941
+Decision_Tree,Jaundice,7,red_spots_over_body,0.0006854695068139117
+Decision_Tree,Jaundice,8,abnormal_menstruation,0.0006565086521982289
+Decision_Tree,Jaundice,9,receiving_blood_transfusion,0.0005879844829484669
+Decision_Tree,Jaundice,10,polyuria,0.000548196460427131
+Decision_Tree,Malaria,1,muscle_pain,0.24569178118885387
+Decision_Tree,Malaria,2,mild_fever,0.00773446653439358
+Decision_Tree,Malaria,3,pain_behind_the_eyes,0.005964966231019587
+Decision_Tree,Malaria,4,coma,0.004550266752230232
+Decision_Tree,Malaria,5,blood_in_sputum,0.004354293247976556
+Decision_Tree,Malaria,6,rusty_sputum,0.003569872945737033
+Decision_Tree,Malaria,7,abnormal_menstruation,0.0035603577306229485
+Decision_Tree,Malaria,8,red_spots_over_body,0.003322725703009044
+Decision_Tree,Malaria,9,polyuria,0.0029310126162761063
+Decision_Tree,Malaria,10,congestion,0.0028388387435635903
+Decision_Tree,Migraine,1,stiff_neck,0.003327248040311281
+Decision_Tree,Migraine,2,blurred_and_distorted_vision,0.0030606003350843406
+Decision_Tree,Migraine,3,depression,0.0027245332170152594
+Decision_Tree,Migraine,4,visual_disturbances,0.002722414497871946
+Decision_Tree,Migraine,5,pain_behind_the_eyes,0.0006622325943655553
+Decision_Tree,Migraine,6,blood_in_sputum,0.000650942536973195
+Decision_Tree,Migraine,7,muscle_pain,0.0006415105205591336
+Decision_Tree,Migraine,8,red_spots_over_body,0.0006248266440884796
+Decision_Tree,Migraine,9,rusty_sputum,0.0005355140991315261
+Decision_Tree,Migraine,10,abnormal_menstruation,0.0004973994528979165
+Decision_Tree,Osteoarthristis,1,knee_pain,0.003417509952189957
+Decision_Tree,Osteoarthristis,2,hip_joint_pain,0.002806556407038852
+Decision_Tree,Osteoarthristis,3,muscle_pain,0.0009626619736507651
+Decision_Tree,Osteoarthristis,4,pain_behind_the_eyes,0.000958823487667494
+Decision_Tree,Osteoarthristis,5,mild_fever,0.000883598910738192
+Decision_Tree,Osteoarthristis,6,abnormal_menstruation,0.0008088403268339724
+Decision_Tree,Osteoarthristis,7,red_spots_over_body,0.000761418870830726
+Decision_Tree,Osteoarthristis,8,rusty_sputum,0.0007268600767964319
+Decision_Tree,Osteoarthristis,9,blood_in_sputum,0.0006323277422772073
+Decision_Tree,Osteoarthristis,10,receiving_blood_transfusion,0.0005324808606664247
+Decision_Tree,Paralysis (brain hemorrhage),1,altered_sensorium,0.005835075600830212
+Decision_Tree,Paralysis (brain hemorrhage),2,mild_fever,0.0010913491405441953
+Decision_Tree,Paralysis (brain hemorrhage),3,blood_in_sputum,0.0008811445023933762
+Decision_Tree,Paralysis (brain hemorrhage),4,rusty_sputum,0.0008583285955466655
+Decision_Tree,Paralysis (brain hemorrhage),5,pain_behind_the_eyes,0.0008125597723889647
+Decision_Tree,Paralysis (brain hemorrhage),6,muscle_pain,0.0007814768767196057
+Decision_Tree,Paralysis (brain hemorrhage),7,receiving_blood_transfusion,0.0007065411128470257
+Decision_Tree,Paralysis (brain hemorrhage),8,abnormal_menstruation,0.0006596368887290616
+Decision_Tree,Paralysis (brain hemorrhage),9,polyuria,0.0006426701607393446
+Decision_Tree,Paralysis (brain hemorrhage),10,red_spots_over_body,0.0006116105677363328
+Decision_Tree,Peptic ulcer diseae,1,passage_of_gases,0.005965516530181362
+Decision_Tree,Peptic ulcer diseae,2,internal_itching,0.002899803617998931
+Decision_Tree,Peptic ulcer diseae,3,mild_fever,0.0009872545970390646
+Decision_Tree,Peptic ulcer diseae,4,pain_behind_the_eyes,0.0007775249378804995
+Decision_Tree,Peptic ulcer diseae,5,abnormal_menstruation,0.0007664825632343354
+Decision_Tree,Peptic ulcer diseae,6,rusty_sputum,0.0007616594822294169
+Decision_Tree,Peptic ulcer diseae,7,muscle_pain,0.00063343976129461
+Decision_Tree,Peptic ulcer diseae,8,blood_in_sputum,0.0005755000053384703
+Decision_Tree,Peptic ulcer diseae,9,receiving_blood_transfusion,0.0005180121396772651
+Decision_Tree,Peptic ulcer diseae,10,red_spots_over_body,0.0005102972657893147
+Decision_Tree,Pneumonia,1,rusty_sputum,0.6058829107734667
+Decision_Tree,Pneumonia,2,fast_heart_rate,0.08338791717748786
+Decision_Tree,Pneumonia,3,receiving_blood_transfusion,0.00891157398862413
+Decision_Tree,Pneumonia,4,blood_in_sputum,0.007146984254870886
+Decision_Tree,Pneumonia,5,pain_behind_the_eyes,0.005773827802918198
+Decision_Tree,Pneumonia,6,polyuria,0.005563487058126848
+Decision_Tree,Pneumonia,7,slurred_speech,0.0041794512411755785
+Decision_Tree,Pneumonia,8,swollen_extremeties,0.004125260257211386
+Decision_Tree,Pneumonia,9,muscle_pain,0.002960491589694709
+Decision_Tree,Pneumonia,10,brittle_nails,0.002809410519439682
+Decision_Tree,Psoriasis,1,silver_like_dusting,0.0091180110662606
+Decision_Tree,Psoriasis,2,skin_peeling,0.0031299792223235096
+Decision_Tree,Psoriasis,3,small_dents_in_nails,0.0029503577247478588
+Decision_Tree,Psoriasis,4,inflammatory_nails,0.0028519447171045766
+Decision_Tree,Psoriasis,5,muscle_pain,0.0005944642387928409
+Decision_Tree,Psoriasis,6,red_spots_over_body,0.0005632848837244414
+Decision_Tree,Psoriasis,7,abnormal_menstruation,0.0005293151578956963
+Decision_Tree,Psoriasis,8,pain_behind_the_eyes,0.0004901870780026329
+Decision_Tree,Psoriasis,9,blood_in_sputum,0.0004557887147136168
+Decision_Tree,Psoriasis,10,mild_fever,0.0004404168875380021
+Decision_Tree,Tuberculosis,1,blood_in_sputum,0.6107940935159042
+Decision_Tree,Tuberculosis,2,phlegm,0.08486298667798921
+Decision_Tree,Tuberculosis,3,receiving_blood_transfusion,0.007668550522837543
+Decision_Tree,Tuberculosis,4,polyuria,0.006936224343563129
+Decision_Tree,Tuberculosis,5,slurred_speech,0.005620682579780518
+Decision_Tree,Tuberculosis,6,stomach_bleeding,0.004451268860313934
+Decision_Tree,Tuberculosis,7,palpitations,0.004358156942012305
+Decision_Tree,Tuberculosis,8,pain_behind_the_eyes,0.004115663014419032
+Decision_Tree,Tuberculosis,9,coma,0.003917506863152766
+Decision_Tree,Tuberculosis,10,fast_heart_rate,0.00314899807179492
+Decision_Tree,Typhoid,1,toxic_look_(typhos),0.0030636924633399387
+Decision_Tree,Typhoid,2,belly_pain,0.002574525745257453
+Decision_Tree,Typhoid,3,muscle_pain,0.0009300468313051402
+Decision_Tree,Typhoid,4,mild_fever,0.0008703705036968613
+Decision_Tree,Typhoid,5,blood_in_sputum,0.0007336895901027269
+Decision_Tree,Typhoid,6,pain_behind_the_eyes,0.0007244701254182102
+Decision_Tree,Typhoid,7,rusty_sputum,0.0007096684018120254
+Decision_Tree,Typhoid,8,abnormal_menstruation,0.0006528297062642056
+Decision_Tree,Typhoid,9,red_spots_over_body,0.0005528441332495258
+Decision_Tree,Typhoid,10,receiving_blood_transfusion,0.0005498138589959394
+Decision_Tree,Urinary tract infection,1,continuous_feel_of_urine,0.008832600804602495
+Decision_Tree,Urinary tract infection,2,bladder_discomfort,0.0031176259406355458
+Decision_Tree,Urinary tract infection,3,mild_fever,0.001198190856946955
+Decision_Tree,Urinary tract infection,4,rusty_sputum,0.0007784820017902869
+Decision_Tree,Urinary tract infection,5,pain_behind_the_eyes,0.0007173409000481516
+Decision_Tree,Urinary tract infection,6,blood_in_sputum,0.000668882378609922
+Decision_Tree,Urinary tract infection,7,polyuria,0.0005591702208342735
+Decision_Tree,Urinary tract infection,8,muscle_pain,0.000551213216043004
+Decision_Tree,Urinary tract infection,9,receiving_blood_transfusion,0.0005055102444987369
+Decision_Tree,Urinary tract infection,10,coma,0.0005054160993290672
+Decision_Tree,Varicose veins,1,cramps,0.006185362429358592
+Decision_Tree,Varicose veins,2,obesity,0.003057518639019938
+Decision_Tree,Varicose veins,3,bruising,0.002907367257047699
+Decision_Tree,Varicose veins,4,swollen_legs,0.00290240471763902
+Decision_Tree,Varicose veins,5,prominent_veins_on_calf,0.002849487158789829
+Decision_Tree,Varicose veins,6,muscle_pain,0.0006442273393649337
+Decision_Tree,Varicose veins,7,pain_behind_the_eyes,0.0006247790227129491
+Decision_Tree,Varicose veins,8,rusty_sputum,0.0005634305977374162
+Decision_Tree,Varicose veins,9,mild_fever,0.0005139823810758725
+Decision_Tree,Varicose veins,10,coma,0.0004485350493264559
+Decision_Tree,hepatitis A,1,mild_fever,0.5058446599094113
+Decision_Tree,hepatitis A,2,muscle_pain,0.07835052049476389
+Decision_Tree,hepatitis A,3,abdominal_pain,0.024623307944504173
+Decision_Tree,hepatitis A,4,pain_behind_the_eyes,0.011172765904383652
+Decision_Tree,hepatitis A,5,rusty_sputum,0.008558548335898059
+Decision_Tree,hepatitis A,6,abnormal_menstruation,0.00843127078095026
+Decision_Tree,hepatitis A,7,blood_in_sputum,0.00749238872250099
+Decision_Tree,hepatitis A,8,red_spots_over_body,0.006429410923303012
+Decision_Tree,hepatitis A,9,coma,0.005735441343955399
+Decision_Tree,hepatitis A,10,polyuria,0.005399476961846881
+Logistic_Regression,(vertigo) Paroymsal  Positional Vertigo,1,unsteadiness,1.1050454694777727
+Logistic_Regression,(vertigo) Paroymsal  Positional Vertigo,2,spinning_movements,0.9819786190986634
+Logistic_Regression,(vertigo) Paroymsal  Positional Vertigo,3,loss_of_balance,0.9320115096867084
+Logistic_Regression,(vertigo) Paroymsal  Positional Vertigo,4,nausea,0.8121556222438813
+Logistic_Regression,(vertigo) Paroymsal  Positional Vertigo,5,headache,0.6218267321586609
+Logistic_Regression,(vertigo) Paroymsal  Positional Vertigo,6,vomiting,0.48323014974594114
+Logistic_Regression,(vertigo) Paroymsal  Positional Vertigo,7,fatigue,0.1805043712258339
+Logistic_Regression,(vertigo) Paroymsal  Positional Vertigo,8,high_fever,0.13815677613019944
+Logistic_Regression,(vertigo) Paroymsal  Positional Vertigo,9,loss_of_appetite,0.0939877439290285
+Logistic_Regression,(vertigo) Paroymsal  Positional Vertigo,10,abdominal_pain,0.08596726953983307
+Logistic_Regression,AIDS,1,high_fever,0.7903535425662994
+Logistic_Regression,AIDS,2,patches_in_throat,0.7267956547439098
+Logistic_Regression,AIDS,3,muscle_wasting,0.7249239180237055
+Logistic_Regression,AIDS,4,extra_marital_contacts,0.7239158164709807
+Logistic_Regression,AIDS,5,vomiting,0.27005470991134645
+Logistic_Regression,AIDS,6,fatigue,0.2314933493733406
+Logistic_Regression,AIDS,7,headache,0.11289366558194161
+Logistic_Regression,AIDS,8,skin_rash,0.10362059250473976
+Logistic_Regression,AIDS,9,nausea,0.07838923297822475
+Logistic_Regression,AIDS,10,chills,0.06750142835080623
+Logistic_Regression,Acne,1,blackheads,0.7923990912735462
+Logistic_Regression,Acne,2,scurring,0.7879477810114622
+Logistic_Regression,Acne,3,pus_filled_pimples,0.781817563995719
+Logistic_Regression,Acne,4,skin_rash,0.6988113433122635
+Logistic_Regression,Acne,5,vomiting,0.21626023203134537
+Logistic_Regression,Acne,6,fatigue,0.14290352240204812
+Logistic_Regression,Acne,7,high_fever,0.13770455196499826
+Logistic_Regression,Acne,8,itching,0.09323073960840703
+Logistic_Regression,Acne,9,headache,0.0852670393884182
+Logistic_Regression,Acne,10,loss_of_appetite,0.06031354870647192
+Logistic_Regression,Alcoholic hepatitis,1,distention_of_abdomen,1.0053886020556093
+Logistic_Regression,Alcoholic hepatitis,2,fluid_overload.1,0.9970774224027992
+Logistic_Regression,Alcoholic hepatitis,3,swelling_of_stomach,0.9894061895087362
+Logistic_Regression,Alcoholic hepatitis,4,history_of_alcohol_consumption,0.9881390513852238
+Logistic_Regression,Alcoholic hepatitis,5,yellowish_skin,0.6964255049824715
+Logistic_Regression,Alcoholic hepatitis,6,abdominal_pain,0.6288698107004166
+Logistic_Regression,Alcoholic hepatitis,7,vomiting,0.3550208032131195
+Logistic_Regression,Alcoholic hepatitis,8,fatigue,0.16573435813188553
+Logistic_Regression,Alcoholic hepatitis,9,loss_of_appetite,0.11677078977227211
+Logistic_Regression,Alcoholic hepatitis,10,nausea,0.10687974952161312
+Logistic_Regression,Allergy,1,chills,0.7655261993408203
+Logistic_Regression,Allergy,2,continuous_sneezing,0.7433772925287485
+Logistic_Regression,Allergy,3,shivering,0.716284716129303
+Logistic_Regression,Allergy,4,watering_from_eyes,0.7139314763247967
+Logistic_Regression,Allergy,5,vomiting,0.2631427139043808
+Logistic_Regression,Allergy,6,fatigue,0.19418938606977462
+Logistic_Regression,Allergy,7,high_fever,0.16080888509750366
+Logistic_Regression,Allergy,8,headache,0.11953213214874267
+Logistic_Regression,Allergy,9,skin_rash,0.08341882228851319
+Logistic_Regression,Allergy,10,nausea,0.08087525144219398
+Logistic_Regression,Arthritis,1,movement_stiffness,0.8178170958533884
+Logistic_Regression,Arthritis,2,muscle_weakness,0.8027438171207905
+Logistic_Regression,Arthritis,3,stiff_neck,0.7950103998184204
+Logistic_Regression,Arthritis,4,painful_walking,0.7178461303934455
+Logistic_Regression,Arthritis,5,swelling_joints,0.7172487268224359
+Logistic_Regression,Arthritis,6,vomiting,0.18111371099948884
+Logistic_Regression,Arthritis,7,fatigue,0.12238943055272103
+Logistic_Regression,Arthritis,8,high_fever,0.08040138967335224
+Logistic_Regression,Arthritis,9,headache,0.07354823350906373
+Logistic_Regression,Arthritis,10,joint_pain,0.05899889003485441
+Logistic_Regression,Bronchial Asthma,1,mucoid_sputum,1.044365693628788
+Logistic_Regression,Bronchial Asthma,2,family_history,0.9787048619240523
+Logistic_Regression,Bronchial Asthma,3,breathlessness,0.8563056997954845
+Logistic_Regression,Bronchial Asthma,4,cough,0.7895456500351429
+Logistic_Regression,Bronchial Asthma,5,high_fever,0.6593403190374374
+Logistic_Regression,Bronchial Asthma,6,fatigue,0.5184240579605103
+Logistic_Regression,Bronchial Asthma,7,vomiting,0.2272527426481247
+Logistic_Regression,Bronchial Asthma,8,loss_of_appetite,0.09692219533026218
+Logistic_Regression,Bronchial Asthma,9,chills,0.09226624630391597
+Logistic_Regression,Bronchial Asthma,10,chest_pain,0.08981185406446457
+Logistic_Regression,Cervical spondylosis,1,neck_pain,0.8486984007060527
+Logistic_Regression,Cervical spondylosis,2,back_pain,0.8052868783473969
+Logistic_Regression,Cervical spondylosis,3,weakness_in_limbs,0.7998986512422561
+Logistic_Regression,Cervical spondylosis,4,loss_of_balance,0.7285414606332778
+Logistic_Regression,Cervical spondylosis,5,dizziness,0.721662625670433
+Logistic_Regression,Cervical spondylosis,6,vomiting,0.1933110773563385
+Logistic_Regression,Cervical spondylosis,7,headache,0.15845417380332946
+Logistic_Regression,Cervical spondylosis,8,fatigue,0.11929426267743111
+Logistic_Regression,Cervical spondylosis,9,chest_pain,0.084681436419487
+Logistic_Regression,Cervical spondylosis,10,high_fever,0.07421726323664188
+Logistic_Regression,Chicken pox,1,red_spots_over_body,1.0621293187141418
+Logistic_Regression,Chicken pox,2,mild_fever,0.9306314706802368
+Logistic_Regression,Chicken pox,3,swelled_lymph_nodes,0.9070569053292274
+Logistic_Regression,Chicken pox,4,lethargy,0.8508226923644543
+Logistic_Regression,Chicken pox,5,malaise,0.75223149061203
+Logistic_Regression,Chicken pox,6,itching,0.7248559519648552
+Logistic_Regression,Chicken pox,7,skin_rash,0.5778214760124684
+Logistic_Regression,Chicken pox,8,headache,0.5713057115674018
+Logistic_Regression,Chicken pox,9,loss_of_appetite,0.5324340835213661
+Logistic_Regression,Chicken pox,10,high_fever,0.4296377435326576
+Logistic_Regression,Chronic cholestasis,1,itching,1.3477046310901641
+Logistic_Regression,Chronic cholestasis,2,yellowing_of_eyes,0.8454222202301025
+Logistic_Regression,Chronic cholestasis,3,nausea,0.804520669579506
+Logistic_Regression,Chronic cholestasis,4,abdominal_pain,0.6856549680233002
+Logistic_Regression,Chronic cholestasis,5,loss_of_appetite,0.6413288414478302
+Logistic_Regression,Chronic cholestasis,6,yellowish_skin,0.6293201759457588
+Logistic_Regression,Chronic cholestasis,7,fatigue,0.6177957862615585
+Logistic_Regression,Chronic cholestasis,8,vomiting,0.48136641681194303
+Logistic_Regression,Chronic cholestasis,9,high_fever,0.1360148787498474
+Logistic_Regression,Chronic cholestasis,10,joint_pain,0.13201626315712928
+Logistic_Regression,Common Cold,1,congestion,0.6821276688948273
+Logistic_Regression,Common Cold,2,sinus_pressure,0.6821276688948273
+Logistic_Regression,Common Cold,3,runny_nose,0.6821276688948273
+Logistic_Regression,Common Cold,4,loss_of_smell,0.6821276688948273
+Logistic_Regression,Common Cold,5,throat_irritation,0.6821276688948273
+Logistic_Regression,Common Cold,6,redness_of_eyes,0.6821276688948273
+Logistic_Regression,Common Cold,7,muscle_pain,0.5726371362805367
+Logistic_Regression,Common Cold,8,phlegm,0.5366192512214184
+Logistic_Regression,Common Cold,9,continuous_sneezing,0.4910309683531523
+Logistic_Regression,Common Cold,10,swelled_lymph_nodes,0.46576732210814953
+Logistic_Regression,Dengue,1,pain_behind_the_eyes,1.1343181848526
+Logistic_Regression,Dengue,2,back_pain,1.0819168925285338
+Logistic_Regression,Dengue,3,red_spots_over_body,0.7429926376789808
+Logistic_Regression,Dengue,4,joint_pain,0.7062426425516606
+Logistic_Regression,Dengue,5,muscle_pain,0.6764520265161991
+Logistic_Regression,Dengue,6,malaise,0.61089458912611
+Logistic_Regression,Dengue,7,skin_rash,0.5604510091245174
+Logistic_Regression,Dengue,8,loss_of_appetite,0.5388908505439758
+Logistic_Regression,Dengue,9,chills,0.5346753165125847
+Logistic_Regression,Dengue,10,nausea,0.491730323433876
+Logistic_Regression,Diabetes ,1,polyuria,0.9417560048401356
+Logistic_Regression,Diabetes ,2,increased_appetite,0.9417560048401356
+Logistic_Regression,Diabetes ,3,irregular_sugar_level,0.7666158117353916
+Logistic_Regression,Diabetes ,4,obesity,0.7077127866446972
+Logistic_Regression,Diabetes ,5,blurred_and_distorted_vision,0.6986291967332363
+Logistic_Regression,Diabetes ,6,lethargy,0.6899217568337918
+Logistic_Regression,Diabetes ,7,restlessness,0.6838155295699835
+Logistic_Regression,Diabetes ,8,weight_loss,0.6289000026881695
+Logistic_Regression,Diabetes ,9,excessive_hunger,0.6187575094401836
+Logistic_Regression,Diabetes ,10,fatigue,0.3322488099336624
+Logistic_Regression,Dimorphic hemmorhoids(piles),1,constipation,0.7599143221974373
+Logistic_Regression,Dimorphic hemmorhoids(piles),2,pain_in_anal_region,0.7401799757033587
+Logistic_Regression,Dimorphic hemmorhoids(piles),3,bloody_stool,0.7399539008736611
+Logistic_Regression,Dimorphic hemmorhoids(piles),4,irritation_in_anus,0.7398638293147087
+Logistic_Regression,Dimorphic hemmorhoids(piles),5,pain_during_bowel_movements,0.7368449514731765
+Logistic_Regression,Dimorphic hemmorhoids(piles),6,vomiting,0.20268042385578156
+Logistic_Regression,Dimorphic hemmorhoids(piles),7,fatigue,0.12347369119524956
+Logistic_Regression,Dimorphic hemmorhoids(piles),8,high_fever,0.08937973044812679
+Logistic_Regression,Dimorphic hemmorhoids(piles),9,headache,0.07053309790790081
+Logistic_Regression,Dimorphic hemmorhoids(piles),10,nausea,0.054714244604110715
+Logistic_Regression,Drug Reaction,1,spotting_ urination,0.9358215671032667
+Logistic_Regression,Drug Reaction,2,stomach_pain,0.9084028171375393
+Logistic_Regression,Drug Reaction,3,burning_micturition,0.9008391756564379
+Logistic_Regression,Drug Reaction,4,itching,0.8245907112956047
+Logistic_Regression,Drug Reaction,5,skin_rash,0.6388479620218277
+Logistic_Regression,Drug Reaction,6,vomiting,0.2122664272785187
+Logistic_Regression,Drug Reaction,7,fatigue,0.13977105915546417
+Logistic_Regression,Drug Reaction,8,high_fever,0.12024495154619216
+Logistic_Regression,Drug Reaction,9,headache,0.07307511158287525
+Logistic_Regression,Drug Reaction,10,loss_of_appetite,0.06898931972682476
+Logistic_Regression,Fungal infection,1,nodal_skin_eruptions,0.8573145581409335
+Logistic_Regression,Fungal infection,2,dischromic _patches,0.8495993446558714
+Logistic_Regression,Fungal infection,3,itching,0.7724068135023117
+Logistic_Regression,Fungal infection,4,skin_rash,0.6492234006524086
+Logistic_Regression,Fungal infection,5,vomiting,0.24141064137220383
+Logistic_Regression,Fungal infection,6,fatigue,0.18489760309457778
+Logistic_Regression,Fungal infection,7,high_fever,0.17555269002914428
+Logistic_Regression,Fungal infection,8,headache,0.10267206281423569
+Logistic_Regression,Fungal infection,9,loss_of_appetite,0.09734498262405396
+Logistic_Regression,Fungal infection,10,abdominal_pain,0.06767264865338803
+Logistic_Regression,GERD,1,stomach_pain,1.0180910717695952
+Logistic_Regression,GERD,2,ulcers_on_tongue,0.9353845719248056
+Logistic_Regression,GERD,3,cough,0.9230261214077473
+Logistic_Regression,GERD,4,acidity,0.9062422201037407
+Logistic_Regression,GERD,5,chest_pain,0.7744131073355675
+Logistic_Regression,GERD,6,vomiting,0.45152280032634734
+Logistic_Regression,GERD,7,fatigue,0.14536792114377023
+Logistic_Regression,GERD,8,high_fever,0.10527565926313401
+Logistic_Regression,GERD,9,headache,0.09583014696836471
+Logistic_Regression,GERD,10,sweating,0.06880858186632395
+Logistic_Regression,Gastroenteritis,1,diarrhoea,0.9309794694185257
+Logistic_Regression,Gastroenteritis,2,sunken_eyes,0.8045852176845074
+Logistic_Regression,Gastroenteritis,3,dehydration,0.7946115070953965
+Logistic_Regression,Gastroenteritis,4,vomiting,0.5632445782423019
+Logistic_Regression,Gastroenteritis,5,headache,0.18717139586806297
+Logistic_Regression,Gastroenteritis,6,fatigue,0.1842387706041336
+Logistic_Regression,Gastroenteritis,7,high_fever,0.17195276021957398
+Logistic_Regression,Gastroenteritis,8,nausea,0.1638579212129116
+Logistic_Regression,Gastroenteritis,9,abdominal_pain,0.12278888002038002
+Logistic_Regression,Gastroenteritis,10,loss_of_appetite,0.09653912857174873
+Logistic_Regression,Heart attack,1,chest_pain,0.9064305186271667
+Logistic_Regression,Heart attack,2,breathlessness,0.8781342163681984
+Logistic_Regression,Heart attack,3,sweating,0.8778391808271409
+Logistic_Regression,Heart attack,4,vomiting,0.6374480128288269
+Logistic_Regression,Heart attack,5,fatigue,0.3447951704263687
+Logistic_Regression,Heart attack,6,high_fever,0.28330584466457365
+Logistic_Regression,Heart attack,7,headache,0.20017725303769113
+Logistic_Regression,Heart attack,8,chills,0.16034213677048684
+Logistic_Regression,Heart attack,9,loss_of_appetite,0.13278513699769973
+Logistic_Regression,Heart attack,10,cough,0.13199480585753917
+Logistic_Regression,Hepatitis B,1,receiving_blood_transfusion,1.0888147711753846
+Logistic_Regression,Hepatitis B,2,receiving_unsterile_injections,1.0888147711753846
+Logistic_Regression,Hepatitis B,3,yellow_urine,0.8598065701313317
+Logistic_Regression,Hepatitis B,4,malaise,0.8330644816160202
+Logistic_Regression,Hepatitis B,5,lethargy,0.6929441697895526
+Logistic_Regression,Hepatitis B,6,yellowing_of_eyes,0.585748653113842
+Logistic_Regression,Hepatitis B,7,dark_urine,0.5787501558661461
+Logistic_Regression,Hepatitis B,8,itching,0.5136182174086571
+Logistic_Regression,Hepatitis B,9,abdominal_pain,0.41766725331544874
+Logistic_Regression,Hepatitis B,10,yellowish_skin,0.3914266563951969
+Logistic_Regression,Hepatitis C,1,family_history,1.1660178150981664
+Logistic_Regression,Hepatitis C,2,nausea,0.7663866430521011
+Logistic_Regression,Hepatitis C,3,yellowish_skin,0.7599590480327606
+Logistic_Regression,Hepatitis C,4,loss_of_appetite,0.7127548635005951
+Logistic_Regression,Hepatitis C,5,yellowing_of_eyes,0.6690992504358292
+Logistic_Regression,Hepatitis C,6,fatigue,0.5953609257936477
+Logistic_Regression,Hepatitis C,7,vomiting,0.5760943681001663
+Logistic_Regression,Hepatitis C,8,abdominal_pain,0.27986660599708557
+Logistic_Regression,Hepatitis C,9,high_fever,0.18090398982167244
+Logistic_Regression,Hepatitis C,10,joint_pain,0.11754705794155598
+Logistic_Regression,Hepatitis D,1,joint_pain,1.4548343151807785
+Logistic_Regression,Hepatitis D,2,dark_urine,1.2961517423391342
+Logistic_Regression,Hepatitis D,3,fatigue,0.8214231967926026
+Logistic_Regression,Hepatitis D,4,abdominal_pain,0.6808754876255989
+Logistic_Regression,Hepatitis D,5,yellowing_of_eyes,0.6292112059891224
+Logistic_Regression,Hepatitis D,6,nausea,0.6115556567907333
+Logistic_Regression,Hepatitis D,7,loss_of_appetite,0.4816743299365044
+Logistic_Regression,Hepatitis D,8,vomiting,0.4626613259315491
+Logistic_Regression,Hepatitis D,9,yellowish_skin,0.4210228808224201
+Logistic_Regression,Hepatitis D,10,high_fever,0.351683546602726
+Logistic_Regression,Hepatitis E,1,coma,1.58947574198246
+Logistic_Regression,Hepatitis E,2,stomach_bleeding,1.58947574198246
+Logistic_Regression,Hepatitis E,3,acute_liver_failure,1.1154093654826283
+Logistic_Regression,Hepatitis E,4,high_fever,0.6695090174674988
+Logistic_Regression,Hepatitis E,5,joint_pain,0.5706430591642857
+Logistic_Regression,Hepatitis E,6,dark_urine,0.5272805847227573
+Logistic_Regression,Hepatitis E,7,yellowing_of_eyes,0.4933679044246674
+Logistic_Regression,Hepatitis E,8,loss_of_appetite,0.37832334339618684
+Logistic_Regression,Hepatitis E,9,abdominal_pain,0.3768885374069214
+Logistic_Regression,Hepatitis E,10,nausea,0.3103277593851089
+Logistic_Regression,Hypertension ,1,lack_of_concentration,1.010788825340569
+Logistic_Regression,Hypertension ,2,chest_pain,0.8374232053756714
+Logistic_Regression,Hypertension ,3,loss_of_balance,0.770588505268097
+Logistic_Regression,Hypertension ,4,dizziness,0.7645106941461564
+Logistic_Regression,Hypertension ,5,headache,0.7415895342826844
+Logistic_Regression,Hypertension ,6,vomiting,0.35771975815296175
+Logistic_Regression,Hypertension ,7,fatigue,0.13778541684150697
+Logistic_Regression,Hypertension ,8,nausea,0.10646396689116955
+Logistic_Regression,Hypertension ,9,high_fever,0.09594219028949738
+Logistic_Regression,Hypertension ,10,sweating,0.04599336115643382
+Logistic_Regression,Hyperthyroidism,1,muscle_weakness,0.8832309730350971
+Logistic_Regression,Hyperthyroidism,2,abnormal_menstruation,0.8341593526303768
+Logistic_Regression,Hyperthyroidism,3,irritability,0.7274667873978615
+Logistic_Regression,Hyperthyroidism,4,fast_heart_rate,0.7255665771663189
+Logistic_Regression,Hyperthyroidism,5,restlessness,0.6786413602530956
+Logistic_Regression,Hyperthyroidism,6,mood_swings,0.6786093199625611
+Logistic_Regression,Hyperthyroidism,7,diarrhoea,0.6534151278436184
+Logistic_Regression,Hyperthyroidism,8,weight_loss,0.6283764824271202
+Logistic_Regression,Hyperthyroidism,9,excessive_hunger,0.5860013730823994
+Logistic_Regression,Hyperthyroidism,10,sweating,0.5710541099309921
+Logistic_Regression,Hypoglycemia,1,slurred_speech,0.9566089153289795
+Logistic_Regression,Hypoglycemia,2,palpitations,0.9566089153289795
+Logistic_Regression,Hypoglycemia,3,anxiety,0.769005811214447
+Logistic_Regression,Hypoglycemia,4,drying_and_tingling_lips,0.7668021142482757
+Logistic_Regression,Hypoglycemia,5,irritability,0.7139446921646595
+Logistic_Regression,Hypoglycemia,6,excessive_hunger,0.6943720988929272
+Logistic_Regression,Hypoglycemia,7,blurred_and_distorted_vision,0.6193107511848212
+Logistic_Regression,Hypoglycemia,8,sweating,0.542758522555232
+Logistic_Regression,Hypoglycemia,9,nausea,0.4528040274977684
+Logistic_Regression,Hypoglycemia,10,headache,0.38925266563892363
+Logistic_Regression,Hypothyroidism,1,enlarged_thyroid,0.6400419190526009
+Logistic_Regression,Hypothyroidism,2,swollen_extremeties,0.6400419011712074
+Logistic_Regression,Hypothyroidism,3,brittle_nails,0.6400419011712074
+Logistic_Regression,Hypothyroidism,4,depression,0.6052563335746527
+Logistic_Regression,Hypothyroidism,5,abnormal_menstruation,0.5856237668544054
+Logistic_Regression,Hypothyroidism,6,irritability,0.5367087595164776
+Logistic_Regression,Hypothyroidism,7,cold_hands_and_feets,0.5190336253494024
+Logistic_Regression,Hypothyroidism,8,puffy_face_and_eyes,0.5181307911872863
+Logistic_Regression,Hypothyroidism,9,weight_gain,0.5167913423851133
+Logistic_Regression,Hypothyroidism,10,mood_swings,0.47864556796848773
+Logistic_Regression,Impetigo,1,red_sore_around_nose,0.9037372879683971
+Logistic_Regression,Impetigo,2,yellow_crust_ooze,0.8958502903580665
+Logistic_Regression,Impetigo,3,blister,0.889018876478076
+Logistic_Regression,Impetigo,4,skin_rash,0.6508712649345398
+Logistic_Regression,Impetigo,5,high_fever,0.6345860481262207
+Logistic_Regression,Impetigo,6,vomiting,0.19315145760774613
+Logistic_Regression,Impetigo,7,fatigue,0.17048498690128328
+Logistic_Regression,Impetigo,8,headache,0.08899290785193444
+Logistic_Regression,Impetigo,9,itching,0.06789720468223095
+Logistic_Regression,Impetigo,10,nausea,0.060677563026547435
+Logistic_Regression,Jaundice,1,weight_loss,1.1936283364892006
+Logistic_Regression,Jaundice,2,dark_urine,0.9771564170718193
+Logistic_Regression,Jaundice,3,itching,0.9628680929541588
+Logistic_Regression,Jaundice,4,high_fever,0.7743830889463424
+Logistic_Regression,Jaundice,5,yellowish_skin,0.7173872724175453
+Logistic_Regression,Jaundice,6,abdominal_pain,0.6220146313309669
+Logistic_Regression,Jaundice,7,fatigue,0.49835447072982786
+Logistic_Regression,Jaundice,8,vomiting,0.43529013991355897
+Logistic_Regression,Jaundice,9,loss_of_appetite,0.20098447129130365
+Logistic_Regression,Jaundice,10,nausea,0.16808493286371232
+Logistic_Regression,Malaria,1,muscle_pain,1.3408967792987823
+Logistic_Regression,Malaria,2,sweating,1.025338852405548
+Logistic_Regression,Malaria,3,diarrhoea,0.7921081840991974
+Logistic_Regression,Malaria,4,chills,0.7484742224216461
+Logistic_Regression,Malaria,5,high_fever,0.6483111500740051
+Logistic_Regression,Malaria,6,nausea,0.6070655673742295
+Logistic_Regression,Malaria,7,headache,0.5693979263305664
+Logistic_Regression,Malaria,8,fatigue,0.39791078567504884
+Logistic_Regression,Malaria,9,vomiting,0.2877154409885406
+Logistic_Regression,Malaria,10,loss_of_appetite,0.11793840080499648
+Logistic_Regression,Migraine,1,visual_disturbances,0.967101760301739
+Logistic_Regression,Migraine,2,acidity,0.9343318093568087
+Logistic_Regression,Migraine,3,indigestion,0.9168606586754322
+Logistic_Regression,Migraine,4,depression,0.9041937399655581
+Logistic_Regression,Migraine,5,stiff_neck,0.900263137742877
+Logistic_Regression,Migraine,6,blurred_and_distorted_vision,0.8231198325753212
+Logistic_Regression,Migraine,7,excessive_hunger,0.7679897792637348
+Logistic_Regression,Migraine,8,irritability,0.7672891080379486
+Logistic_Regression,Migraine,9,headache,0.562422625720501
+Logistic_Regression,Migraine,10,vomiting,0.1814184844493866
+Logistic_Regression,Osteoarthristis,1,hip_joint_pain,0.877871257904917
+Logistic_Regression,Osteoarthristis,2,knee_pain,0.8754235026426613
+Logistic_Regression,Osteoarthristis,3,neck_pain,0.8140770964324474
+Logistic_Regression,Osteoarthristis,4,joint_pain,0.7899175986647606
+Logistic_Regression,Osteoarthristis,5,painful_walking,0.7493747942149639
+Logistic_Regression,Osteoarthristis,6,swelling_joints,0.7438214430585504
+Logistic_Regression,Osteoarthristis,7,vomiting,0.16616271585226058
+Logistic_Regression,Osteoarthristis,8,fatigue,0.10534302070736885
+Logistic_Regression,Osteoarthristis,9,high_fever,0.06678527779877186
+Logistic_Regression,Osteoarthristis,10,loss_of_appetite,0.04757912289351225
+Logistic_Regression,Paralysis (brain hemorrhage),1,altered_sensorium,0.9609240379184485
+Logistic_Regression,Paralysis (brain hemorrhage),2,weakness_of_one_body_side,0.8345739062875509
+Logistic_Regression,Paralysis (brain hemorrhage),3,headache,0.8002033531665802
+Logistic_Regression,Paralysis (brain hemorrhage),4,vomiting,0.5978869140148163
+Logistic_Regression,Paralysis (brain hemorrhage),5,nausea,0.23251953125
+Logistic_Regression,Paralysis (brain hemorrhage),6,fatigue,0.18458166122436523
+Logistic_Regression,Paralysis (brain hemorrhage),7,high_fever,0.16303548142313956
+Logistic_Regression,Paralysis (brain hemorrhage),8,abdominal_pain,0.10221598595380783
+Logistic_Regression,Paralysis (brain hemorrhage),9,loss_of_appetite,0.08968209512531758
+Logistic_Regression,Paralysis (brain hemorrhage),10,sweating,0.07956344671547413
+Logistic_Regression,Peptic ulcer diseae,1,internal_itching,1.0258519930765033
+Logistic_Regression,Peptic ulcer diseae,2,passage_of_gases,1.0080724162980914
+Logistic_Regression,Peptic ulcer diseae,3,indigestion,0.9072116248309612
+Logistic_Regression,Peptic ulcer diseae,4,abdominal_pain,0.6987385138869285
+Logistic_Regression,Peptic ulcer diseae,5,loss_of_appetite,0.6717210531234741
+Logistic_Regression,Peptic ulcer diseae,6,vomiting,0.41380671560764315
+Logistic_Regression,Peptic ulcer diseae,7,fatigue,0.17072013318538665
+Logistic_Regression,Peptic ulcer diseae,8,nausea,0.13831634372472762
+Logistic_Regression,Peptic ulcer diseae,9,yellowish_skin,0.12487346455454826
+Logistic_Regression,Peptic ulcer diseae,10,high_fever,0.09060640260577202
+Logistic_Regression,Pneumonia,1,rusty_sputum,1.286185387149453
+Logistic_Regression,Pneumonia,2,fast_heart_rate,1.2172658048570155
+Logistic_Regression,Pneumonia,3,phlegm,0.6824959196150303
+Logistic_Regression,Pneumonia,4,chest_pain,0.6349585697054863
+Logistic_Regression,Pneumonia,5,malaise,0.6162787958979606
+Logistic_Regression,Pneumonia,6,sweating,0.5837057836353778
+Logistic_Regression,Pneumonia,7,breathlessness,0.5759155072271824
+Logistic_Regression,Pneumonia,8,cough,0.5628385372459889
+Logistic_Regression,Pneumonia,9,chills,0.5603324875235558
+Logistic_Regression,Pneumonia,10,high_fever,0.37604416310787203
+Logistic_Regression,Psoriasis,1,skin_peeling,0.8682790654711425
+Logistic_Regression,Psoriasis,2,small_dents_in_nails,0.8666369208134711
+Logistic_Regression,Psoriasis,3,inflammatory_nails,0.865425628144294
+Logistic_Regression,Psoriasis,4,silver_like_dusting,0.8640228367410601
+Logistic_Regression,Psoriasis,5,joint_pain,0.7921251758933068
+Logistic_Regression,Psoriasis,6,skin_rash,0.6329722508788109
+Logistic_Regression,Psoriasis,7,vomiting,0.1643735021352768
+Logistic_Regression,Psoriasis,8,fatigue,0.114583770185709
+Logistic_Regression,Psoriasis,9,high_fever,0.09048445224761963
+Logistic_Regression,Psoriasis,10,headache,0.05459184572100639
+Logistic_Regression,Tuberculosis,1,blood_in_sputum,0.9167280320078135
+Logistic_Regression,Tuberculosis,2,mild_fever,0.7910192683339119
+Logistic_Regression,Tuberculosis,3,swelled_lymph_nodes,0.7621762678027153
+Logistic_Regression,Tuberculosis,4,yellowing_of_eyes,0.6935152292251587
+Logistic_Regression,Tuberculosis,5,weight_loss,0.6461167149245739
+Logistic_Regression,Tuberculosis,6,phlegm,0.6210663311183453
+Logistic_Regression,Tuberculosis,7,loss_of_appetite,0.5341538250446319
+Logistic_Regression,Tuberculosis,8,malaise,0.4827741250395775
+Logistic_Regression,Tuberculosis,9,breathlessness,0.4457942295819521
+Logistic_Regression,Tuberculosis,10,chest_pain,0.437675379216671
+Logistic_Regression,Typhoid,1,toxic_look_(typhos),0.9836704703047872
+Logistic_Regression,Typhoid,2,belly_pain,0.9752835256047547
+Logistic_Regression,Typhoid,3,constipation,0.9338543972931802
+Logistic_Regression,Typhoid,4,chills,0.6781141817569732
+Logistic_Regression,Typhoid,5,diarrhoea,0.6706724166870117
+Logistic_Regression,Typhoid,6,abdominal_pain,0.6441497102379798
+Logistic_Regression,Typhoid,7,fatigue,0.5123610317707061
+Logistic_Regression,Typhoid,8,headache,0.4707746848464012
+Logistic_Regression,Typhoid,9,high_fever,0.4676663100719452
+Logistic_Regression,Typhoid,10,nausea,0.44126847982406614
+Logistic_Regression,Urinary tract infection,1,continuous_feel_of_urine,0.7706524066627025
+Logistic_Regression,Urinary tract infection,2,bladder_discomfort,0.7695758812129497
+Logistic_Regression,Urinary tract infection,3,burning_micturition,0.663005331903696
+Logistic_Regression,Urinary tract infection,4,foul_smell_of urine,0.6162976792082191
+Logistic_Regression,Urinary tract infection,5,vomiting,0.2425309032201767
+Logistic_Regression,Urinary tract infection,6,fatigue,0.1426367335021496
+Logistic_Regression,Urinary tract infection,7,skin_rash,0.10833792462944984
+Logistic_Regression,Urinary tract infection,8,high_fever,0.101316636800766
+Logistic_Regression,Urinary tract infection,9,headache,0.08203499801456929
+Logistic_Regression,Urinary tract infection,10,itching,0.062471387162804606
+Logistic_Regression,Varicose veins,1,prominent_veins_on_calf,0.8753163306042552
+Logistic_Regression,Varicose veins,2,swollen_legs,0.8737390918657184
+Logistic_Regression,Varicose veins,3,cramps,0.8723943148739636
+Logistic_Regression,Varicose veins,4,bruising,0.8676589438691735
+Logistic_Regression,Varicose veins,5,obesity,0.8209954738616944
+Logistic_Regression,Varicose veins,6,swollen_blood_vessels,0.799818029999733
+Logistic_Regression,Varicose veins,7,fatigue,0.4927068918943405
+Logistic_Regression,Varicose veins,8,vomiting,0.15533762276172638
+Logistic_Regression,Varicose veins,9,high_fever,0.08214953020215035
+Logistic_Regression,Varicose veins,10,headache,0.052178158238530156
+Logistic_Regression,hepatitis A,1,mild_fever,1.6683509021997451
+Logistic_Regression,hepatitis A,2,muscle_pain,1.4991504073143005
+Logistic_Regression,hepatitis A,3,diarrhoea,0.9596587136387825
+Logistic_Regression,hepatitis A,4,dark_urine,0.6929985530674457
+Logistic_Regression,hepatitis A,5,joint_pain,0.6925848215818405
+Logistic_Regression,hepatitis A,6,yellowing_of_eyes,0.5761653423309326
+Logistic_Regression,hepatitis A,7,yellowish_skin,0.40202004835009575
+Logistic_Regression,hepatitis A,8,abdominal_pain,0.39619013890624044
+Logistic_Regression,hepatitis A,9,fatigue,0.37219429314136504
+Logistic_Regression,hepatitis A,10,loss_of_appetite,0.3547233805060387
+XGBoost,(vertigo) Paroymsal  Positional Vertigo,1,unsteadiness,2.393093764781952
+XGBoost,(vertigo) Paroymsal  Positional Vertigo,2,spinning_movements,1.5761444687843322
+XGBoost,(vertigo) Paroymsal  Positional Vertigo,3,loss_of_balance,0.6358752636238932
+XGBoost,(vertigo) Paroymsal  Positional Vertigo,4,dizziness,0.13567409869283437
+XGBoost,(vertigo) Paroymsal  Positional Vertigo,5,nausea,0.03834097422659397
+XGBoost,(vertigo) Paroymsal  Positional Vertigo,6,headache,0.02371812267228961
+XGBoost,(vertigo) Paroymsal  Positional Vertigo,7,vomiting,0.009967006603255868
+XGBoost,(vertigo) Paroymsal  Positional Vertigo,8,chest_pain,0.00661088244523853
+XGBoost,(vertigo) Paroymsal  Positional Vertigo,9,lack_of_concentration,0.0026146122079808267
+XGBoost,(vertigo) Paroymsal  Positional Vertigo,10,high_fever,0.0022968973265960813
+XGBoost,AIDS,1,extra_marital_contacts,1.2266569495201112
+XGBoost,AIDS,2,patches_in_throat,1.151869249343872
+XGBoost,AIDS,3,muscle_wasting,1.0310767740011215
+XGBoost,AIDS,4,high_fever,0.14523416571319103
+XGBoost,AIDS,5,fatigue,0.07633021641522646
+XGBoost,AIDS,6,skin_rash,0.039216525852680206
+XGBoost,AIDS,7,chills,0.026563721359707415
+XGBoost,AIDS,8,vomiting,0.00494981361553073
+XGBoost,AIDS,9,cough,0.002413204312324524
+XGBoost,AIDS,10,blister,0.0023543469607830046
+XGBoost,Acne,1,scurring,1.2615471839904786
+XGBoost,Acne,2,blackheads,1.1696599841117858
+XGBoost,Acne,3,pus_filled_pimples,1.0437239408493042
+XGBoost,Acne,4,skin_rash,0.19693308379501104
+XGBoost,Acne,5,joint_pain,0.03584927315823734
+XGBoost,Acne,6,itching,0.03068172719795257
+XGBoost,Acne,7,high_fever,0.0055339542450383306
+XGBoost,Acne,8,silver_like_dusting,0.0020034514367580415
+XGBoost,Acne,9,blister,0.0016467975452542304
+XGBoost,Acne,10,small_dents_in_nails,0.0010011786594986915
+XGBoost,Alcoholic hepatitis,1,swelling_of_stomach,1.328916472941637
+XGBoost,Alcoholic hepatitis,2,fluid_overload.1,0.9482541561126709
+XGBoost,Alcoholic hepatitis,3,history_of_alcohol_consumption,0.940077292919159
+XGBoost,Alcoholic hepatitis,4,distention_of_abdomen,0.9276895344257354
+XGBoost,Alcoholic hepatitis,5,yellowish_skin,0.12003906946629286
+XGBoost,Alcoholic hepatitis,6,loss_of_appetite,0.06743290523299947
+XGBoost,Alcoholic hepatitis,7,itching,0.053147230623289944
+XGBoost,Alcoholic hepatitis,8,yellowing_of_eyes,0.018407212756574153
+XGBoost,Alcoholic hepatitis,9,abdominal_pain,0.004898311197757721
+XGBoost,Alcoholic hepatitis,10,fatigue,0.002390777401160449
+XGBoost,Allergy,1,watering_from_eyes,1.833870679140091
+XGBoost,Allergy,2,shivering,1.329431727528572
+XGBoost,Allergy,3,continuous_sneezing,0.8051711618900299
+XGBoost,Allergy,4,chills,0.08393394649028778
+XGBoost,Allergy,5,vomiting,0.004777335748076439
+XGBoost,Allergy,6,fatigue,0.0028642954304814337
+XGBoost,Allergy,7,high_fever,0.0008665198693051934
+XGBoost,Allergy,8,yellow_crust_ooze,0.0
+XGBoost,Allergy,9,inflammatory_nails,0.0
+XGBoost,Allergy,10,blister,0.0
+XGBoost,Arthritis,1,movement_stiffness,1.6632687449455261
+XGBoost,Arthritis,2,muscle_weakness,0.8979709327220917
+XGBoost,Arthritis,3,stiff_neck,0.8740556895732879
+XGBoost,Arthritis,4,painful_walking,0.6007357895374298
+XGBoost,Arthritis,5,swelling_joints,0.5883365258574486
+XGBoost,Arthritis,6,joint_pain,0.014300259342417122
+XGBoost,Arthritis,7,fast_heart_rate,0.010604793578386307
+XGBoost,Arthritis,8,neck_pain,0.008225458953529597
+XGBoost,Arthritis,9,hip_joint_pain,0.005818519648164511
+XGBoost,Arthritis,10,knee_pain,0.005329386331140995
+XGBoost,Bronchial Asthma,1,mucoid_sputum,2.596091276407242
+XGBoost,Bronchial Asthma,2,family_history,1.5036466598510743
+XGBoost,Bronchial Asthma,3,breathlessness,0.5592659264802933
+XGBoost,Bronchial Asthma,4,cough,0.4298593536019325
+XGBoost,Bronchial Asthma,5,high_fever,0.11350641979370266
+XGBoost,Bronchial Asthma,6,yellowish_skin,0.08925020107999444
+XGBoost,Bronchial Asthma,7,yellowing_of_eyes,0.03288469933904707
+XGBoost,Bronchial Asthma,8,nausea,0.028008687170222403
+XGBoost,Bronchial Asthma,9,loss_of_appetite,0.022196468990296127
+XGBoost,Bronchial Asthma,10,chest_pain,0.01171399534214288
+XGBoost,Cervical spondylosis,1,weakness_in_limbs,1.4861867994070053
+XGBoost,Cervical spondylosis,2,neck_pain,1.11123383641243
+XGBoost,Cervical spondylosis,3,back_pain,0.7410301670432091
+XGBoost,Cervical spondylosis,4,dizziness,0.6674652054905892
+XGBoost,Cervical spondylosis,5,loss_of_balance,0.5893153801560402
+XGBoost,Cervical spondylosis,6,headache,0.032648366992361844
+XGBoost,Cervical spondylosis,7,joint_pain,0.015002206806093455
+XGBoost,Cervical spondylosis,8,knee_pain,0.010045867972075939
+XGBoost,Cervical spondylosis,9,swelling_joints,0.008357978239655495
+XGBoost,Cervical spondylosis,10,hip_joint_pain,0.006264113495126367
+XGBoost,Chicken pox,1,red_spots_over_body,4.609923768043518
+XGBoost,Chicken pox,2,lethargy,0.4745730496942997
+XGBoost,Chicken pox,3,itching,0.298786405287683
+XGBoost,Chicken pox,4,nausea,0.2733107000589371
+XGBoost,Chicken pox,5,mild_fever,0.27056509368121623
+XGBoost,Chicken pox,6,swelled_lymph_nodes,0.2597348835319281
+XGBoost,Chicken pox,7,joint_pain,0.09617232680320739
+XGBoost,Chicken pox,8,vomiting,0.05973885059356689
+XGBoost,Chicken pox,9,chills,0.05970888137817383
+XGBoost,Chicken pox,10,malaise,0.001291667018085718
+XGBoost,Chronic cholestasis,1,itching,1.7389710187911986
+XGBoost,Chronic cholestasis,2,yellowing_of_eyes,1.2594183772802352
+XGBoost,Chronic cholestasis,3,nausea,1.050846168398857
+XGBoost,Chronic cholestasis,4,yellowish_skin,0.46880944166332483
+XGBoost,Chronic cholestasis,5,abdominal_pain,0.40654012486338614
+XGBoost,Chronic cholestasis,6,fatigue,0.3278664961457253
+XGBoost,Chronic cholestasis,7,loss_of_appetite,0.24767190925776958
+XGBoost,Chronic cholestasis,8,vomiting,0.22432195367291569
+XGBoost,Chronic cholestasis,9,dark_urine,0.12579258710611613
+XGBoost,Chronic cholestasis,10,joint_pain,0.032430031895637514
+XGBoost,Common Cold,1,throat_irritation,6.028622126579284
+XGBoost,Common Cold,2,continuous_sneezing,0.018236666359007357
+XGBoost,Common Cold,3,swelled_lymph_nodes,0.0022293148562312127
+XGBoost,Common Cold,4,yellow_crust_ooze,0.0
+XGBoost,Common Cold,5,inflammatory_nails,0.0
+XGBoost,Common Cold,6,blister,0.0
+XGBoost,Common Cold,7,red_sore_around_nose,0.0
+XGBoost,Common Cold,8,small_dents_in_nails,0.0
+XGBoost,Common Cold,9,blackheads,0.0
+XGBoost,Common Cold,10,silver_like_dusting,0.0
+XGBoost,Dengue,1,pain_behind_the_eyes,6.308031511306763
+XGBoost,Dengue,2,red_spots_over_body,0.022562501952052116
+XGBoost,Dengue,3,yellow_crust_ooze,0.0
+XGBoost,Dengue,4,red_sore_around_nose,0.0
+XGBoost,Dengue,5,inflammatory_nails,0.0
+XGBoost,Dengue,6,blister,0.0
+XGBoost,Dengue,7,skin_peeling,0.0
+XGBoost,Dengue,8,small_dents_in_nails,0.0
+XGBoost,Dengue,9,blackheads,0.0
+XGBoost,Dengue,10,pus_filled_pimples,0.0
+XGBoost,Diabetes ,1,increased_appetite,5.355533266067505
+XGBoost,Diabetes ,2,irregular_sugar_level,0.2940159559249878
+XGBoost,Diabetes ,3,lethargy,0.004733052849769592
+XGBoost,Diabetes ,4,weight_loss,0.0024184083566069605
+XGBoost,Diabetes ,5,blurred_and_distorted_vision,0.002416725270450115
+XGBoost,Diabetes ,6,restlessness,0.002404969371855259
+XGBoost,Diabetes ,7,excessive_hunger,0.0023456113412976265
+XGBoost,Diabetes ,8,yellow_crust_ooze,0.0
+XGBoost,Diabetes ,9,inflammatory_nails,0.0
+XGBoost,Diabetes ,10,blister,0.0
+XGBoost,Dimorphic hemmorhoids(piles),1,irritation_in_anus,0.8456555008888245
+XGBoost,Dimorphic hemmorhoids(piles),2,bloody_stool,0.8254346191883087
+XGBoost,Dimorphic hemmorhoids(piles),3,pain_in_anal_region,0.765344774723053
+XGBoost,Dimorphic hemmorhoids(piles),4,pain_during_bowel_movements,0.7395445659756661
+XGBoost,Dimorphic hemmorhoids(piles),5,constipation,0.4693705439567566
+XGBoost,Dimorphic hemmorhoids(piles),6,chills,0.0509872006252408
+XGBoost,Dimorphic hemmorhoids(piles),7,nausea,0.0047039523720741275
+XGBoost,Dimorphic hemmorhoids(piles),8,vomiting,0.0018918387591838836
+XGBoost,Dimorphic hemmorhoids(piles),9,fatigue,0.0016273966059088707
+XGBoost,Dimorphic hemmorhoids(piles),10,skin_rash,0.0013904258608818053
+XGBoost,Drug Reaction,1,spotting_ urination,2.212393641471863
+XGBoost,Drug Reaction,2,stomach_pain,0.9395859956741333
+XGBoost,Drug Reaction,3,burning_micturition,0.9365300208330154
+XGBoost,Drug Reaction,4,itching,0.4376174360513687
+XGBoost,Drug Reaction,5,skin_rash,0.233190886490047
+XGBoost,Drug Reaction,6,cough,0.018385640997439622
+XGBoost,Drug Reaction,7,acidity,0.01633639445062727
+XGBoost,Drug Reaction,8,continuous_feel_of_urine,0.015967659186571836
+XGBoost,Drug Reaction,9,bladder_discomfort,0.015087122609838844
+XGBoost,Drug Reaction,10,foul_smell_of urine,0.00986775835044682
+XGBoost,Fungal infection,1,dischromic _patches,2.0496752738952635
+XGBoost,Fungal infection,2,nodal_skin_eruptions,1.527653580904007
+XGBoost,Fungal infection,3,itching,0.27412441577762364
+XGBoost,Fungal infection,4,skin_rash,0.21734734401106834
+XGBoost,Fungal infection,5,spotting_ urination,0.031085792183876037
+XGBoost,Fungal infection,6,fatigue,0.030827333149500192
+XGBoost,Fungal infection,7,stomach_pain,0.005326485726982355
+XGBoost,Fungal infection,8,abdominal_pain,0.0045659664086997506
+XGBoost,Fungal infection,9,pus_filled_pimples,0.004488183930516243
+XGBoost,Fungal infection,10,loss_of_appetite,0.0039940470946021375
+XGBoost,GERD,1,ulcers_on_tongue,1.9417898893356322
+XGBoost,GERD,2,stomach_pain,1.4077185809612274
+XGBoost,GERD,3,acidity,0.8387671053409577
+XGBoost,GERD,4,cough,0.4751409202814102
+XGBoost,GERD,5,chest_pain,0.3571860153228045
+XGBoost,GERD,6,skin_rash,0.055247554741799834
+XGBoost,GERD,7,itching,0.03516130205243826
+XGBoost,GERD,8,burning_micturition,0.024073803890496494
+XGBoost,GERD,9,vomiting,0.014491766691207886
+XGBoost,GERD,10,spotting_ urination,0.00692074247635901
+XGBoost,Gastroenteritis,1,dehydration,2.0331946849822997
+XGBoost,Gastroenteritis,2,sunken_eyes,1.4672640144824982
+XGBoost,Gastroenteritis,3,diarrhoea,0.48421168196946385
+XGBoost,Gastroenteritis,4,fatigue,0.0609627116646152
+XGBoost,Gastroenteritis,5,nausea,0.06095683339517564
+XGBoost,Gastroenteritis,6,vomiting,0.007012710277922452
+XGBoost,Gastroenteritis,7,chest_pain,0.001461966522037983
+XGBoost,Gastroenteritis,8,abdominal_pain,0.0009410724043846131
+XGBoost,Gastroenteritis,9,sweating,0.00012742074904963373
+XGBoost,Gastroenteritis,10,blister,0.0
+XGBoost,Heart attack,1,breathlessness,1.432090973854065
+XGBoost,Heart attack,2,chest_pain,1.427999486029148
+XGBoost,Heart attack,3,sweating,0.9072285328060389
+XGBoost,Heart attack,4,vomiting,0.3605707036331296
+XGBoost,Heart attack,5,fatigue,0.3168391216546297
+XGBoost,Heart attack,6,cough,0.24053155705332757
+XGBoost,Heart attack,7,high_fever,0.13981222547590733
+XGBoost,Heart attack,8,phlegm,0.03320212690159678
+XGBoost,Heart attack,9,headache,0.030205224151723088
+XGBoost,Heart attack,10,chills,0.02790347229456529
+XGBoost,Hepatitis B,1,receiving_blood_transfusion,5.390650367736816
+XGBoost,Hepatitis B,2,yellow_urine,0.34332728032022714
+XGBoost,Hepatitis B,3,yellow_crust_ooze,0.0
+XGBoost,Hepatitis B,4,red_sore_around_nose,0.0
+XGBoost,Hepatitis B,5,inflammatory_nails,0.0
+XGBoost,Hepatitis B,6,blister,0.0
+XGBoost,Hepatitis B,7,skin_peeling,0.0
+XGBoost,Hepatitis B,8,small_dents_in_nails,0.0
+XGBoost,Hepatitis B,9,blackheads,0.0
+XGBoost,Hepatitis B,10,pus_filled_pimples,0.0
+XGBoost,Hepatitis C,1,family_history,2.7430567026138304
+XGBoost,Hepatitis C,2,nausea,0.6572383046150208
+XGBoost,Hepatitis C,3,yellowing_of_eyes,0.6064948111772537
+XGBoost,Hepatitis C,4,yellowish_skin,0.39639618545770644
+XGBoost,Hepatitis C,5,loss_of_appetite,0.38817603518255056
+XGBoost,Hepatitis C,6,abdominal_pain,0.2089271530508995
+XGBoost,Hepatitis C,7,vomiting,0.204776506498456
+XGBoost,Hepatitis C,8,high_fever,0.1754827791824937
+XGBoost,Hepatitis C,9,cough,0.086741560138762
+XGBoost,Hepatitis C,10,breathlessness,0.06713279020041227
+XGBoost,Hepatitis D,1,dark_urine,1.6528607964515687
+XGBoost,Hepatitis D,2,joint_pain,1.074839037656784
+XGBoost,Hepatitis D,3,nausea,0.4984866125974804
+XGBoost,Hepatitis D,4,fatigue,0.46578900441527366
+XGBoost,Hepatitis D,5,yellowing_of_eyes,0.4317862793803215
+XGBoost,Hepatitis D,6,yellowish_skin,0.3610380333382636
+XGBoost,Hepatitis D,7,abdominal_pain,0.3602786500006914
+XGBoost,Hepatitis D,8,mild_fever,0.24726098366081714
+XGBoost,Hepatitis D,9,itching,0.23536657858639956
+XGBoost,Hepatitis D,10,high_fever,0.22541184891015292
+XGBoost,Hepatitis E,1,coma,5.368526768684387
+XGBoost,Hepatitis E,2,acute_liver_failure,0.3864716799929738
+XGBoost,Hepatitis E,3,high_fever,0.04906026907265186
+XGBoost,Hepatitis E,4,dark_urine,0.003923045098781585
+XGBoost,Hepatitis E,5,inflammatory_nails,0.0
+XGBoost,Hepatitis E,6,blister,0.0
+XGBoost,Hepatitis E,7,red_sore_around_nose,0.0
+XGBoost,Hepatitis E,8,yellow_crust_ooze,0.0
+XGBoost,Hepatitis E,9,blackheads,0.0
+XGBoost,Hepatitis E,10,small_dents_in_nails,0.0
+XGBoost,Hypertension ,1,lack_of_concentration,3.034852719306946
+XGBoost,Hypertension ,2,dizziness,0.7153449326753616
+XGBoost,Hypertension ,3,loss_of_balance,0.6646007090806961
+XGBoost,Hypertension ,4,chest_pain,0.38305711299180983
+XGBoost,Hypertension ,5,headache,0.1326437409967184
+XGBoost,Hypertension ,6,weakness_in_limbs,0.0511971585219726
+XGBoost,Hypertension ,7,neck_pain,0.01615994262974709
+XGBoost,Hypertension ,8,back_pain,0.008246745471842587
+XGBoost,Hypertension ,9,fatigue,0.007835149113088847
+XGBoost,Hypertension ,10,weight_gain,0.007313175825402141
+XGBoost,Hyperthyroidism,1,muscle_weakness,1.833590966463089
+XGBoost,Hyperthyroidism,2,abnormal_menstruation,1.398235523700714
+XGBoost,Hyperthyroidism,3,fast_heart_rate,0.5447734494926408
+XGBoost,Hyperthyroidism,4,restlessness,0.33655358985997735
+XGBoost,Hyperthyroidism,5,sweating,0.27063256164547056
+XGBoost,Hyperthyroidism,6,diarrhoea,0.26743497342104094
+XGBoost,Hyperthyroidism,7,weight_loss,0.2140346672385931
+XGBoost,Hyperthyroidism,8,mood_swings,0.21331870777066797
+XGBoost,Hyperthyroidism,9,excessive_hunger,0.174755443376489
+XGBoost,Hyperthyroidism,10,fatigue,0.15288976319134234
+XGBoost,Hypoglycemia,1,slurred_speech,4.7329038143157955
+XGBoost,Hypoglycemia,2,anxiety,0.2946964502334595
+XGBoost,Hypoglycemia,3,drying_and_tingling_lips,0.29359266757965086
+XGBoost,Hypoglycemia,4,excessive_hunger,0.016601160913705826
+XGBoost,Hypoglycemia,5,blurred_and_distorted_vision,0.0024246126413345337
+XGBoost,Hypoglycemia,6,irritability,0.0023418696597218513
+XGBoost,Hypoglycemia,7,red_sore_around_nose,0.0
+XGBoost,Hypoglycemia,8,yellow_crust_ooze,0.0
+XGBoost,Hypoglycemia,9,inflammatory_nails,0.0
+XGBoost,Hypoglycemia,10,blister,0.0
+XGBoost,Hypothyroidism,1,enlarged_thyroid,3.7990508794784548
+XGBoost,Hypothyroidism,2,cold_hands_and_feets,0.3108675956726074
+XGBoost,Hypothyroidism,3,puffy_face_and_eyes,0.31069777011871336
+XGBoost,Hypothyroidism,4,weight_gain,0.2999704122543335
+XGBoost,Hypothyroidism,5,depression,0.0024842217564582823
+XGBoost,Hypothyroidism,6,abnormal_menstruation,0.0024313190951943398
+XGBoost,Hypothyroidism,7,irritability,0.0023345671594142913
+XGBoost,Hypothyroidism,8,yellow_crust_ooze,0.0
+XGBoost,Hypothyroidism,9,inflammatory_nails,0.0
+XGBoost,Hypothyroidism,10,blister,0.0
+XGBoost,Impetigo,1,yellow_crust_ooze,1.3197841405868531
+XGBoost,Impetigo,2,red_sore_around_nose,1.3019717693328858
+XGBoost,Impetigo,3,blister,1.2263389840722083
+XGBoost,Impetigo,4,skin_rash,0.15684497635811567
+XGBoost,Impetigo,5,high_fever,0.03224870208650828
+XGBoost,Impetigo,6,joint_pain,0.032023667520843443
+XGBoost,Impetigo,7,itching,0.024993658624589445
+XGBoost,Impetigo,8,fatigue,0.0021522872149944304
+XGBoost,Impetigo,9,lethargy,0.0019254442304372787
+XGBoost,Impetigo,10,vomiting,0.0011157877393998205
+XGBoost,Jaundice,1,dark_urine,1.6176954478025436
+XGBoost,Jaundice,2,weight_loss,1.529661986231804
+XGBoost,Jaundice,3,itching,1.1159792318940163
+XGBoost,Jaundice,4,yellowish_skin,0.35717311552725733
+XGBoost,Jaundice,5,high_fever,0.3019723331148271
+XGBoost,Jaundice,6,abdominal_pain,0.2627107994630933
+XGBoost,Jaundice,7,yellowing_of_eyes,0.22666966095566748
+XGBoost,Jaundice,8,loss_of_appetite,0.1553421813994646
+XGBoost,Jaundice,9,restlessness,0.05617866516113281
+XGBoost,Jaundice,10,sweating,0.046409867878537625
+XGBoost,Malaria,1,muscle_pain,3.5893511295318605
+XGBoost,Malaria,2,sweating,1.0999081954360008
+XGBoost,Malaria,3,diarrhoea,0.5431420922279357
+XGBoost,Malaria,4,chills,0.24440814945846795
+XGBoost,Malaria,5,nausea,0.15134979827562348
+XGBoost,Malaria,6,vomiting,0.12446846931707115
+XGBoost,Malaria,7,joint_pain,0.10003322232514619
+XGBoost,Malaria,8,fatigue,0.09420002149417997
+XGBoost,Malaria,9,loss_of_appetite,0.08439200408756733
+XGBoost,Malaria,10,headache,0.054489115171600135
+XGBoost,Migraine,1,visual_disturbances,2.7188493728637697
+XGBoost,Migraine,2,acidity,0.6441669404506684
+XGBoost,Migraine,3,depression,0.6361069560050965
+XGBoost,Migraine,4,indigestion,0.6103389441967011
+XGBoost,Migraine,5,stiff_neck,0.5684451326727867
+XGBoost,Migraine,6,blurred_and_distorted_vision,0.2757345523685217
+XGBoost,Migraine,7,irritability,0.15470440668286756
+XGBoost,Migraine,8,excessive_hunger,0.1318903597071767
+XGBoost,Migraine,9,headache,0.0925334980012849
+XGBoost,Migraine,10,fatigue,0.014087216136977077
+XGBoost,Osteoarthristis,1,hip_joint_pain,1.6561476826667785
+XGBoost,Osteoarthristis,2,knee_pain,1.5616279184818267
+XGBoost,Osteoarthristis,3,neck_pain,0.5554095149040222
+XGBoost,Osteoarthristis,4,painful_walking,0.4640322118997574
+XGBoost,Osteoarthristis,5,swelling_joints,0.4557227253913879
+XGBoost,Osteoarthristis,6,joint_pain,0.07739262916147709
+XGBoost,Osteoarthristis,7,stiff_neck,0.006901109684258699
+XGBoost,Osteoarthristis,8,muscle_weakness,0.003491153847426176
+XGBoost,Osteoarthristis,9,dizziness,0.0009358256123960018
+XGBoost,Osteoarthristis,10,loss_of_balance,0.000824675615876913
+XGBoost,Paralysis (brain hemorrhage),1,altered_sensorium,2.129589486122131
+XGBoost,Paralysis (brain hemorrhage),2,weakness_of_one_body_side,1.5596263647079467
+XGBoost,Paralysis (brain hemorrhage),3,headache,0.21366701144725084
+XGBoost,Paralysis (brain hemorrhage),4,loss_of_balance,0.04279322412330657
+XGBoost,Paralysis (brain hemorrhage),5,nausea,0.04008340016007424
+XGBoost,Paralysis (brain hemorrhage),6,vomiting,0.03268028367310762
+XGBoost,Paralysis (brain hemorrhage),7,fatigue,0.02828270208556205
+XGBoost,Paralysis (brain hemorrhage),8,depression,0.020005249977111818
+XGBoost,Paralysis (brain hemorrhage),9,high_fever,0.013493478577584029
+XGBoost,Paralysis (brain hemorrhage),10,excessive_hunger,0.0041145481634885074
+XGBoost,Peptic ulcer diseae,1,internal_itching,2.1791326642036437
+XGBoost,Peptic ulcer diseae,2,passage_of_gases,1.885973760485649
+XGBoost,Peptic ulcer diseae,3,indigestion,0.5914331167936325
+XGBoost,Peptic ulcer diseae,4,abdominal_pain,0.056375342048704626
+XGBoost,Peptic ulcer diseae,5,loss_of_appetite,0.015252235811203718
+XGBoost,Peptic ulcer diseae,6,yellowish_skin,0.006883809925056994
+XGBoost,Peptic ulcer diseae,7,chills,0.004556162282824516
+XGBoost,Peptic ulcer diseae,8,excessive_hunger,0.0020704302936792375
+XGBoost,Peptic ulcer diseae,9,vomiting,0.0012814187444746493
+XGBoost,Peptic ulcer diseae,10,blister,0.0
+XGBoost,Pneumonia,1,rusty_sputum,6.038299965858459
+XGBoost,Pneumonia,2,phlegm,0.009078482538461686
+XGBoost,Pneumonia,3,fast_heart_rate,0.004886407591402531
+XGBoost,Pneumonia,4,yellow_crust_ooze,0.0
+XGBoost,Pneumonia,5,inflammatory_nails,0.0
+XGBoost,Pneumonia,6,blister,0.0
+XGBoost,Pneumonia,7,red_sore_around_nose,0.0
+XGBoost,Pneumonia,8,small_dents_in_nails,0.0
+XGBoost,Pneumonia,9,blackheads,0.0
+XGBoost,Pneumonia,10,pus_filled_pimples,0.0
+XGBoost,Psoriasis,1,skin_peeling,1.1305468440055848
+XGBoost,Psoriasis,2,inflammatory_nails,0.950415289402008
+XGBoost,Psoriasis,3,small_dents_in_nails,0.936564028263092
+XGBoost,Psoriasis,4,silver_like_dusting,0.8764319837093353
+XGBoost,Psoriasis,5,joint_pain,0.12753964234143494
+XGBoost,Psoriasis,6,skin_rash,0.05546973329037428
+XGBoost,Psoriasis,7,loss_of_appetite,0.0397592879133299
+XGBoost,Psoriasis,8,high_fever,0.002298750914633274
+XGBoost,Psoriasis,9,itching,0.0015100954100489617
+XGBoost,Psoriasis,10,neck_pain,0.0013786659575998784
+XGBoost,Tuberculosis,1,blood_in_sputum,6.005235719680786
+XGBoost,Tuberculosis,2,cough,0.030861317180097103
+XGBoost,Tuberculosis,3,weight_loss,0.004038531333208084
+XGBoost,Tuberculosis,4,yellow_crust_ooze,0.0
+XGBoost,Tuberculosis,5,inflammatory_nails,0.0
+XGBoost,Tuberculosis,6,blister,0.0
+XGBoost,Tuberculosis,7,red_sore_around_nose,0.0
+XGBoost,Tuberculosis,8,small_dents_in_nails,0.0
+XGBoost,Tuberculosis,9,blackheads,0.0
+XGBoost,Tuberculosis,10,pus_filled_pimples,0.0
+XGBoost,Typhoid,1,toxic_look_(typhos),2.240827336907387
+XGBoost,Typhoid,2,belly_pain,2.001193678379059
+XGBoost,Typhoid,3,constipation,0.7922664523124695
+XGBoost,Typhoid,4,chills,0.1375292308628559
+XGBoost,Typhoid,5,diarrhoea,0.12051246762275696
+XGBoost,Typhoid,6,pain_during_bowel_movements,0.07450865507125855
+XGBoost,Typhoid,7,abdominal_pain,0.01756985429674387
+XGBoost,Typhoid,8,nausea,0.008482410851866008
+XGBoost,Typhoid,9,headache,0.004448979604057967
+XGBoost,Typhoid,10,pain_in_anal_region,0.0039102952927350994
+XGBoost,Urinary tract infection,1,continuous_feel_of_urine,1.7295784115791322
+XGBoost,Urinary tract infection,2,bladder_discomfort,0.9796529322862625
+XGBoost,Urinary tract infection,3,burning_micturition,0.5387143015861511
+XGBoost,Urinary tract infection,4,foul_smell_of urine,0.45117645859718325
+XGBoost,Urinary tract infection,5,skin_rash,0.0011515712831169367
+XGBoost,Urinary tract infection,6,itching,0.0010092674754559993
+XGBoost,Urinary tract infection,7,vomiting,0.0009727638214826583
+XGBoost,Urinary tract infection,8,fatigue,0.0008788903243839741
+XGBoost,Urinary tract infection,9,swelling_joints,0.0004928986076265573
+XGBoost,Urinary tract infection,10,stomach_pain,0.00046566869132220746
+XGBoost,Varicose veins,1,cramps,1.0020668469369411
+XGBoost,Varicose veins,2,prominent_veins_on_calf,0.7455041408538818
+XGBoost,Varicose veins,3,swollen_legs,0.7256106615066529
+XGBoost,Varicose veins,4,bruising,0.6826310694217682
+XGBoost,Varicose veins,5,obesity,0.39918254017829896
+XGBoost,Varicose veins,6,swollen_blood_vessels,0.34521571099758147
+XGBoost,Varicose veins,7,weight_loss,0.07311286330223084
+XGBoost,Varicose veins,8,restlessness,0.0037963852286338807
+XGBoost,Varicose veins,9,abnormal_menstruation,0.0020066462457180023
+XGBoost,Varicose veins,10,fatigue,0.0018765728920698166
+XGBoost,hepatitis A,1,mild_fever,3.0192848682403564
+XGBoost,hepatitis A,2,muscle_pain,0.59465411901474
+XGBoost,hepatitis A,3,dark_urine,0.48122132904827597
+XGBoost,hepatitis A,4,diarrhoea,0.3876892218366265
+XGBoost,hepatitis A,5,joint_pain,0.3593138829339296
+XGBoost,hepatitis A,6,malaise,0.3346064329147339
+XGBoost,hepatitis A,7,yellowish_skin,0.3207870927639306
+XGBoost,hepatitis A,8,nausea,0.3116248329170048
+XGBoost,hepatitis A,9,abdominal_pain,0.29963062522001566
+XGBoost,hepatitis A,10,blister,0.0

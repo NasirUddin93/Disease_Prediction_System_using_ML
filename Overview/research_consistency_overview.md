@@ -1,9 +1,9 @@
 # Research Pipeline Consistency & Project Overview
 
 **Project Title**: *Disease Prediction System Using Machine Learning: A Robust, Explainable, and Uncertainty-Aware Framework Under Real-World Symptom Sparsity and Noise*  
-**Author**: Nasir Uddin (ID: 243043)  
-**Supervisor**: Dr. Rashed Mazumder, Associate Professor  
-**Program**: Professional Masters in Information Technology (PMIT), Institute of Information Technology (IIT), Jahangirnagar University  
+**Candidate**: Nasir uddin (Registration No: `23880300014`, Session: `2023-2024`)  
+**Supervisor**: Husne Ara Rubaiyeat, Assistant Professor  
+**Department**: Department of Computer Science, National University, Gazipur, Bangladesh  
 **Date**: October 2026  
 
 ---
@@ -35,9 +35,9 @@ This document establishes the end-to-end traceability, verification, and consist
 | **Phase 4: Feature Selection (`E4`)** | Dimensionality reduction across $\{132 \to 10\}$ symptoms; $\ge 95\%$ F1 retention | Formulated in Section 8 | `feature_selection.py`, `phase4_final_summary.csv` | Chapter V (Table 5.2 with LogReg, MLP, RF; Figs 5.3–5.5) | ✅ **Fully Aligned** |
 | **Phase 5: Symptom Sparsity (`E5`)** | Cold-start chief complaint restriction ($s \in [1, 10]$ active symptoms) | Formulated in Section 9.1 | `sparsity_experiment.py`, `sparsity_summary.csv` | Chapter VI (Table 6.1, Fig 6.1, differential buffer) | ✅ **Completed & Verified** |
 | **Phase 6: Reporting Noise (`E6`)** | False-negative dropout & false-positive misreporting ($0\% \to 30\%$, matched burden) | Formulated in Section 9.2 (H3) | `noise_experiment.py`, `noise_summary.csv` | Chapter VII / Phase 6 Report (Figs 7.1–7.3) | ✅ **Completed & Verified** |
-| **Phase 7: Calibration (`E7`)** | ECE, Brier score, Platt scaling, Isotonic reliability diagrams | Formulated in Section 10 (H4) | Not yet executed | Chapter IV (Formulation) & Chapter VII (Future Work) | ✅ **Consistent Roadmap** |
-| **Phase 8: Explainable AI (`E8`)** | TreeSHAP attributions & WHO/CDC diagnostic guideline audit | Formulated in Section 11 (H5) | Not yet executed | Chapter IV (Formulation) & Chapter VII (Future Work) | ✅ **Consistent Roadmap** |
-| **Phase 9: CDSS Prototype (`E9`)** | Interactive FastAPI/web interface with differential diagnostic ranking | Formulated in Section 12 | Not yet implemented | Chapter VII (Section 7.4 Deployment Roadmap) | ✅ **Consistent Roadmap** |
+| **Phase 7: Calibration (`E7`)** | 10-Fold Protocol C ECE, Brier score, Platt scaling, Isotonic reliability diagrams | Formulated in Section 10 (H4) | `calibration_experiment.py`, `calibration_summary.csv` (10 folds, 270 rows) | Chapter VII & Phase 7 Report (Reliability diagrams) | ✅ **Completed & Verified** |
+| **Phase 8: Explainable AI (`E8`)** | TreeSHAP/LinearSHAP attributions, fold stability, WHO/CDC diagnostic guideline audit | Formulated in Section 11 (H5) | `shap_experiment.py`, `clinical_concordance_audit.csv` (72.7% match) | Chapter VII & Phase 8 Report (Stability & concordance plots) | ✅ **Completed & Verified** |
+| **Phase 9: CDSS Prototype (`E9`)** | Interactive FastAPI + React/Next.js research prototype with differential ranking | Formulated in Section 12 | `plan/phase_09_completion_plan.md` | Chapter VII (Section 7.4 Deployment Roadmap) | 📋 **Blueprint Ready** |
 
 ---
 
