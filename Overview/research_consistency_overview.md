@@ -103,7 +103,7 @@ Chapter 8: Discussion & Conclusion                 (Integrates Noise findings, C
   2. *Matched-Error-Burden Control*: When controlling for the exact number of altered symptoms (~1.49 features):
      - 20% Dropout (1.49 omitted symptoms): Logistic Regression Macro-F1 = 0.942, Random Forest = 0.911.
      - Matched 1.20% False Positive (1.49 spurious symptoms): Logistic Regression Macro-F1 = 0.999, Random Forest collapses to 0.774.
-     - *Verdict*: Hypothesis H3 is confirmed—spurious activations cause steeper degradation in tree-based architectures and higher structural distortion than omissions even under equal error burden.
+     - *Verdict*: Hypothesis H3 is partially supported (model-dependent)—spurious activations cause substantially steeper degradation in tree-based architectures (Random Forest, XGBoost), whereas linear and neural models degrade more under symptom omission under matched error burdens.
 * **Differential Diagnostic Buffer**: Top-3 and Top-5 candidate ranking continues to provide robust safeguards under moderate noise (e.g., Random Forest Top-5 accuracy is 99.6% under `comb_d10_fp2` despite Top-1 dropping to 83.6%).
 * **Final Status**: Fully completed, verified, and synchronized with thesis figures (`noise_degradation_curves.png`, `noise_type_comparison.png`, `noise_combined_heatmap.png`).
 

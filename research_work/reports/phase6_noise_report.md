@@ -14,15 +14,20 @@ In clinical consultations, symptom misreporting is bidirectional: patients omit 
 
 **Hypothesis H3 Postulate**: *False-positive symptom activations will cause steeper degradation than false-negative symptom dropouts.*
 
-### Empirical Verdict on Hypothesis H3: Confirmed with Methodological Nuance
+### Empirical Verdict on Hypothesis H3: Partially Supported (Model-Dependent)
+
+The effect of symptom-reporting noise is model-dependent. False-positive activations cause substantially greater degradation in Random Forest and XGBoost under the matched-error-burden comparison, whereas several other models exhibit greater degradation under the tested dropout condition. Hypothesis H3 is therefore only partially supported and should not be generalized to all model architectures.
+
 1. **Under the Primary Preregistered Rate Grid**:
-   - When comparing raw percentages (e.g., 5% Dropout vs. 5% False Positive), **false-positive activation causes catastrophic collapse**: Logistic Regression Macro-F1 drops from 1.000 to 0.985 under 5% FP, compared to retaining 0.942 under 20% Dropout.
-   - **Mechanism**: A 5% false-positive rate activates ~6.23 spurious symptoms across the 124.55 absent features, drowning out the signal of true pathology.
+   - When comparing raw percentages (e.g., 5% Dropout vs. 5% False Positive), false-positive activation causes severe collapse in models with partitioning logic or unconstrained features.
+   - **Mechanism**: A 5% false-positive rate activates ~6.23 spurious symptoms across the 124.55 absent features, whereas 5% Dropout omits only ~0.37 symptoms from 7.45 active features.
 2. **Under the Matched-Error-Burden Control (Equal Changed Features)**:
    - When matching the exact expected number of altered features (~1.49 symptoms):
-     - 20% Dropout (1.49 omitted symptoms): Logistic Regression Macro-F1 = 0.942, Random Forest = 0.911.
-     - Matched 1.20% False Positive (1.49 spurious symptoms): Logistic Regression Macro-F1 = 0.999, Random Forest = 0.774.
-   - **Conclusion**: Spurious symptom activations cause greater degradation than symptom omissions even when controlling for feature count, because false positives actively trigger incorrect disease associations, whereas dropouts merely reduce confirmatory evidence.
+     - For **Random Forest**: 20% Dropout yields Macro-F1 = 0.9113, whereas matched 1.20% FP drops Macro-F1 to 0.7743 (False positives are more damaging).
+     - For **XGBoost**: 20% Dropout yields Macro-F1 = 0.5478, whereas matched 1.20% FP yields 0.5024 (False positives are more damaging).
+     - For **Logistic Regression**: 20% Dropout yields Macro-F1 = 0.9420, whereas matched 1.20% FP retains 0.9988 (Dropout is more damaging).
+     - For **MLP**: 20% Dropout yields Macro-F1 = 0.9026, whereas matched 1.20% FP yields 0.9553 (Dropout is more damaging).
+   - **Conclusion**: Spurious symptom activations selectively destabilize tree partitioning architectures (Random Forest, XGBoost) where single active features divert root/branch splits, whereas linear/neural models (Logistic Regression, MLP) show greater resilience to sparse spurious activations and degrade more under evidence omission.
 
 ---
 
@@ -83,10 +88,10 @@ In clinical consultations, symptom misreporting is bidirectional: patients omit 
 
 ## 3. Core Architectural Discoveries
 
-### 3.1 Asymmetric Vulnerability to Spurious Reporting
-- All evaluated models exhibit significantly higher sensitivity to false positives than false negatives.
+### 3.1 Architectural Divergence in Noise Sensitivity
+- The effect of symptom-reporting noise is model-dependent: false positives are substantially more damaging for tree-based models (Random Forest, XGBoost), whereas dropouts cause greater degradation in linear and neural architectures (Logistic Regression, MLP) under matched error burdens.
 - Tree ensembles (Random Forest, XGBoost) suffer severe misrouting when spurious positive indicators satisfy high-level split predicates for incorrect classes.
-- Additive linear and neural models (Logistic Regression, MLP) demonstrate smoother degradation under dropout, but their unconstrained linear combinations can be misled by contradictory positive symptom spikes.
+- Additive linear and neural models demonstrate smoother degradation under dropout, and their soft-margin evidence summation dampens isolated spurious activations.
 
 ### 3.2 The Differential Diagnostic Safeguard Under Noise
 - While single-label Top-1 accuracy declines under noise, **Top-3 and Top-5 candidate retrieval** provides a crucial buffer.

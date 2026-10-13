@@ -27,17 +27,17 @@ In ambulatory and emergency intake settings, patient symptom reporting is intrin
 \subsection{Two-Tier Evaluation of Hypothesis H3}
 \label{subsec:h3_evaluation}
 
-Hypothesis H3 posits that \textit{spurious symptom activations (false positives) will cause significantly steeper diagnostic performance drops than symptom omissions (false negatives)}. Our empirical benchmark evaluates this phenomenon across two complementary tiers:
+Hypothesis H3 posits that \textit{spurious symptom activations (false positives) will cause steeper diagnostic performance drops than symptom omissions (false negatives)}. Our empirical benchmark evaluates this phenomenon across two complementary tiers:
 
 \begin{enumerate}
-    \item \textbf{Primary Rate Grid ($p_{\text{drop}} \in [0.05, 0.30]$ vs.\ $p_{\text{fp}} \in [0.01, 0.10]$)}: Under raw percentage rates, false-positive activation causes rapid diagnostic failure. For instance, in Random Forest, Macro-F1 drops moderately from $0.987 \pm 0.022$ at baseline to $0.911 \pm 0.030$ under a 20\% dropout rate. In contrast, under a modest 5\% false-positive activation rate, Random Forest Macro-F1 collapses precipitously to $0.467 \pm 0.038$ (Top-1 accuracy collapsing from $0.994$ to $0.550$). This dramatic divergence stems from feature space sparsity: activating 5\% of the 124.55 typically absent symptoms introduces $\sim 6.23$ spurious positive features, completely overpowering the true clinical signal of the $7.45$ present symptoms.
+    \item \textbf{Primary Rate Grid ($p_{\text{drop}} \in [0.05, 0.30]$ vs.\ $p_{\text{fp}} \in [0.01, 0.10]$)}: Under raw percentage rates, false-positive activation causes rapid diagnostic failure in models with partitioning logic. For instance, in Random Forest, Macro-F1 drops moderately from $0.987 \pm 0.022$ at baseline to $0.911 \pm 0.030$ under a 20\% dropout rate. In contrast, under a modest 5\% false-positive activation rate, Random Forest Macro-F1 collapses precipitously to $0.467 \pm 0.038$ (Top-1 accuracy collapsing from $0.994$ to $0.550$). This divergence stems from feature space sparsity: activating 5\% of the 124.55 typically absent symptoms introduces $\sim 6.23$ spurious positive features, overpowering the true clinical signal of the $7.45$ present symptoms.
     
     \item \textbf{Matched-Error-Burden Control (Equal Feature Mutations)}: To rule out denominator asymmetry and evaluate intrinsic error severity, we conducted matched-error-burden evaluations where the false-positive rate was calibrated ($p_{\text{fp}} = 0.0120$) to induce the exact expected number of altered features ($\sim 1.49$ symptoms) as a 20\% dropout rate ($p_{\text{drop}} = 0.20$):
     \begin{itemize}
         \item Under 20\% Dropout (1.49 omitted symptoms): Logistic Regression retains Macro-F1 of $0.942 \pm 0.015$, and Random Forest retains $0.911 \pm 0.030$.
         \item Under Matched 1.20\% False Positives (1.49 spurious symptoms): Logistic Regression retains $0.999 \pm 0.003$ due to linear soft-margin compensation, whereas Random Forest collapses to $0.774 \pm 0.035$ (Top-1 accuracy $0.931$).
     \end{itemize}
-    This confirms that spurious symptom activations disrupt partitioning decision trees far more severely than symptom omissions, validating Hypothesis H3.
+    Crucially, the empirical effect of symptom-reporting noise is model-dependent. False-positive activations cause substantially greater degradation in Random Forest and XGBoost under the matched-error-burden comparison, whereas several other models (such as Logistic Regression and MLP) exhibit greater degradation under the tested dropout condition. Hypothesis H3 is therefore only partially supported and should not be generalized to all model architectures.
 \end{enumerate}
 
 \begin{figure}[H]
@@ -103,7 +103,7 @@ This research establishes a rigorous, leakage-aware foundation for symptom-based
     \item Through leakage-aware Duplicate-Aware Group Cross-Validation (Protocol C), we proved that partitioned tree-based models suffer substantial degradation (Decision Tree: $-17.44\%$, XGBoost: $-12.80\%$) when evaluated on genuinely unseen symptom profiles, confirming Hypothesis H1.
     \item Our leakage-aware feature selection demonstrates that a compact set of 50 consensus symptoms preserves $\ge 95\%$ retained Macro-F1 on the benchmark, identifying an algorithmically stable symptom ontology without sacrificing core predictive fidelity.
     \item Under controlled symptom sparsity simulations, we observed that while single-label Top-1 accuracy declines steeply as inputs are restricted to acute chief complaints ($s \le 3$), Top-3 and Top-5 candidate ranking retains over 88\% and 93\% inclusion on this benchmark, confirming the critical buffer provided by differential candidate ranking when patient intake profiles are incomplete.
-    \item Through extensive bidirectional stochastic noise benchmarking across 20,520 cross-validation runs, we confirmed Hypothesis H3, proving that false-positive symptom activations degrade tree-based architectures more severely than symptom dropouts under both raw rate grids and matched-burden feature controls.
+    \item Through extensive bidirectional stochastic noise benchmarking across 20,520 cross-validation runs, we evaluated Hypothesis H3, demonstrating that noise sensitivity is model-dependent: false-positive symptom activations degrade tree-based architectures (Random Forest, XGBoost) substantially more than symptom dropouts under matched-burden controls, whereas linear and neural architectures exhibit greater degradation under dropout. Hypothesis H3 is therefore partially supported rather than universally applicable.
 \end{enumerate}
 
 \section{Key Findings Summary}
@@ -113,7 +113,7 @@ This research establishes a rigorous, leakage-aware foundation for symptom-based
     \item Duplicate-Aware Group CV (Protocol C) exposes that Decision Tree accuracy collapses by $-17.44\%$ and XGBoost by $-12.80\%$ relative to standard cross-validation.
     \item A compact ontology of 50 consensus symptoms satisfies the $\ge 95\%$ retained Macro-F1 operational criterion at the dataset level, establishing algorithmic feature stability on this benchmark.
     \item Multi-candidate differential ranking (Top-3 and Top-5) consistently provides a resilient safeguard against single-label accuracy collapse under both feature reduction and simulated symptom sparsity.
-    \item Stochastic noise benchmarking proves that false-positive spurious symptom activations induce significantly steeper degradation than symptom dropouts (e.g., Random Forest Macro-F1 dropping to $0.774$ under matched false positives vs. $0.911$ under matching dropout), establishing the critical asymmetry of clinical reporting errors.
+    \item Stochastic noise benchmarking proves that reporting error sensitivity is model-dependent: false-positive spurious activations cause substantially steeper degradation in tree ensembles (e.g., Random Forest Macro-F1 dropping to $0.774$ under matched false positives vs. $0.911$ under matching dropout), whereas linear and neural models degrade more under symptom omission.
 \end{itemize}
 
 \section{Future Work and Research Roadmap}
