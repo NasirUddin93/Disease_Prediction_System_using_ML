@@ -37,7 +37,7 @@ This document establishes the end-to-end traceability, verification, and consist
 | **Phase 6: Reporting Noise (`E6`)** | False-negative dropout & false-positive misreporting ($0\% \to 30\%$, matched burden) | Formulated in Section 9.2 (H3) | `noise_experiment.py`, `noise_summary.csv` | Chapter VII / Phase 6 Report (Figs 7.1–7.3) | ✅ **Completed & Verified** |
 | **Phase 7: Calibration (`E7`)** | 10-Fold Protocol C ECE, Brier score, Platt scaling, Isotonic reliability diagrams | Formulated in Section 10 (H4) | `calibration_experiment.py`, `calibration_summary.csv` (10 folds, 270 rows) | Chapter VII & Phase 7 Report (Reliability diagrams) | ✅ **Completed & Verified** |
 | **Phase 8: Explainable AI (`E8`)** | TreeSHAP/LinearSHAP attributions, fold stability, WHO/CDC diagnostic guideline audit | Formulated in Section 11 (H5) | `shap_experiment.py`, `clinical_concordance_audit.csv` (72.7% match) | Chapter VII & Phase 8 Report (Stability & concordance plots) | ✅ **Completed & Verified** |
-| **Phase 9: CDSS Prototype (`E9`)** | Interactive FastAPI + React/Next.js research prototype with differential ranking | Formulated in Section 12 | `plan/phase_09_completion_plan.md` | Chapter VII (Section 7.4 Deployment Roadmap) | 📋 **Blueprint Ready** |
+| **Phase 9: CDSS Prototype (`E9`)** | Interactive FastAPI + responsive web research prototype with differential ranking & SHAP | Formulated in Section 12 | `prototype/` (FastAPI on port 8181 + UI, 22 tests pass, browser verified) | Chapter VII (Pending thesis writeup) | ✅ **Completed & Verified** |
 
 ---
 
