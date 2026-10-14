@@ -1,7 +1,7 @@
 \chapter{Introduction}
 \label{chap:intro}
 
-Clinical Decision Support Systems (CDSS) powered by artificial intelligence have emerged as essential instruments for triaging patients, mitigating diagnostic delays, and assisting primary care physicians in high-burden healthcare environments~\cite{shortliffe2018clinical, topol2019high}. In ambulatory and telehealth settings, patient-reported symptoms represent the primary point of clinical contact. Consequently, formulating accurate and reliable multi-disease prediction models from categorical symptom indicators has garnered substantial scholarly and industrial interest~\cite{chen2016xgboost, breiman2001random}.
+Clinical Decision Support Systems (CDSS) powered by artificial intelligence have emerged as essential instruments for triaging patients, mitigating diagnostic delays, and assisting primary care physicians in high-burden healthcare environments~\cite{shortliffe2018clinical, topol2019high, semigran2015evaluation, elias2021diagnostic}. In ambulatory and telehealth settings, patient-reported symptoms represent the primary point of clinical contact. Consequently, formulating accurate and reliable multi-disease prediction models from categorical symptom indicators using ensemble, kernel, and deep learning methods has garnered substantial scholarly and industrial interest~\cite{chen2016xgboost, breiman2001random, cortes1995support, shickel2017deep}.
 
 Despite rapid algorithmic advancements, a critical disconnect persists between experimental machine learning (ML) claims and prospective clinical reality. Many published studies and reproducible repositories benchmark conventional classifiers on synthetic or semi-synthetic symptom repositories, routinely reporting classification accuracies exceeding 99\% or even achieving 100\%~\cite{kaushil2020kaggle}. In clinical practice, such results are unrealistic. Real-world diagnostic encounters are characterized by:
 \begin{enumerate}
@@ -10,7 +10,7 @@ Despite rapid algorithmic advancements, a critical disconnect persists between e
     \item \textbf{Diagnostic Uncertainty}: Symptoms frequently overlap across infectious, autoimmune, and gastrointestinal conditions, necessitating a probabilistic \emph{differential diagnosis} rather than a rigid single-label prediction.
 \end{enumerate}
 
-Furthermore, as recently established by Kapoor and Narayanan~\cite{kapoor2023leakage}, data leakage and synthetic duplication represent pervasive causes of reproducibility failure across computational science. When a benchmark dataset contains replicated synthetic instances, standard cross-validation or random train-test splitting enables models to memorize duplicate vectors rather than learning generalizable medical pathology.
+Furthermore, as recently established by Kapoor and Narayanan~\cite{kapoor2023leakage} and earlier conceptualized by Kaufman et al.~\cite{kaufman2012leakage}, data leakage and synthetic duplication represent pervasive causes of reproducibility failure across computational science. When a benchmark dataset contains replicated synthetic instances, standard cross-validation or random train-test splitting enables models to memorize duplicate vectors rather than learning generalizable medical pathology.
 
 \section{Research Vision and Core Question}
 \label{sec:research_vision}

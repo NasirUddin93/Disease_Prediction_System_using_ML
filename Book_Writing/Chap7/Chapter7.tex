@@ -63,6 +63,7 @@ As detailed in \cref{tab:noise_summary}, architectural resilience to reporting n
 \centering
 \scriptsize
 \setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{llccccc}
 \toprule
 \textbf{Model Architecture} & \textbf{Perturbation Condition} & \textbf{Macro-F1} & \textbf{Top-1 Acc} & \textbf{Top-3 Acc} & \textbf{Top-5 Acc} & \textbf{Brier Score} \\
@@ -91,7 +92,8 @@ As detailed in \cref{tab:noise_summary}, architectural resilience to reporting n
 & Matched FP (1.2\%) & $0.9930 \pm 0.0079$ & $0.9987$ & $1.0000$ & $1.0000$ & $0.3125$ \\
 & Combined (D10+FP2) & $0.9390 \pm 0.0235$ & $0.9896$ & $0.9992$ & $0.9998$ & $0.5376$ \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 \section{Probability Calibration and Uncertainty Quantification (Hypothesis H4)}
@@ -99,7 +101,7 @@ As detailed in \cref{tab:noise_summary}, architectural resilience to reporting n
 
 In clinical triage, accurate candidate disease ranking must be paired with statistically reliable posterior probability estimates. A decision support system that outputs a 90\% probability for Dengue should ideally be correct 90\% of the time. Uncalibrated modern models, especially non-linear neural networks and tree ensembles, frequently suffer from overconfidence or skewed probability distributions~\cite{guo2017calibration}.
 
-To address this challenge, we conducted a systematic empirical evaluation of post-hoc probability calibration across all representative model architectures under Duplicate-Aware Group 10-Fold Cross-Validation (Protocol C) with zero inner-to-outer validation leakage ($N = 2,700$ fold-level evaluations). We compared uncalibrated native models against two primary parametric and non-parametric scaling techniques: Platt / Sigmoid calibration~\cite{platt1999probabilistic} and Isotonic regression~\cite{zadrozny2002transforming}.
+To address this challenge, we conducted a systematic empirical evaluation of post-hoc probability calibration across all representative model architectures under Duplicate-Aware Group 10-Fold Cross-Validation (Protocol C) with zero inner-to-outer validation leakage ($N = 2,700$ fold-level evaluations). We compared uncalibrated native models against two primary parametric and non-parametric scaling techniques: Platt / Sigmoid calibration~\cite{platt1999probabilistic} and Isotonic regression~\cite{zadrozny2002transforming}, evaluated across multi-class log loss and strictly proper Brier scores~\cite{brier1950verification, niculescumizil2005predicting}.
 
 \begin{figure}[H]
 \centering
@@ -136,6 +138,7 @@ As shown in \cref{tab:calibration_summary} and \cref{fig:calibration_metrics}, e
 \centering
 \scriptsize
 \setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{llcccccc}
 \toprule
 \textbf{Model Architecture} & \textbf{Calibration Mode} & \textbf{ECE-15 (Mean $\pm$ SD)} & \textbf{Brier Score} & \textbf{Log Loss} & \textbf{Top-1 Acc} & \textbf{Top-3 Acc} & \textbf{Top-5 Acc} \\
@@ -165,13 +168,14 @@ As shown in \cref{tab:calibration_summary} and \cref{fig:calibration_metrics}, e
 & Platt (Sigmoid)     & $0.3221 \pm 0.0744$ & $0.4926$ & $1.5906$ & $0.7040$ & $0.8184$ & $0.8367$ \\
 & Isotonic            & $0.3304 \pm 0.0963$ & $0.4699$ & $2.3931$ & $0.7479$ & $0.8648$ & $0.8855$ \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 \section{Explainable AI and Clinical Literature Concordance (Hypothesis H5)}
 \label{sec:explainable_ai}
 
-In clinical machine learning, transparency is an imperative. Diagnostic predictions must be explainable in terms of active and absent signs to foster physician trust. We employed SHAP (SHapley Additive exPlanations)~\cite{lundberg2017unified}—specifically TreeSHAP for tree ensembles and LinearSHAP for regularized linear models—to quantify the marginal contribution of each symptom to the model's posterior log-odds.
+In clinical machine learning, transparency is an imperative for physician trust and algorithmic causability~\cite{holzinger2019causability, molnar2020interpretable}. As argued by Rudin~\cite{rudin2019stop}, automated decision-support outputs must provide interpretable representations rather than opaque black-box recommendations. We employed SHAP (SHapley Additive exPlanations)~\cite{lundberg2017unified}—specifically TreeSHAP for tree ensembles and LinearSHAP for regularized linear models—to quantify the marginal contribution of each symptom to the model's posterior log-odds.
 
 \begin{figure}[H]
 \centering
@@ -209,20 +213,22 @@ To rigorously evaluate Hypothesis H5, we conducted a systematic concordance audi
 \centering
 \scriptsize
 \setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{p{2.2cm}p{3.8cm}p{4.5cm}p{3.2cm}c}
 \toprule
 \textbf{Disease} & \textbf{Authoritative Reference} & \textbf{Top-5 Model SHAP Symptoms} & \textbf{Concordant Symptoms} & \textbf{Match \%} \\
 \midrule
-\textbf{Malaria} & CDC Clinical Guidance for Malaria Diagnosis & \textit{muscle\_pain, diarrhoea, sweating, chills, high\_fever} & \textit{muscle\_pain, diarrhoea, sweating, chills, high\_fever} & \textbf{100\%} \\
-\textbf{Typhoid} & WHO Enteric Fever / Typhoid Technical Guidelines & \textit{toxic\_look\_(typhos), belly\_pain, constipation, diarrhoea, chills} & \textit{toxic\_look\_(typhos), belly\_pain, constipation, diarrhoea, chills} & \textbf{100\%} \\
+\textbf{Malaria} & CDC Clinical Guidance for Malaria Diagnosis~\cite{cdc2022malaria} & \textit{muscle\_pain, diarrhoea, sweating, chills, high\_fever} & \textit{muscle\_pain, diarrhoea, sweating, chills, high\_fever} & \textbf{100\%} \\
+\textbf{Typhoid} & WHO Enteric Fever / Typhoid Technical Guidelines~\cite{who2020dengue} & \textit{toxic\_look\_(typhos), belly\_pain, constipation, diarrhoea, chills} & \textit{toxic\_look\_(typhos), belly\_pain, constipation, diarrhoea, chills} & \textbf{100\%} \\
 \textbf{GERD} & American College of Gastroenterology (ACG) Guidelines & \textit{ulcers\_on\_tongue, stomach\_pain, acidity, chest\_pain, cough} & \textit{ulcers\_on\_tongue, stomach\_pain, acidity, chest\_pain, cough} & \textbf{100\%} \\
-\textbf{Diabetes} & American Diabetes Association (ADA) Diagnostic Standards & \textit{polyuria, increased\_appetite, irregular\_sugar\_level, restlessness, weight\_loss} & \textit{polyuria, increased\_appetite, irregular\_sugar\_level, weight\_loss} & \textbf{80\%} \\
-\textbf{Dengue} & WHO Dengue Guidelines for Diagnosis \& Prevention & \textit{pain\_behind\_the\_eyes, back\_pain, red\_spots\_over\_body, muscle\_pain, malaise} & \textit{pain\_behind\_the\_eyes, back\_pain, muscle\_pain} & \textbf{60\%} \\
-\textbf{Asthma} & Global Initiative for Asthma (GINA) Strategy Report & \textit{mucoid\_sputum, family\_history, breathlessness, cough, yellowish\_skin} & \textit{mucoid\_sputum, breathlessness, cough} & \textbf{60\%} \\
+\textbf{Diabetes} & American Diabetes Association (ADA) Diagnostic Standards~\cite{ada2023standards} & \textit{polyuria, increased\_appetite, irregular\_sugar\_level, restlessness, weight\_loss} & \textit{polyuria, increased\_appetite, irregular\_sugar\_level, weight\_loss} & \textbf{80\%} \\
+\textbf{Dengue} & WHO Dengue Guidelines for Diagnosis \& Prevention~\cite{who2020dengue} & \textit{pain\_behind\_the\_eyes, back\_pain, red\_spots\_over\_body, muscle\_pain, malaise} & \textit{pain\_behind\_the\_eyes, back\_pain, muscle\_pain} & \textbf{60\%} \\
+\textbf{Asthma} & Global Initiative for Asthma (GINA) Strategy Report~\cite{gina2023global} & \textit{mucoid\_sputum, family\_history, breathlessness, cough, yellowish\_skin} & \textit{mucoid\_sputum, breathlessness, cough} & \textbf{60\%} \\
 \midrule
 \multicolumn{4}{l}{\textbf{Overall Mean Clinical Literature Concordance Ratio}} & \textbf{72.7\%} \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 \noindent\textbf{Evaluation of Hypothesis H5}: Hypothesis H5 posits that \textit{model decisions explained via additive SHAP attributions align with recognized primary diagnostic criteria from medical literature, and tree ensembles exhibit higher explanation stability than single trees}. With a **72.7\% mean concordance ratio** across target guidelines and strong ensemble stability (Jaccard $> 0.52$), **Hypothesis H5 is fully supported**.
@@ -230,7 +236,7 @@ To rigorously evaluate Hypothesis H5, we conducted a systematic concordance audi
 \section{Clinical Decision Support System Research Prototype}
 \label{sec:prototype}
 
-To bridge empirical research and practical utility, we developed an interactive Clinical Decision Support System (CDSS) research prototype implementing the validated models, probability calibrator, and explainability engine.
+To bridge empirical research and practical utility, we developed an interactive Clinical Decision Support System (CDSS) research prototype implementing the validated models, probability calibrator, and explainability engine, adhering to clinical AI design paradigms articulated by Shortliffe and Sepúlveda~\cite{shortliffe2018clinical}, Topol~\cite{topol2019high}, and Fraser et al.~\cite{fraser2018evaluating}.
 
 \subsection{System Architecture and Implementation}
 \label{subsec:prototype_arch}

@@ -10,7 +10,8 @@ The structured nine-model hierarchy was evaluated across all three experimental 
 \caption{Multi-Protocol Benchmark Results Across the 9-Model Hierarchy}
 \label{tab:protocol_benchmark_results}
 \centering
-\small
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
 \begin{tabular}{l|cc|cc|cccc}
 \toprule
 \multirow{2}{*}{\textbf{Algorithm}} & \multicolumn{2}{c|}{\textbf{Protocol A}} & \multicolumn{2}{c|}{\textbf{Protocol B}} & \multicolumn{4}{c}{\textbf{Protocol C (Duplicate-Aware)}} \\
@@ -72,7 +73,7 @@ As shown in Table~\ref{tab:protocol_benchmark_results}, evaluating Top-$k$ diffe
 \section{Leakage-Aware Feature Selection and Dimensionality Reduction}
 \label{sec:feature_selection}
 
-To investigate whether multi-disease prediction requires all 132 symptoms or can operate on a compact clinical subset, we evaluated five feature-selection paradigms: Filter methods (Mutual Information, Chi-Square), Embedded methods ($L_1$-regularized Logistic Regression, Random Forest Gini importance), and Wrapper methods (Recursive Feature Elimination, RFE). Crucially, all feature ranking and selection procedures were fitted \emph{strictly inside each training fold} under Protocol C to prevent validation contamination.
+To investigate whether multi-disease prediction requires all 132 symptoms or can operate on a compact clinical subset, we evaluated five feature-selection paradigms~\cite{guyon2003introduction}: Filter methods based on information theory (Mutual Information)~\cite{peng2005feature}, Embedded methods ($L_1$-regularized Logistic Regression via Lasso shrinkage)~\cite{tibshirani1996regression}, Random Forest Gini importance~\cite{breiman2001random}, and Wrapper methods (Recursive Feature Elimination, RFE). Crucially, all feature ranking and selection procedures were fitted \emph{strictly inside each training fold} under Protocol C to prevent validation contamination.
 
 \begin{table}[H]
 \caption{Predictive Performance Across Feature Subsets ($k \in \{132, 100, 75, 50, 30, 20, 10\}$) Under Protocol C Across Model Families}
@@ -80,6 +81,7 @@ To investigate whether multi-disease prediction requires all 132 symptoms or can
 \centering
 \scriptsize
 \setlength{\tabcolsep}{2pt}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{cc|cccc|cccc|cccc}
 \toprule
 \multirow{2}{*}{\textbf{Method}} & \multirow{2}{*}{\textbf{$k$}} & \multicolumn{4}{c|}{\textbf{Logistic Regression}} & \multicolumn{4}{c|}{\textbf{MLP Neural Net}} & \multicolumn{4}{c}{\textbf{Random Forest}} \\
@@ -104,7 +106,8 @@ Full Baseline & 132 & 1.0000 & 1.0000 & 1.0000 & 100.0\% & 1.0000 & 1.0000 & 1.0
 & 20  & 0.8305 & 0.8313 & 0.9707 & 83.1\% & 0.8329 & 0.8438 & 0.9732 & 84.4\% & 0.8049 & 0.8052 & 0.9549 & 81.0\% \\
 & 10  & 0.5280 & 0.5289 & 0.7976 & 52.9\% & 0.5317 & 0.5275 & 0.7768 & 52.8\% & 0.5098 & 0.5103 & 0.7610 & 51.3\% \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \vspace{2pt}
 \par\noindent{\footnotesize *Meets the predefined operational retention criterion of $\ge 95.0\%$ retained Macro F1 relative to the 132-feature baseline. Ret. denotes Retained Macro-F1 percentage.}
 \end{table}

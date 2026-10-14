@@ -10,13 +10,12 @@
 \usepackage{color}
 \usepackage{xspace}
 \usepackage{mdframed}
-\usepackage{epsfig}
-\usepackage{subfigure}   % To make subfigures. Read subfigure.pdf on ctan.tug.org
 \usepackage{multirow}
 \usepackage{verbatim}
 \usepackage[numbers]{natbib}      % Allows you to use BibTeX
 \usepackage{acronym} % For the List of Abbreviations. Read acronym.pdf on ctan.tug.org
 \usepackage{booktabs}% http://ctan.org/pkg/booktabs
+\usepackage{caption} % Robust caption formatting
 \usepackage{indentfirst}
 \usepackage{enumitem}
 \usepackage{setspace}
@@ -32,6 +31,11 @@
 
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage[noabbrev,capitalize]{cleveref}
+
+% Fix hyperref bookmark level for rac.sty chap definition
+\makeatletter
+\providecommand*{\toclevel@chap}{0}
+\makeatother
 
 \onehalfspacing
 \providecommand{\sun}{\ensuremath{\odot}} % sun symbol is \sun

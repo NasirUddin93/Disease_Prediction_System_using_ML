@@ -1,7 +1,7 @@
 \chapter{Clinical Symptom Sparsity and Cold-Start Robustness}
 \label{chap:sparsity}
 
-While feature selection (\cref{chap:results_feature_selection}) identifies a compact global ontology for model construction, real-world deployment requires robustness against incomplete symptom presentation. When an intake profile presents only a restricted subset of chief symptoms ($s \in [1, 10]$ active symptoms) rather than an exhaustive symptom profile (cohort natural mean: $7.45 \pm 3.59$ active symptoms, range 3--17), models must degrade gracefully. In this chapter, we evaluate this behavior through controlled stochastic masking experiments under Protocol C. 
+While feature selection (\cref{chap:results_feature_selection}) identifies a compact global ontology for model construction, real-world deployment requires robustness against incomplete symptom presentation. In primary care and ambulatory triage encounters, patients rarely present with textbook constellations; rather, audits of clinical symptom checkers indicate that patients typically report only 3 to 8 presenting complaints~\cite{semigran2015evaluation, elias2021diagnostic, ferraccioli2022differential}. When an intake profile presents only a restricted subset of chief symptoms ($s \in [1, 10]$ active symptoms) rather than an exhaustive symptom profile (cohort natural mean: $7.45 \pm 3.59$ active symptoms, range 3--17), models must degrade gracefully. In this chapter, we evaluate this behavior through controlled stochastic masking experiments under Protocol C. 
 
 \begin{figure}[H]
 \centering
@@ -28,6 +28,7 @@ Crucially, these controlled masking experiments represent a benchmark-specific s
 \centering
 \scriptsize
 \setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{cc|cccc|cccc}
 \toprule
 \multirow{2}{*}{\textbf{Model}} & \multirow{2}{*}{\textbf{Budget ($s$)}} & \multicolumn{4}{c|}{\textbf{Full 132-Symptom Space}} & \multicolumn{4}{c}{\textbf{Fold-Specific 50-Symptom Space (Zero Leakage)}} \\
@@ -76,7 +77,8 @@ Crucially, these controlled masking experiments represent a benchmark-specific s
 & 3 Symptoms  & $0.884 \pm 0.054$ & $0.838 \pm 0.043$ & 0.968 & 0.999 & $0.729 \pm 0.079$ & $0.684 \pm 0.056$ & 0.934 & 0.976 \\
 & 1 Symptom   & $0.372 \pm 0.079$ & $0.317 \pm 0.027$ & 0.604 & 0.718 & $0.159 \pm 0.056$ & $0.145 \pm 0.021$ & 0.502 & 0.666 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \begin{flushleft}
 \scriptsize
 \textit{Note: Results report two-stage hierarchical cross-validation mean $\pm$ fold standard deviation across 10 duplicate-aware folds, where each fold aggregates 5 independent nested stochastic masking seeds. Feature selection for the 50-symptom representation was performed strictly within each training fold, guaranteeing zero data leakage.}

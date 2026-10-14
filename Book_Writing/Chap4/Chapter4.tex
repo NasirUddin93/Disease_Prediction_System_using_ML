@@ -3,7 +3,7 @@
 
 \section{Evaluation Protocols}
 \label{sec:evaluation_protocols}
-To establish scientific validity, models are evaluated across three distinct protocols:
+To establish scientific validity and circumvent the over-optimistic evaluation artifacts documented by Vandewiele et al.~\cite{vandewiele2021overly} and Kapoor and Narayanan~\cite{kapoor2023leakage}, models are evaluated across three distinct protocols:
 \begin{itemize}
     \item \textbf{Protocol A (Original Kaggle Split)}: Train on \texttt{Training.csv} (4,920 samples) and evaluate on \texttt{Testing.csv} (42 samples). Serves as a baseline to replicate prior claims.
     \item \textbf{Protocol B (Standard Stratified 10-Fold CV)}: Evaluates randomized cross-validation on the combined dataset.
@@ -12,11 +12,11 @@ To establish scientific validity, models are evaluated across three distinct pro
 
 \section{Structured Model Hierarchy}
 \label{sec:model_hierarchy}
-We implement a four-level model hierarchy:
+We implement a four-level model hierarchy in Python using Scikit-Learn~\cite{pedregosa2011scikit} and XGBoost~\cite{chen2016xgboost}:
 \begin{enumerate}
     \item \textbf{Baselines}: Uniform Dummy Classifier, Bernoulli Naive Bayes, and $L_1/L_2$-regularized Multinomial Logistic Regression.
-    \item \textbf{Tree Ensembles}: CART Decision Trees, Random Forest (100 estimators), Extra Trees, and Extreme Gradient Boosting (XGBoost).
-    \item \textbf{Kernel Methods}: Linear SVM and RBF-kernel SVM with Platt probability scaling.
+    \item \textbf{Tree Ensembles}: CART Decision Trees, Random Forest (100 estimators)~\cite{breiman2001random}, Extra Trees~\cite{geurts2006extremely}, and Extreme Gradient Boosting (XGBoost)~\cite{chen2016xgboost}.
+    \item \textbf{Kernel Methods}: Linear SVM and RBF-kernel SVM~\cite{cortes1995support} with Platt probability scaling~\cite{platt1999probabilistic}.
     \item \textbf{Neural Network}: A structured Multi-Layer Perceptron (MLP):
     \begin{equation}
         \mathbf{x} \in \{0, 1\}^{132} \xrightarrow{\text{Dense(128, ReLU)}} \xrightarrow{\text{Drop(0.3)}} \xrightarrow{\text{Dense(64, ReLU)}} \xrightarrow{\text{Drop(0.2)}} \mathbf{y} \in \Delta^{41}
@@ -40,13 +40,13 @@ We introduce two controlled perturbation mechanisms across 5 random seeds:
 
 \section{Uncertainty Quantification and Differential Diagnosis}
 \label{sec:uncertainty_quant}
-Posterior probabilities $\hat{p}_{ic}$ for sample $i$ and class $c$ are calibrated using Platt scaling and Isotonic regression. Reliability is quantified via:
+Posterior probabilities $\hat{p}_{ic}$ for sample $i$ and class $c$ are calibrated using Platt scaling and Isotonic regression. In accordance with proper scoring rule theory~\cite{gneiting2007strictly}, reliability is quantified via:
 \begin{itemize}
-    \item \textbf{Brier Score}:
+    \item \textbf{Brier Score}~\cite{brier1950verification}:
     \begin{equation}
         \text{BS} = \frac{1}{N} \sum_{i=1}^N \sum_{c=1}^C (\hat{p}_{ic} - y_{ic})^2
     \end{equation}
-    \item \textbf{Expected Calibration Error (ECE)}:
+    \item \textbf{Expected Calibration Error (ECE)}~\cite{guo2017calibration}:
     \begin{equation}
         \text{ECE} = \sum_{m=1}^M \frac{|B_m|}{N} \left| \text{acc}(B_m) - \text{conf}(B_m) \right|
     \end{equation}
@@ -55,7 +55,7 @@ Posterior probabilities $\hat{p}_{ic}$ for sample $i$ and class $c$ are calibrat
 
 \section{Explainable AI (XAI) and Medical Alignment}
 \label{sec:xai_method}
-We apply TreeSHAP~\cite{lundberg2017unified} to compute exact Shapley feature attributions:
+Rather than relying on unstable local linear approximations~\cite{ribeiro2016why}, we apply TreeSHAP~\cite{lundberg2017unified} to compute exact, axiomatically grounded Shapley feature attributions:
 \begin{equation}
     \phi_j = \sum_{S \subseteq F \setminus \{j\}} \frac{|S|!(|F| - |S| - 1)!}{|F|!} [f(S \cup \{j\}) - f(S)]
 \end{equation}

@@ -50,4 +50,4 @@ As documented in Table~\ref{tab:forensic_summary}, while the training dataset co
 
 \section{Forensic Finding 3: Severe Train-Test Data Leakage}
 \label{sec:forensic_finding3}
-Crucially, set-theoretic intersection between the test and training sets confirms that \textbf{41 out of 42 testing records (97.62\%) are identical duplicates of training records} (\cref{fig:leakage_audit}). Evaluating models using the Kaggle test set does not measure generalization; it measures vector retrieval.
+Crucially, set-theoretic intersection between the test and training sets confirms that \textbf{41 out of 42 testing records (97.62\%) are identical duplicates of training records} (\cref{fig:leakage_audit}). In the formal taxonomy of data leakage established by Kaufman et al.~\cite{kaufman2012leakage} and Kapoor and Narayanan~\cite{kapoor2023leakage}, this constitutes complete train-test contamination: evaluating models using the Kaggle test set does not measure generalizable predictive modeling, but rather verbatim vector retrieval from memorized training instances.
